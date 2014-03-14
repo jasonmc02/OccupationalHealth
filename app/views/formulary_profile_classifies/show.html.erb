@@ -1,0 +1,31 @@
+<%- model_class = FormularyProfileClassify -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:formulary_profile_id) %>:</strong></dt>
+  <dd><%= @formulary_profile_classify.formulary_profile_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project) %>:</strong></dt>
+  <dd><%= @formulary_profile_classify.project %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:part_program) %>:</strong></dt>
+  <dd><%= @formulary_profile_classify.part_program %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:entire_program) %>:</strong></dt>
+  <dd><%= @formulary_profile_classify.entire_program %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:other) %>:</strong></dt>
+  <dd><%= @formulary_profile_classify.other %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:which) %>:</strong></dt>
+  <dd><%= @formulary_profile_classify.which %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              formulary_profile_classifies_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_formulary_profile_classify_path(@formulary_profile_classify), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              formulary_profile_classify_path(@formulary_profile_classify),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

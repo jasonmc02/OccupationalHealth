@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  research: false
+  action: false
+  policy: false
+
+two:
+  research: false
+  action: false
+  policy: false

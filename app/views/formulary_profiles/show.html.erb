@@ -1,0 +1,35 @@
+<%- model_class = FormularyProfile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @formulary_profile.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:period) %>:</strong></dt>
+  <dd><%= @formulary_profile.period %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:region) %>:</strong></dt>
+  <dd><%= @formulary_profile.region %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:institution) %>:</strong></dt>
+  <dd><%= @formulary_profile.institution %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @formulary_profile.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:objective) %>:</strong></dt>
+  <dd><%= @formulary_profile.objective %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:discipline) %>:</strong></dt>
+  <dd><%= @formulary_profile.discipline %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:success) %>:</strong></dt>
+  <dd><%= @formulary_profile.success %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              formulary_profiles_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_formulary_profile_path(@formulary_profile), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              formulary_profile_path(@formulary_profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

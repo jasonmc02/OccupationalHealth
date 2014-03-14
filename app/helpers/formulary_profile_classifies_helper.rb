@@ -1,0 +1,2 @@
+module FormularyProfileClassifiesHelper
+end

@@ -1,0 +1,62 @@
+en:
+  application:
+    title: "Occupational Health"
+  dictionary:
+    blank: &BLANK "Este campo no puede quedar en blanco"
+    required: &REQUIRED "Campo requerido"
+    greater_than: &GREATER_THAN "Mayor a %{count}"
+    greater_than_or_equal_to: &GREATER_THAN_OR_EQUAL_TO "Mayor o igual a %{count}"
+    less_than_or_equal_to: &LESS_THAN_OR_EQUAL_TO "Menor o igual a %{count}"
+    not_a_number: &NOT_A_NUMBER "Solo números"
+    less_than: &LESS_THAN "Menor a %{count}"
+  helpers:
+  navbar_elements:
+    language: "Language"
+    en: "English"
+    es: "Español"
+    fr: "Français"
+    pt: "Português"
+  activerecord:
+    errors:
+      models:
+    models:
+      formulary_profile: "Project Profile"
+      formulary_profile_area: "Which of the following areas does the focus and subject of your project include:"
+      formulary_profile_classify: "Would you classify this work (ie. design, execution, official designation) as:"
+      formulary_profile_reach: "Overall, given the interest, reach and scope of your project, is your work centered in:"
+    attributes:
+      formulary_profile:
+        name: "Project Title"
+        period: "Project duration (beginning and end dates): mm/yyyy – mm-yyyy"
+        region: "Country (or countries) and Region(s) of the project"
+        institution: "Complete names of institution(s) involved in the project "
+        description: "Briefly describe the core problem or issue that your project deals with (please include contextual health/well-being elements in your description)"
+        objective: "What are the main objectives of your project?"
+        discipline: "What disciplines and sectors are represented through institutions, people or strategies (theory and methodology) for your project and project team? "
+        success: "What is the key achievement that will be used to determine if the project has been a success?"
+      formulary_profile_area:
+        mining: "Mining"
+        pesticide: "Pesticides"
+        occupational_health: "Occupational health"
+        community_paticipation: "Community participation"
+        watershed_management: "Watershed management"
+        solid_waste_management: "Solid waste management"
+        public_health: "Public health"
+        animal_health: "Animal Health/Veterinary public health"
+        determinant_of_health: "Determinants of Health"
+        food_sovereignty: "Food Security and Sovereignty"
+        indigenous_health: "Indigenous Health and Well-Being"
+        climate_change: "Climate Change"
+        forest_management: "Forestry and Forest Management"
+        other: "Other"
+        which: "Which?"
+      formulary_profile_reach:
+        research: "Research"
+        action: "Action / Practices"
+        policy: "Policy"
+      formulary_profile_classify:
+        project: "A project"
+        part_program: "Part of a program (ie. health programming, environmental management planning)"
+        entire_program: "An entire Program"
+        other: "Other"
+        which: "Which?"

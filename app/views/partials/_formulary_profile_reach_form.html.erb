@@ -1,0 +1,17 @@
+<%- model_class = FormularyProfileReach -%>
+<div class="control-group">
+  <label>
+    <%= t model_class.model_name.human.titleize %>
+  </label>
+</div>
+<div class="clearfix">
+  <div class="inline-checkbox span3">
+    <%= f.check_box :research, :class => 'check-box' %><%= f.label :research, :class => 'check-label' %>
+  </div>
+  <div class="inline-checkbox span3">
+    <%= f.check_box :action, :class => 'check-box' %><%= f.label :action, :class => 'check-label' %>
+  </div>
+  <div class="inline-checkbox span3">
+    <%= f.check_box :policy, :class => 'check-box' %><%= f.label :policy, :class => 'check-label' %>
+  </div>
+</div>

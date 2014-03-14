@@ -1,0 +1,2 @@
+module FormularyProfileReachesHelper
+end

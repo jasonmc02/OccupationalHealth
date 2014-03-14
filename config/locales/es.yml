@@ -1,0 +1,62 @@
+es:
+  application:
+    title: "Salud Ocupacional"
+  dictionary:
+    blank: &BLANK "Este campo no puede quedar en blanco"
+    required: &REQUIRED "Campo requerido"
+    greater_than: &GREATER_THAN "Mayor a %{count}"
+    greater_than_or_equal_to: &GREATER_THAN_OR_EQUAL_TO "Mayor o igual a %{count}"
+    less_than_or_equal_to: &LESS_THAN_OR_EQUAL_TO "Menor o igual a %{count}"
+    not_a_number: &NOT_A_NUMBER "Solo números"
+    less_than: &LESS_THAN "Menor a %{count}"
+  helpers:
+  navbar_elements:
+    language: "Idioma"
+    en: "English"
+    es: "Español"
+    fr: "Français"
+    pt: "Português"
+  activerecord:
+    errors:
+      models:
+    models:
+      formulary_profile: "Perfil del Proyecto"
+      formulary_profile_area: "Su proyecto se circunscribe en la siguiente temática:"
+      formulary_profile_classify: "La modalidad en la cual se encuentra registrado, diseñado y ejecutado es:"
+      formulary_profile_reach: "Dado el alcance o interés de su proyecto, es/fue su proyecto centrado sobre todo en:"
+    attributes:
+      formulary_profile:
+        name: "Nombre del proyecto:"
+        period: "Periodo que abarca el proyecto:"
+        region: "País(es) / Región (es) donde el proyecto se llevó a cabo:"
+        institution: "Nombre completo de la(s) institución (nes) de investigación involucradas en el proyecto: No queremos saber todas las instituciones involucradas?"
+        description: "Describa brevemente el problema sobre el cual se están actuando: (Incluye una indicación sobre la descripción del contexto de salud/bienestar sobre el cual se realiza el proyecto)"
+        objective: "¿Cuáles son los objetivos principales del proyecto? "
+        discipline: "¿Cuáles son las disciplinas y sectores representados por instituciones, personas y estrategias (teóricas y metodológicas) en su  equipo de trabajo? "
+        success: "¿Cuál es el principal logro que se utilizará para determinar si el proyecto ha sido un éxito?  "
+      formulary_profile_area:
+        mining: "Minería"
+        pesticide: "Plaguicidas"
+        occupational_health: "Salud laboral"
+        community_paticipation: "Participación comunitaria"
+        watershed_management: "Manejo de cuencas fluviales"
+        solid_waste_management: "Desechos sólidos"
+        public_health: "Salud pública"
+        animal_health: "Sanidad animal"
+        determinant_of_health: "Determinantes de Salud"
+        food_sovereignty: "Seguridad y Soberanía del Alimentos"
+        indigenous_health: "Salúd y Bienestar Indígena"
+        climate_change: "Cambio Climático"
+        forest_management: "Silvicultura y Manejo Forestal"
+        other: "Otro"
+        which: "¿Cuál?"
+      formulary_profile_reach:
+        research: "Investigación"
+        action: "Acciones / prácticas"
+        policy: "La política"
+      formulary_profile_classify:
+        project: "Un proyecto"
+        part_program: "Parte de un programa"
+        entire_program: "Un programa"
+        other: "Otro"
+        which: "¿Cuál?"

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: false
+  part_program: false
+  entire_program: false
+  other: false
+  which: MyString
+
+two:
+  project: false
+  part_program: false
+  entire_program: false
+  other: false
+  which: MyString

@@ -1,0 +1,26 @@
+<%- model_class = FormularyProfileClassify -%>
+<div class="control-group">
+  <label>
+    <%= t model_class.model_name.human.titleize %>
+  </label>
+</div>
+<div class="clearfix">
+  <div class="inline-checkbox span3">
+    <%= f.check_box :project, :class => 'check-box' %><%= f.label :project, :class => 'check-label' %>
+  </div>
+  <div class="inline-checkbox span3">
+    <%= f.check_box :part_program, :class => 'check-box' %><%= f.label :part_program, :class => 'check-label' %>
+  </div>
+  <div class="inline-checkbox span3">
+    <%= f.check_box :entire_program, :class => 'check-box' %><%= f.label :entire_program, :class => 'check-label' %>
+  </div>
+  <div class="inline-checkbox span3">
+    <%= f.check_box :other, :class => 'check-box' %><%= f.label :other, :class => 'check-label' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :which, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :which, :class => 'text_field' %>
+  </div>
+</div>
