@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 gem 'mysql2', '~> 0.3.15'
-gem 'capistrano', '~> 2.15.5'
+gem 'capistrano', '~> 3.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
