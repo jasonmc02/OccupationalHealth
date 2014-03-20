@@ -9,13 +9,6 @@ set :deploy_to, '/home/ubuntu/OccupationalHealth'
 set :keep_releases, 3
 set :pty, true
 
-task :production do
-  server 'ec2-54-186-30-232.us-west-2.compute.amazonaws.com'
-end
-
-task :test do
-  server 'ec2-54-186-30-232.us-west-2.compute.amazonaws.com'
-end
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
@@ -45,27 +38,37 @@ end
 
 # Default value for keep_releases is 5
 
+#after :finishing, :assets
+#after :finishing, :bundle
+#after "deploy", "deploy:database"
+#after :finishing, :migrate
+
+after :deploy, 'deploy:bundle', 'deploy:database', 'deploy:migrate'
 
 namespace :deploy do
 
   task :assets do
-    
     run "rm -rf #{deploy_to}/current/public/assets"
-    run "mkdir #{deploy_to}/config/assets"
-    run "ln -s #{deploy_to}/config/assets #{deploy_to}/current/public/assets"
-
+    run "mkdir #{deploy_to}/shared/assets"
+    run "ln -s #{deploy_to}/shared/assets #{deploy_to}/current/public/assets"
     run_locally "rake assets:precompile"
     run_locally "cd public; tar -zcvf assets.tar.gz assets"
-    top.upload "public/assets.tar.gz", "#{deploy_to}/config/", :via => :scp
-    run "cd #{deploy_to}/config/; tar -zxvf assets.tar.gz"
+    top.upload "public/assets.tar.gz", "#{deploy_to}/shared/", :via => :scp
+    run "cd #{deploy_to}/shared/; tar -zxvf assets.tar.gz"
     run_locally "rm public/assets.tar.gz"
     run_locally "rm -rf public/assets"
+  end
+
+  desc "Install gems"
+  task :bundle do
+    puts "Downloading gems"
+    run "cd /#{deploy_to}/current && bundle install"
   end
 
   desc "Symlink to db file"
   task :database do
     puts "Database configuration...\n"
-    run "ln -nfs ~#{deploy_to}/shared/config/database.yml #{deploy_to}/current/config/database.yml"
+    run "ln -nfs ~#{deploy_to}/shared/shared/database.yml #{deploy_to}/current/shared/database.yml"
   end
 
   desc "Run migration"
