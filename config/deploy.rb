@@ -2,6 +2,7 @@
 lock '3.1.0'
 
 set :application, 'OccupationalHealth'
+set :deploy_user, 'ubuntu'
 set :scm, :git
 set :branch, :development
 set :repo_url, 'git@github.com:jasonmc02/OccupationalHealth.git'
@@ -43,55 +44,72 @@ set :pty, true
 #after "deploy", "deploy:database"
 #after :finishing, :migrate
 
-after :deploy, 'deploy:bundle', 'deploy:database', 'deploy:migrate'
+#after :finishing, 'deploy:bundle'#, 'deploy:database', 'deploy:migrate'
 
 namespace :deploy do
-
+=begin
   task :assets do
-    run "rm -rf #{deploy_to}/current/public/assets"
-    run "mkdir #{deploy_to}/shared/assets"
-    run "ln -s #{deploy_to}/shared/assets #{deploy_to}/current/public/assets"
-    run_locally "rake assets:precompile"
-    run_locally "cd public; tar -zcvf assets.tar.gz assets"
-    top.upload "public/assets.tar.gz", "#{deploy_to}/shared/", :via => :scp
-    run "cd #{deploy_to}/shared/; tar -zxvf assets.tar.gz"
-    run_locally "rm public/assets.tar.gz"
-    run_locally "rm -rf public/assets"
+    on roles(:mailserver) do
+      run "rm -rf #{deploy_to}/current/public/assets"
+      run "mkdir #{deploy_to}/shared/assets"
+      run "ln -s #{deploy_to}/shared/assets #{deploy_to}/current/public/assets"
+      run_locally "rake assets:precompile"
+      run_locally "cd public; tar -zcvf assets.tar.gz assets"
+      top.upload "public/assets.tar.gz", "#{deploy_to}/shared/", :via => :scp
+      run "cd #{deploy_to}/shared/; tar -zxvf assets.tar.gz"
+      run_locally "rm public/assets.tar.gz"
+      run_locally "rm -rf public/assets"
+    end
   end
 
   desc "Install gems"
   task :bundle do
-    puts "Downloading gems"
-    run "cd /#{deploy_to}/current && bundle install"
+    on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
+      puts "Downloading gems"
+      run "cd /#{deploy_to}/current && bundle install"
+    end
   end
 
   desc "Symlink to db file"
   task :database do
-    puts "Database configuration...\n"
-    run "ln -nfs ~#{deploy_to}/shared/shared/database.yml #{deploy_to}/current/shared/database.yml"
+    on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
+      puts "Database configuration...\n"
+      run "ln -nfs ~#{deploy_to}/shared/shared/database.yml #{deploy_to}/current/shared/database.yml"
+    end
   end
 
   desc "Run migration"
   task :migrate do
-    puts "Running migrations...\n"
-    run "cd #{deploy_to}/current && bundle exec rake db:migrate"
+    on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
+      puts "Running migrations...\n"
+      run "cd #{deploy_to}/current && bundle exec rake db:migrate"
+    end
   end
 
   desc "Restart unicorn daemon"
   task :restart_unicorn do
-    puts "Restarting unicorn...\n"
-    run "#{sudo} service #{unicorn_daemon} restart"
+    on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
+      puts "Restarting unicorn...\n"
+      run "#{sudo} service #{unicorn_daemon} restart"
+    end
   end
 
   desc "Restart memcached..."
   task :restart_memcached do
-    puts "Restarting memcached...\n"
-    run "#{sudo} service memcached restart"
+    on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
+      puts "Restarting memcached...\n"
+      run "#{sudo} service memcached restart"
+    end
   end
 
   desc "Restart Nginx server"
   task :restart_nginx do
-    puts "Restarting nginx...\n"
-    run "#{sudo} service nginx restart"
+    on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
+      puts "Restarting nginx...\n"
+      run "#{sudo} service nginx restart"
+    end
   end
+
+  after :finishing, 'deploy:assets', 'deploy:bundle', 'deploy:database', 'deploy:migrate'
+=end
 end

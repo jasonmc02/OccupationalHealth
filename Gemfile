@@ -5,6 +5,17 @@ gem 'rails', '4.0.2'
 
 gem 'mysql2', '~> 0.3.15'
 gem 'capistrano', '~> 3.1.0'
+# rails specific capistrano funcitons
+#gem 'capistrano-rails', '~> 1.1.0'
+
+# integrate bundler with capistrano
+#gem 'capistrano-bundler'
+
+# if you are using RBENV
+#gem 'capistrano-rvm'
+
+gem 'unicorn', '~> 4.8.2'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
