@@ -1,8 +1,8 @@
-working_directory "/home/ubuntu/OccupationalHealth"
+working_directory "/home/ubuntu/OccupationalHealth/current"
 rails_env = 'production'
-pid "/home/ubuntu/OccupationalHealth/tmp/pids/unicorn.pid"
-stderr_path "/home/ubuntu/OccupationalHealth/log/unicorn.log"
-stdout_path "/home/ubuntu/OccupationalHealth/log/unicorn.log"
+pid "/home/ubuntu/OccupationalHealth/current/tmp/pids/unicorn.pid"
+stderr_path "/home/ubuntu/OccupationalHealth/current/log/unicorn.log"
+stdout_path "/home/ubuntu/OccupationalHealth/current/log/unicorn.log"
 
 listen "/tmp/unicorn.occupational_health.sock"
 worker_processes 4
