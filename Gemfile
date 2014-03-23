@@ -14,8 +14,6 @@ gem 'capistrano', '~> 3.1.0'
 # if you are using RBENV
 #gem 'capistrano-rvm'
 
-gem 'unicorn', '~> 4.8.2'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -41,12 +39,16 @@ gem "therubyracer", '~> 0.12.1'
 gem "less-rails", '~> 2.4.2'
 gem "twitter-bootstrap-rails", '~> 2.2.8'
 
+gem 'unicorn', '~> 4.8.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'better_errors', '~> 1.1.0'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
