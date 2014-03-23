@@ -1,6 +1,6 @@
-role :web, %w{deploy@ec2-54-186-30-232.us-west-2.compute.amazonaws.com}
+role :web, %w{ubuntu@ec2-54-186-151-59.us-west-2.compute.amazonaws.com}
 
-server 'ec2-54-186-30-232.us-west-2.compute.amazonaws.com', roles: [:web], user: 'ubuntu'
+server 'ec2-54-186-151-59.us-west-2.compute.amazonaws.com', roles: [:web], user: 'ubuntu'
 set :ssh_options, {
   keys: %w{/home/jason/DevAWSServer.pem}
 }
