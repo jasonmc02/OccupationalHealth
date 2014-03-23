@@ -19,7 +19,7 @@ development:
 development:
   adapter: mysql2
   encoding: utf8
-  database: OccupationalHealth
+  database: OccupationalHealth_production
   pool: 5
   username: root
   password: root
