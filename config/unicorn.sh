@@ -4,7 +4,8 @@ set -e
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/home/ubuntu/OccupationalHealth/current
 PID=/home/ubuntu/OccupationalHealth/shared/tmp/pids/unicorn.pid
-CMD="/home/ubuntu/OccupationalHealth/current/bin/unicorn -D -c /home/ubuntu/OccupationalHealth/current/config/unicorn.rb -E production"
+#CMD="/home/ubuntu/OccupationalHealth/current/bin/unicorn -D -c /home/ubuntu/OccupationalHealth/current/config/unicorn.rb -E production"
+CMD="/home/ubuntu/OccupationalHealth/current/bin/unicorn -D -c /home/ubuntu/OccupationalHealth/current/config/unicorn.rb"
 action="$1"
 set -u
 
