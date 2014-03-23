@@ -119,3 +119,27 @@ ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
   Rendered /home/jason/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
   Rendered /home/jason/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
   Rendered /home/jason/.rvm/gems/ruby-2.1.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.1ms)
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (8.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFormularyProfiles (20140309182029)
+  [1m[35m (2.2ms)[0m  CREATE TABLE `formulary_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `period` varchar(255), `region` varchar(255), `institution` varchar(255), `description` text, `objective` text, `discipline` text, `success` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140309182029')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFormularyProfileAreas (20140310002403)
+  [1m[35m (2.8ms)[0m  CREATE TABLE `formulary_profile_areas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `formulary_profile_id` int(11), `mining` tinyint(1), `pesticide` tinyint(1), `occupational_health` tinyint(1), `community_paticipation` tinyint(1), `watershed_management` tinyint(1), `solid_waste_management` tinyint(1), `public_health` tinyint(1), `animal_health` tinyint(1), `determinant_of_health` tinyint(1), `food_sovereignty` tinyint(1), `indigenous_health` tinyint(1), `climate_change` tinyint(1), `forest_management` tinyint(1), `other` tinyint(1), `which` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140310002403')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFormularyProfileReaches (20140312044645)
+  [1m[35m (2.2ms)[0m  CREATE TABLE `formulary_profile_reaches` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `formulary_profile_id` int(11), `research` tinyint(1), `action` tinyint(1), `policy` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140312044645')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFormularyProfileClassifies (20140312051812)
+  [1m[35m (2.8ms)[0m  CREATE TABLE `formulary_profile_classifies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `formulary_profile_id` int(11), `project` tinyint(1), `part_program` tinyint(1), `entire_program` tinyint(1), `other` tinyint(1), `which` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140312051812')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
