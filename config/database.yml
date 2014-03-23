@@ -1,13 +1,13 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: OccupationalHealth_development
+  database: OccupationalHealth
   pool: 5
   username: root
   password: root
   socket: /var/run/mysqld/mysqld.sock
 
-development:
+test:
   adapter: mysql2
   encoding: utf8
   database: OccupationalHealth_test
@@ -16,10 +16,10 @@ development:
   password: root
   socket: /var/run/mysqld/mysqld.sock
 
-development:
+production:
   adapter: mysql2
   encoding: utf8
-  database: OccupationalHealth_production
+  database: OccupationalHealth
   pool: 5
   username: root
   password: root
