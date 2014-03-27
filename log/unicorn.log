@@ -39,3 +39,8 @@ I, [2014-03-23T09:33:24.228838 #3856]  INFO -- : worker=1 ready
 127.0.0.1 - - [23/Mar/2014 09:35:00] "GET /twitter/bootstrap.js?body=1 HTTP/1.0" 200 13 0.0410
 127.0.0.1 - - [23/Mar/2014 09:35:00] "GET /application.js?body=1 HTTP/1.0" 200 587 0.0256
 127.0.0.1 - - [23/Mar/2014 09:35:00] "GET /images/favicon.ico HTTP/1.0" 404 27091 0.0750
+I, [2014-03-23T11:16:34.406320 #3849]  INFO -- : reaped #<Process::Status: pid 3853 exit 0> worker=0
+I, [2014-03-23T11:16:34.406578 #3849]  INFO -- : reaped #<Process::Status: pid 3856 exit 0> worker=1
+I, [2014-03-23T11:16:34.406857 #3849]  INFO -- : reaped #<Process::Status: pid 3859 exit 0> worker=2
+I, [2014-03-23T11:16:34.407020 #3849]  INFO -- : reaped #<Process::Status: pid 3862 exit 0> worker=3
+I, [2014-03-23T11:16:34.407198 #3849]  INFO -- : master complete

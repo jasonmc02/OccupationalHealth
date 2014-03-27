@@ -1,12 +1,8 @@
 working_directory "/home/ubuntu/OccupationalHealth/current"
-#working_directory "/home/jason/progra/OccupationalHealth/"
 rails_env = 'production'
 pid "/home/ubuntu/OccupationalHealth/shared/tmp/pids/unicorn.pid"
-#pid "/home/jason/progra/OccupationalHealth/tmp/pids/unicorn.pid"
 stderr_path "/home/ubuntu/OccupationalHealth/shared/log/unicorn.log"
-#stderr_path "/home/jason/progra/OccupationalHealth/log/unicorn.log"
 stdout_path "/home/ubuntu/OccupationalHealth/shared/log/unicorn.log"
-#stdout_path "/home/jason/progra/OccupationalHealth/log/unicorn.log"
 
 listen "/tmp/unicorn.occupational_health.sock"
 worker_processes 4
