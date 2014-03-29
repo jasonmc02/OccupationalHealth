@@ -1,0 +1,54 @@
+<div class="control-group">
+  <%= f.label :project_term, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select(:project_term, @description_options.map { |value| [ value[:val], value[:key] ] }) %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :require_integration, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :require_integration, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :require_integration_name, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :require_integration_name, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :gender, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :gender, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :equity, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :equity, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :community_participation, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :community_participation, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :policy, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :policy, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :complexity, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :complexity, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :other, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :other, :class => 'text_field' %>
+  </div>
+</div>

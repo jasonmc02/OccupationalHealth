@@ -1,0 +1,49 @@
+<%- model_class = FormularyContext -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:scale_description) %>:</strong></dt>
+  <dd><%= @formulary_context.scale_description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:intersectoral_aspect) %>:</strong></dt>
+  <dd><%= @formulary_context.intersectoral_aspect %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:intersectoral_aspect_name) %>:</strong></dt>
+  <dd><%= @formulary_context.intersectoral_aspect_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:political_jurisdiction) %>:</strong></dt>
+  <dd><%= @formulary_context.political_jurisdiction %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:political_jurisdictions_name) %>:</strong></dt>
+  <dd><%= @formulary_context.political_jurisdictions_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sociopolitical_context) %>:</strong></dt>
+  <dd><%= @formulary_context.sociopolitical_context %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:local_context) %>:</strong></dt>
+  <dd><%= @formulary_context.local_context %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:local_context_name) %>:</strong></dt>
+  <dd><%= @formulary_context.local_context_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project_affect) %>:</strong></dt>
+  <dd><%= @formulary_context.project_affect %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project_affect_name) %>:</strong></dt>
+  <dd><%= @formulary_context.project_affect_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:role_consideration) %>:</strong></dt>
+  <dd><%= @formulary_context.role_consideration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:role_consideration_name) %>:</strong></dt>
+  <dd><%= @formulary_context.role_consideration_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:key_actors) %>:</strong></dt>
+  <dd><%= @formulary_context.key_actors %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:success_consideration) %>:</strong></dt>
+  <dd><%= @formulary_context.success_consideration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:success_considerantion_name) %>:</strong></dt>
+  <dd><%= @formulary_context.success_considerantion_name %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              formulary_contexts_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_formulary_context_path(@formulary_context), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              formulary_context_path(@formulary_context),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

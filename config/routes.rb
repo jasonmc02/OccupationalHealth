@@ -1,5 +1,11 @@
 OccupationalHealth::Application.routes.draw do
 
+  resources :formulary_context_descriptions
+
+  resources :formulary_context_ecosystem_features
+
+  resources :formulary_contexts
+
   resources :formulary_profile_classifies
 
   resources :formulary_profile_reaches

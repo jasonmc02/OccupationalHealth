@@ -1,0 +1,65 @@
+<%- model_class = FormularyContextEcosystemFeature -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:formulary_context_id) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.formulary_context_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:urban) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.urban %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:semiurban) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.semiurban %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rural) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.rural %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:wilderness) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.wilderness %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:disrupted) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.disrupted %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:resource_extraction) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.resource_extraction %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:environmental_degradation) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.environmental_degradation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:climate_effect) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.climate_effect %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:natural_force) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.natural_force %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:coastal) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.coastal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:agricultural) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.agricultural %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:forest) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.forest %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rainfores) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.rainfores %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cloud_forest) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.cloud_forest %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dry_forest) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.dry_forest %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:old_growth_forest) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.old_growth_forest %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mixed_forest) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.mixed_forest %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:other) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.other %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:watershed) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.watershed %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:watersheed_name) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.watersheed_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:wetland) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.wetland %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:desert) %>:</strong></dt>
+  <dd><%= @formulary_context_ecosystem_feature.desert %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              formulary_context_ecosystem_features_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_formulary_context_ecosystem_feature_path(@formulary_context_ecosystem_feature), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              formulary_context_ecosystem_feature_path(@formulary_context_ecosystem_feature),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

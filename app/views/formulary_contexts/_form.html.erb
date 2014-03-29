@@ -1,0 +1,98 @@
+<%= form_for @formulary_context, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :scale_description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :scale_description, :class => 'text_field' %>
+    </div>
+  </div>
+  <%= f.fields_for :formulary_context_ecosystem_feature do |builder| %>
+    <%= render '/partials/formulary_context_ecosystem_feature_form', :f => builder %>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :intersectoral_aspect, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :intersectoral_aspect, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :intersectoral_aspect_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:intersectoral_aspect_name, @context_options.map { |value| [ value[:val], value[:key] ] }) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :political_jurisdiction, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :political_jurisdiction, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :political_jurisdictions_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :political_jurisdictions_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sociopolitical_context, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :sociopolitical_context, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :local_context, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :local_context, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :local_context_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :local_context_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_affect, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :project_affect, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_affect_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_affect_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :role_consideration, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :role_consideration, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :role_consideration_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :role_consideration_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :key_actors, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :key_actors, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :success_consideration, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :success_consideration, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :success_considerantion_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :success_considerantion_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <%= f.fields_for :formulary_context_description do |builder| %>
+    <%= render '/partials/formulary_context_description_form', :f => builder %>
+  <% end %>
+<% end %>

@@ -1,0 +1,146 @@
+<%= form_for @formulary_context_ecosystem_feature, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :formulary_context_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :formulary_context_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :urban, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :urban, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :semiurban, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :semiurban, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rural, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rural, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wilderness, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :wilderness, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :disrupted, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :disrupted, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :resource_extraction, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :resource_extraction, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :environmental_degradation, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :environmental_degradation, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :climate_effect, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :climate_effect, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :natural_force, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :natural_force, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :coastal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :coastal, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :agricultural, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :agricultural, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :forest, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :forest, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rainfores, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rainfores, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cloud_forest, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cloud_forest, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dry_forest, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dry_forest, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :old_growth_forest, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :old_growth_forest, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mixed_forest, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mixed_forest, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :other, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :other, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :watershed, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :watershed, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :watersheed_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :watersheed_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wetland, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :wetland, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :desert, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :desert, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                formulary_context_ecosystem_features_path, :class => 'btn' %>
+  </div>
+<% end %>

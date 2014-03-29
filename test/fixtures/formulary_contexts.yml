@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scale_description: MyText
+  intersectoral_aspect: false
+  intersectoral_aspect_name: MyString
+  political_jurisdiction: false
+  political_jurisdictions_name: MyString
+  sociopolitical_context: MyText
+  local_context: false
+  local_context_name: MyString
+  project_affect: false
+  project_affect_name: MyString
+  role_consideration: false
+  role_consideration_name: MyString
+  key_actors: MyText
+  success_consideration: false
+  success_considerantion_name: MyString
+
+two:
+  scale_description: MyText
+  intersectoral_aspect: false
+  intersectoral_aspect_name: MyString
+  political_jurisdiction: false
+  political_jurisdictions_name: MyString
+  sociopolitical_context: MyText
+  local_context: false
+  local_context_name: MyString
+  project_affect: false
+  project_affect_name: MyString
+  role_consideration: false
+  role_consideration_name: MyString
+  key_actors: MyText
+  success_consideration: false
+  success_considerantion_name: MyString

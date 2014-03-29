@@ -5,17 +5,29 @@
   </label>
 </div>
 <div class="clearfix">
-  <div class="inline-checkbox span3">
-    <%= f.check_box :project, :class => 'check-box' %><%= f.label :project, :class => 'check-label' %>
+  <div class="control-group">
+    <%= f.label :project, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :project, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="inline-checkbox span3">
-    <%= f.check_box :part_program, :class => 'check-box' %><%= f.label :part_program, :class => 'check-label' %>
+  <div class="control-group">
+    <%= f.label :part_program, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :part_program, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="inline-checkbox span3">
-    <%= f.check_box :entire_program, :class => 'check-box' %><%= f.label :entire_program, :class => 'check-label' %>
+  <div class="control-group">
+    <%= f.label :entire_program, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :entire_program, :class => 'text_field' %>
+    </div>
   </div>
-  <div class="inline-checkbox span3">
-    <%= f.check_box :other, :class => 'check-box' %><%= f.label :other, :class => 'check-label' %>
+  <div class="control-group">
+    <%= f.label :other, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :other, :class => 'text_field' %>
+    </div>
   </div>
 </div>
 <div class="control-group">

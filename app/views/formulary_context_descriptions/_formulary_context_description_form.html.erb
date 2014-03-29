@@ -1,0 +1,57 @@
+<%= form_for(@formulary_context_description) do |f| %>
+  <% if @formulary_context_description.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@formulary_context_description.errors.count, "error") %> prohibited this formulary_context_description from being saved:</h2>
+
+      <ul>
+      <% @formulary_context_description.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :formulary_context_id %><br>
+    <%= f.number_field :formulary_context_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_term %><br>
+    <%= f.text_field :project_term %>
+  </div>
+  <div class="field">
+    <%= f.label :require_integration %><br>
+    <%= f.check_box :require_integration %>
+  </div>
+  <div class="field">
+    <%= f.label :require_integration_name %><br>
+    <%= f.text_field :require_integration_name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.check_box :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :equity %><br>
+    <%= f.check_box :equity %>
+  </div>
+  <div class="field">
+    <%= f.label :community_participation %><br>
+    <%= f.check_box :community_participation %>
+  </div>
+  <div class="field">
+    <%= f.label :policy %><br>
+    <%= f.check_box :policy %>
+  </div>
+  <div class="field">
+    <%= f.label :complexity %><br>
+    <%= f.check_box :complexity %>
+  </div>
+  <div class="field">
+    <%= f.label :other %><br>
+    <%= f.text_field :other %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
