@@ -10,12 +10,27 @@ fr:
     not_a_number: &NOT_A_NUMBER "Solo números"
     less_than: &LESS_THAN "Menor a %{count}"
   helpers:
+    links:
+      actions: "Actions"
+      new: "New"
+      edit: "Edit"
+      destroy: "Delete"
+      confirm: "Are you sure?"
   navbar_elements:
-    language: "Language"
-    en: "English"
-    es: "Español"
-    fr: "Français"
-    pt: "Português"
+    language:
+      language: "Language"
+      en: "English"
+      es: "Español"
+      fr: "Français"
+      pt: "Português"
+    user:
+      log_in: "Log In"
+      sign_up: "Sign up"
+      log_out: "Log Out"
+    links:
+      home: "Home"
+      formulary: "Formularies"
+      report: "Report"
   selects:
     formulary_context:
       research: "Research"
@@ -39,14 +54,12 @@ fr:
     errors:
       models:
     models:
-      formulary_profile: "Project Profile"
-      formulary_profile_area: "Which of the following areas does the focus and subject of your project include:"
-      formulary_profile_classify: "Would you classify this work (ie. design, execution, official designation) as:"
-      formulary_profile_reach: "Overall, given the interest, reach and scope of your project, is your work centered in:"
-      formulary_context: ""
-      formulary_context_ecosystem_feature: "Within the ecological or geographical scale of your project, the main features of the ecosystem are"
-      formulary_context_description: "Briefly describe the aspects of your project work, objectives, and central question/problematic that reflects the links with human health and well-being."
+      formulary: "Formulary"
     attributes:
+      formulary:
+        id: "Id"
+        user_id: "User Email"
+        created_at: "Created"
       formulary_profile:
         name: "Project Title"
         period: "Project duration (beginning and end dates): mm/yyyy – mm-yyyy"

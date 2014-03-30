@@ -10,12 +10,28 @@ es:
     not_a_number: &NOT_A_NUMBER "Solo números"
     less_than: &LESS_THAN "Menor a %{count}"
   helpers:
+    links:
+      actions: "Acciones"
+      new: "Nuevo"
+      edit: "Editar"
+      destroy: "Eliminar"
+      cancel: "Cancelar"
+      confirm: "¿Estás seguro?"
   navbar_elements:
-    language: "Idioma"
-    en: "English"
-    es: "Español"
-    fr: "Français"
-    pt: "Português"
+    language:
+      language: "Idioma"
+      en: "English"
+      es: "Español"
+      fr: "Français"
+      pt: "Português"
+    user:
+      log_in: "Iniciar Sesión"
+      sign_up: "Registrarse"
+      log_out: "Cerrar Sesión"
+    links:
+      home: "Inicio"
+      formulary: "Formularios"
+      report: "Reportes"
   selects:
     formulary_context:
       research: "Investigación"
@@ -39,18 +55,16 @@ es:
     errors:
       models:
     models:
-      formulary_profile: "Perfil del Proyecto"
-      formulary_profile_area: "Su proyecto se circunscribe en la siguiente temática:"
-      formulary_profile_classify: "La modalidad en la cual se encuentra registrado, diseñado y ejecutado es:"
-      formulary_profile_reach: "Dado el alcance o interés de su proyecto, es/fue su proyecto centrado sobre todo en:"
-      formulary_context: "Contexto del proyecto"
-      formulary_context_ecosystem_feature: "De acuerdo al área donde se desarrolló su proyecto, el ecosistema fue predominantemente (puede marcar más de una opción"
-      formulary_context_description: "Describa brevemente los aspectos del trabajo de su proyecto, objetivos y pregunta/problemática central que refleje el vínculo entre salud humana y bienestar"
+      formulary: "Formulario"
     attributes:
+      formulary:
+        id: "Id"
+        user_id: "Correo del usuario"
+        created_at: "Creado"
       formulary_profile:
-        name: "Nombre del proyecto:"
-        period: "Periodo que abarca el proyecto:"
-        region: "País(es) / Región (es) donde el proyecto se llevó a cabo:"
+        name: "Nombre del proyecto"
+        period: "Periodo que abarca el proyecto"
+        region: "País(es) / Región (es) donde el proyecto se llevó a cabo"
         institution: "Nombre completo de la(s) institución (nes) de investigación involucradas en el proyecto: No queremos saber todas las instituciones involucradas?"
         description: "Describa brevemente el problema sobre el cual se están actuando: (Incluye una indicación sobre la descripción del contexto de salud/bienestar sobre el cual se realiza el proyecto)"
         objective: "¿Cuáles son los objetivos principales del proyecto? "

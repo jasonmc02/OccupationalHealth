@@ -41,6 +41,8 @@ gem "twitter-bootstrap-rails", '~> 2.2.8'
 
 gem 'unicorn', '~> 4.8.2'
 
+gem 'devise', '~> 3.2.4'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

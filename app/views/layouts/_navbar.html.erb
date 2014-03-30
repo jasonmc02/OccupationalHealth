@@ -9,23 +9,56 @@
       <a class="brand" href="/"><%= t 'application.title' %> </a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
+          <li>
+            <a href="<%= root_path %>">
+              <%= t 'navbar_elements.links.home' %>
+            </a>
+          </li>
+          <li>
+            <a href="<%= formularies_path %>">
+              <%= t 'navbar_elements.links.formulary' %>
+            </a>
+          </li>
         </ul>
         <ul class="nav pull-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= t 'navbar_elements.language' %> 
+              <%= t 'navbar_elements.language.language' %> 
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="/en"><%= t 'navbar_elements.en' %></a></li>
-              <li><a href="/es"><%= t 'navbar_elements.es' %></a></li>
-              <li><a href="/fr"><%= t 'navbar_elements.fr' %></a></li>
-              <li><a href="/pt"><%= t 'navbar_elements.pt' %></a></li>
+              <li><a href="/en"><%= t 'navbar_elements.language.en' %></a></li>
+              <li><a href="/es"><%= t 'navbar_elements.language.es' %></a></li>
+              <li><a href="/fr"><%= t 'navbar_elements.language.fr' %></a></li>
+              <li><a href="/pt"><%= t 'navbar_elements.language.pt' %></a></li>
             </ul>
           </li>
+          <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= current_user.email %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="<%= destroy_user_session_path %>" data-method="delete">
+                    <%= t 'navbar_elements.user.log_out' %>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="dropdown">
+              <a href="<%= new_user_session_path %>" class="dropdown-toggle">
+                <%= t 'navbar_elements.user.log_in' %>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="<%= new_user_registration_path %>" class="dropdown-toggle">
+                <%= t 'navbar_elements.user.sign_up' %>
+              </a>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

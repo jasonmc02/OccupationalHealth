@@ -33,4 +33,6 @@ OccupationalHealth::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  config.action_mailer.default_url_options = { host: '54.186.151.59' }
 end

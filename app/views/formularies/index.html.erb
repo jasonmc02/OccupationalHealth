@@ -1,36 +1,34 @@
 <%- model_class = Formulary -%>
+<%- model_subclass = FormularyProfile %>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_subclass.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= t("helpers.links.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @formularies.each do |formulary| %>
       <tr>
-        <td><%= link_to formulary.id, formulary_path(formulary) %></td>
-        <td><%= formulary.user_id %></td>
-        <td><%=l formulary.created_at %></td>
+        <td><%= formulary.user.email %></td>
+        <td><%= formulary.formulary_profile.name %></td>
+        <td><%= formulary.created_at.to_date %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t("helpers.links.edit"),
                       edit_formulary_path(formulary), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t("helpers.links.destroy"),
                       formulary_path(formulary),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t("helpers.links.confirm") },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_formulary_path,
-            :class => 'btn btn-primary' %>
+<%= link_to t("helpers.links.new"), new_formulary_path, :class => 'btn btn-primary' %>
