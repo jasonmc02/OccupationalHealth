@@ -6,9 +6,32 @@ class CreateFormularyProfiles < ActiveRecord::Migration
       t.string :period
       t.string :region
       t.string :institution
+      t.boolean :mining
+      t.boolean :pesticide
+      t.boolean :occupational_health
+      t.boolean :community_paticipation
+      t.boolean :watershed_management
+      t.boolean :solid_waste_management
+      t.boolean :public_health
+      t.boolean :animal_health
+      t.boolean :determinant_of_health
+      t.boolean :food_sovereignty
+      t.boolean :indigenous_health
+      t.boolean :climate_change
+      t.boolean :forest_management
+      t.boolean :other
+      t.string :which
       t.text :description
+      t.boolean :project
+      t.boolean :part_program
+      t.boolean :entire_program
+      t.boolean :other
+      t.string :which
       t.text :objective
       t.text :discipline
+      t.boolean :research
+      t.boolean :action
+      t.boolean :policy
       t.text :success
 
       t.timestamps

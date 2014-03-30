@@ -69,6 +69,6 @@ class FormularyActionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def formulary_action_params
-      params.require(:formulary_action).permit(:community_leader, :decision_maker, :other_research_group, :community_group, :ngos, :business, :church, :other, :municipal, :regiona, :national, :other, :none, :entire_process, :research_part, :not_participatory_process, :factor_affects, :factor_affects_name, :implement, :implement_description, :new_methodologies, :new_methodologies_description, :other_incorporation, :other_incorporation_description, :influence, :inlfuence_description, :develop_understanding, :including_actor, :enhancing_participation, :improving_communication, :other, :none, :local, :regional, :national, :international, :global)
+      params.require(:formulary_action).permit(:formulary_id, :community_leader, :decision_maker, :other_research_group, :community_group, :ngos, :business, :church, :other, :municipal, :regiona, :national, :other, :none, :entire_process, :research_part, :not_participatory_process, :factor_affects, :factor_affects_name, :implement, :implement_description, :new_methodologies, :new_methodologies_description, :other_incorporation, :other_incorporation_description, :influence, :inlfuence_description, :develop_understanding, :including_actor, :enhancing_participation, :improving_communication, :other, :none, :local, :regional, :national, :international, :global)
     end
 end

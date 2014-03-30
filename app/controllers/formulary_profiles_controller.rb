@@ -69,6 +69,6 @@ class FormularyProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def formulary_profile_params
-      params.require(:formulary_profile).permit(:name, :period, :region, :institution, :description, :objective, :discipline, :success)
+      params.require(:formulary_profile).permit(:formulary_id, :name, :period, :region, :institution, :mining, :pesticide, :occupational_health, :community_paticipation, :watershed_management, :solid_waste_management, :public_health, :animal_health, :determinant_of_health, :food_sovereignty, :indigenous_health, :climate_change, :forest_management, :other, :project, :part_program, :entire_program, :other, :which, :description, :objective, :discipline, :research, :action, :policy, :success)
     end
 end

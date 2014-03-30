@@ -56,7 +56,6 @@ es:
         objective: "¿Cuáles son los objetivos principales del proyecto? "
         discipline: "¿Cuáles son las disciplinas y sectores representados por instituciones, personas y estrategias (teóricas y metodológicas) en su  equipo de trabajo? "
         success: "¿Cuál es el principal logro que se utilizará para determinar si el proyecto ha sido un éxito?  "
-      formulary_profile_area:
         mining: "Minería"
         pesticide: "Plaguicidas"
         occupational_health: "Salud laboral"
@@ -72,11 +71,9 @@ es:
         forest_management: "Silvicultura y Manejo Forestal"
         other: "Otro"
         which: "¿Cuál?"
-      formulary_profile_reach:
         research: "Investigación"
         action: "Acciones / prácticas"
         policy: "La política"
-      formulary_profile_classify:
         project: "Un proyecto"
         part_program: "Parte de un programa"
         entire_program: "Un programa"
@@ -98,8 +95,6 @@ es:
         key_actors: "Dé ejemplos de cómo los actores claves identificados en su estudio (por ejemplo: comunidades, grupos organizados, instituciones estatales o comités interinstitucionales) tienen o planean incorporar los resultados de su proyecto en sus propias investigaciones o agendas?"
         success_consideration: "¿Su enfoque analítico incluye alguna consideración de cómo el éxito de su proyecto se puede escalar para apoyar proyectos que existen en contextos geográficos más grandes o en áreas que pueden ser geográfica, política, ecológica o culturalmente distintos al sitio actual de estudio?"
         success_considerantion_name: "Por favor describa"
-      formulary_context_ecosystem_feature:
-        formulary_context_id: ""
         urban: "Urbano"
         semiurban: "Semiurbano"
         rural: "Rural"
@@ -122,8 +117,6 @@ es:
         watersheed_name: "Nombre"
         wetland: "Humedales"
         desert: "Desierto y/o Chaco"
-      formulary_context_description:
-        formulary_context_id: ""
         project_term: "Su proyecto está diseñado para resolver un problema que es a"
         require_integration: "¿El problema que su proyecto aborda requiere de la integración de perspectivas de diversas disciplinas?"
         require_integration_name: "Por favor explique por qué"
@@ -134,7 +127,6 @@ es:
         complexity: "Complejidad"
         other: "Otra, por favor especifique"
       formulary_research:
-        formulary_id: ""
         interaction: "En su análisis, ha considerado los impactos de la interacción entre los diferentes actores (por ejemplo sociales, económicos, ambientales y salud)."
         interaction_name: "Las interacciones más relevantes del estudio son:"
         integrate_investigation: "Tiene el diseño y la ejecución de su proyecto capacidad (en el equipo de trabajo) para conducir de manera integrada la investigación, por ejemplo trabajar transdisciplinariamente?"
@@ -148,7 +140,6 @@ es:
         no_impact: "No ha tenido ningún impacto en los resultados o en la utilidad del proyecto"
         other: "Otros"
       formulary_actions:
-        formulary_id: ""
         community_leader: "Líderes comunales"
         decision_maker: "Tomadores de decisión"
         other_research_group: "Otros grupos de investigación"
@@ -187,7 +178,6 @@ es:
         international: "Internacional"
         global: "Global"
       formulary_policy:
-        formulary_id: ""
         intersectoral_design: "Las intervenciones planteadas/ realizadas por su proyecto tienen o tuvieron un impacto:"
         improve_strategies: "Estrategias en las que los recursos del ecosistema pueden ser utilizado de una manera ecológicamente eficiente y sostenible."
         prevent_strategies: "Acciones que se requieren para prevenir, mitigar, controlar, compensar y corregir los posibles efectos o impactos ambientales o en salud negativos que son objeto de estudio"

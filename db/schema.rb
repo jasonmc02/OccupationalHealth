@@ -58,23 +58,9 @@ ActiveRecord::Schema.define(version: 20140330044848) do
     t.datetime "updated_at"
   end
 
-  create_table "formulary_context_descriptions", force: true do |t|
-    t.integer  "formulary_context_id"
-    t.string   "project_term"
-    t.boolean  "require_integration"
-    t.string   "require_integration_name"
-    t.boolean  "gender"
-    t.boolean  "equity"
-    t.boolean  "community_participation"
-    t.boolean  "policy"
-    t.boolean  "complexity"
-    t.string   "other"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "formulary_context_ecosystem_features", force: true do |t|
-    t.integer  "formulary_context_id"
+  create_table "formulary_contexts", force: true do |t|
+    t.integer  "formulary_id"
+    t.text     "scale_description"
     t.boolean  "urban"
     t.boolean  "semiurban"
     t.boolean  "rural"
@@ -97,13 +83,6 @@ ActiveRecord::Schema.define(version: 20140330044848) do
     t.string   "watersheed_name"
     t.boolean  "wetland"
     t.boolean  "desert"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "formulary_contexts", force: true do |t|
-    t.integer  "formulary_id"
-    t.text     "scale_description"
     t.boolean  "intersectoral_aspect"
     t.string   "intersectoral_aspect_name"
     t.boolean  "political_jurisdiction"
@@ -118,6 +97,15 @@ ActiveRecord::Schema.define(version: 20140330044848) do
     t.text     "key_actors"
     t.boolean  "success_consideration"
     t.string   "success_considerantion_name"
+    t.integer  "formulary_context_id"
+    t.string   "project_term"
+    t.boolean  "require_integration"
+    t.string   "require_integration_name"
+    t.boolean  "gender"
+    t.boolean  "equity"
+    t.boolean  "community_participation"
+    t.boolean  "policy"
+    t.boolean  "complexity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -138,8 +126,12 @@ ActiveRecord::Schema.define(version: 20140330044848) do
     t.datetime "updated_at"
   end
 
-  create_table "formulary_profile_areas", force: true do |t|
-    t.integer  "formulary_profile_id"
+  create_table "formulary_profiles", force: true do |t|
+    t.integer  "formulary_id"
+    t.string   "name"
+    t.string   "period"
+    t.string   "region"
+    t.string   "institution"
     t.boolean  "mining"
     t.boolean  "pesticide"
     t.boolean  "occupational_health"
@@ -155,39 +147,15 @@ ActiveRecord::Schema.define(version: 20140330044848) do
     t.boolean  "forest_management"
     t.boolean  "other"
     t.string   "which"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "formulary_profile_classifies", force: true do |t|
-    t.integer  "formulary_profile_id"
+    t.text     "description"
     t.boolean  "project"
     t.boolean  "part_program"
     t.boolean  "entire_program"
-    t.boolean  "other"
-    t.string   "which"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "formulary_profile_reaches", force: true do |t|
-    t.integer  "formulary_profile_id"
+    t.text     "objective"
+    t.text     "discipline"
     t.boolean  "research"
     t.boolean  "action"
     t.boolean  "policy"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "formulary_profiles", force: true do |t|
-    t.integer  "formulary_id"
-    t.string   "name"
-    t.string   "period"
-    t.string   "region"
-    t.string   "institution"
-    t.text     "description"
-    t.text     "objective"
-    t.text     "discipline"
     t.text     "success"
     t.datetime "created_at"
     t.datetime "updated_at"

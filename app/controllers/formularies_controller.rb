@@ -17,22 +17,14 @@ class FormulariesController < ApplicationController
     @formulary = Formulary.new
 
     @formulary.build_formulary_profile
-    @formulary.formulary_profile.build_formulary_profile_area
-    @formulary.formulary_profile.build_formulary_profile_classify
-    @formulary.formulary_profile.build_formulary_profile_reach
-
+    #@formulary.formulary_profile.build_formulary_profile_area
     @formulary.build_formulary_context
-    @formulary.formulary_context.build_formulary_context_ecosystem_feature
-    @formulary.formulary_context.build_formulary_context_description
-    
     @formulary.build_formulary_research
-
     @formulary.build_formulary_action
-
     @formulary.build_formulary_policy
 
-    @context_options = FormularyContext.options
-    @description_options = FormularyContextDescription.options
+    @context_options = FormularyContext.optionsa
+    @description_options = FormularyContext.optionsb
     @intersectoral_design_options = FormularyPolicy.intersectoral_design
     @project_result_options = FormularyPolicy.project_result
   end

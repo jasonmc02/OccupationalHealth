@@ -56,7 +56,6 @@ en:
         objective: "What are the main objectives of your project?"
         discipline: "What disciplines and sectors are represented through institutions, people or strategies (theory and methodology) for your project and project team? "
         success: "What is the key achievement that will be used to determine if the project has been a success?"
-      formulary_profile_area:
         mining: "Mining"
         pesticide: "Pesticides"
         occupational_health: "Occupational health"
@@ -72,11 +71,9 @@ en:
         forest_management: "Forestry and Forest Management"
         other: "Other"
         which: "Which?"
-      formulary_profile_reach:
         research: "Research"
         action: "Action / Practices"
         policy: "Policy"
-      formulary_profile_classify:
         project: "A project"
         part_program: "Part of a program (ie. health programming, environmental management planning)"
         entire_program: "An entire Program"
@@ -98,8 +95,6 @@ en:
         key_actors: "Please give examples of how key actors identified in your study (for example communities, organized groups, state institutions or interagency committees) have or plan to incorporate the results of your project into their own research or practice agendas?"
         success_consideration: "Does your analytical approach include a consideration of how the successes of your project could be scaled to support projects occurring in larger geographical contexts or in arenas which may be geographically, politically, ecologically or culturally distinct from the present study site?"
         success_considerantion_name: "Please describe"
-      formulary_context_ecosystem_feature:
-        formulary_context_id: ""
         urban: "Urban"
         semiurban: "Semiurban"
         rural: "Rural"
@@ -122,8 +117,6 @@ en:
         watersheed_name: "Name"
         wetland: "Wetlands, marshes"
         desert: "Desert or Arid lands"
-      formulary_context_description:
-        formulary_context_id: ""
         project_term: "Is your project designed to address a problem that is"
         require_integration: "Does the problem(s) that your project addresses require the integration of perspectives from diverse disciplines?"
         require_integration_name: "Please explain why"
