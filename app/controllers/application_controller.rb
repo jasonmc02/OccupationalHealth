@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
       if params.has_key?(:locale)
         I18n.locale = params[:locale]
       else
-        I18n.locale = 'en'
+        if I18n.locale.blank?
+          I18n.locale = 'en'
+        end
       end
     end
 end

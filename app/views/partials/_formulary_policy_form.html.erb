@@ -1,0 +1,60 @@
+<div class="control-group">
+  <%= f.label :intersectoral_design, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select(:intersectoral_design, @intersectoral_design_options.map { |value| [ value[:val], value[:key] ] }) %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :improve_strategies, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :improve_strategies, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :prevent_strategies, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :prevent_strategies, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :actor_strategies, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :actor_strategies, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :other, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :other, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :other_description, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :other_description, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :multiple_kind, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :multiple_kind, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :multiple_kind_name, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :multiple_kind_name, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :improve_policies, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_area :improve_policies, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :project_result, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select(:project_result, @project_result_options.map { |value| [ value[:val], value[:key] ] }) %>
+  </div>
+</div>

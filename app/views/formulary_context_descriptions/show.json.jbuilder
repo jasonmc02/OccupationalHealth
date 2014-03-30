@@ -1,1 +1,0 @@
-json.extract! @formulary_context_description, :id, :formulary_context_id, :project_term, :require_integration, :require_integration_name, :gender, :equity, :community_participation, :policy, :complexity, :other, :created_at, :updated_at

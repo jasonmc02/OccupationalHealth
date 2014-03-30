@@ -1,23 +1,17 @@
 OccupationalHealth::Application.routes.draw do
+  
+  resources :formulary_policies
 
-  resources :formulary_context_descriptions
+  resources :formulary_actions
 
-  resources :formulary_context_ecosystem_features
+  resources :formulary_researches
 
-  resources :formulary_contexts
-
-  resources :formulary_profile_classifies
-
-  resources :formulary_profile_reaches
-
-  resources :formulary_profile_areas
-
-  resources :formulary_profiles
-
+  resources :formularies
+  
+  match "/" => "formularies#index", :via => :get
+  
   scope "/:locale", :locale => /en|es|fr|pt/ do
-    root 'home#index'
+    root 'formularies#index'
+    resources :formularies
   end
-
-  match "/" => "home#index", :via => :get
-
 end

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  formulary_id: MyString
+  interaction: false
+  interaction_name: MyString
+  integrate_investigation: false
+  integtrate_investigation_yes: MyString
+  integrate_investigation_no: MyString
+  test_hypothesis: false
+  generate_knowledge: false
+  inlcude_actor: false
+  translate_knowledge: false
+  influencing_legislation: false
+  no_impact: false
+  other: MyString
+
+two:
+  formulary_id: MyString
+  interaction: false
+  interaction_name: MyString
+  integrate_investigation: false
+  integtrate_investigation_yes: MyString
+  integrate_investigation_no: MyString
+  test_hypothesis: false
+  generate_knowledge: false
+  inlcude_actor: false
+  translate_knowledge: false
+  influencing_legislation: false
+  no_impact: false
+  other: MyString

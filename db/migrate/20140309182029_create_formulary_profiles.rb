@@ -1,6 +1,7 @@
 class CreateFormularyProfiles < ActiveRecord::Migration
   def change
     create_table :formulary_profiles do |t|
+      t.integer :formulary_id
       t.string :name
       t.string :period
       t.string :region

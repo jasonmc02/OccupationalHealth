@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  formulary_id: 1
+  intersectoral_design: MyString
+  improve_strategies: false
+  prevent_strategies: false
+  actor_strategies: false
+  other: false
+  other_description: MyString
+  multiple_kind: false
+  multiple_kind_name: MyString
+  improve_policies: MyText
+  project_result: MyString
+
+two:
+  formulary_id: 1
+  intersectoral_design: MyString
+  improve_strategies: false
+  prevent_strategies: false
+  actor_strategies: false
+  other: false
+  other_description: MyString
+  multiple_kind: false
+  multiple_kind_name: MyString
+  improve_policies: MyText
+  project_result: MyString

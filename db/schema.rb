@@ -11,7 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329034358) do
+ActiveRecord::Schema.define(version: 20140330044848) do
+
+  create_table "formularies", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "formulary_actions", force: true do |t|
+    t.integer  "formulary_id"
+    t.boolean  "community_leader"
+    t.boolean  "decision_maker"
+    t.boolean  "other_research_group"
+    t.boolean  "community_group"
+    t.boolean  "ngos"
+    t.boolean  "business"
+    t.boolean  "church"
+    t.boolean  "other"
+    t.boolean  "municipal"
+    t.boolean  "regiona"
+    t.boolean  "national"
+    t.boolean  "none"
+    t.boolean  "entire_process"
+    t.boolean  "research_part"
+    t.boolean  "not_participatory_process"
+    t.boolean  "factor_affects"
+    t.string   "factor_affects_name"
+    t.boolean  "implement"
+    t.string   "implement_description"
+    t.boolean  "new_methodologies"
+    t.string   "new_methodologies_description"
+    t.boolean  "other_incorporation"
+    t.string   "other_incorporation_description"
+    t.boolean  "influence"
+    t.string   "inlfuence_description"
+    t.boolean  "develop_understanding"
+    t.boolean  "including_actor"
+    t.boolean  "enhancing_participation"
+    t.boolean  "improving_communication"
+    t.boolean  "local"
+    t.boolean  "regional"
+    t.boolean  "international"
+    t.boolean  "global"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "formulary_context_descriptions", force: true do |t|
     t.integer  "formulary_context_id"
@@ -57,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140329034358) do
   end
 
   create_table "formulary_contexts", force: true do |t|
+    t.integer  "formulary_id"
     t.text     "scale_description"
     t.boolean  "intersectoral_aspect"
     t.string   "intersectoral_aspect_name"
@@ -72,6 +118,22 @@ ActiveRecord::Schema.define(version: 20140329034358) do
     t.text     "key_actors"
     t.boolean  "success_consideration"
     t.string   "success_considerantion_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "formulary_policies", force: true do |t|
+    t.integer  "formulary_id"
+    t.string   "intersectoral_design"
+    t.boolean  "improve_strategies"
+    t.boolean  "prevent_strategies"
+    t.boolean  "actor_strategies"
+    t.boolean  "other"
+    t.string   "other_description"
+    t.boolean  "multiple_kind"
+    t.string   "multiple_kind_name"
+    t.text     "improve_policies"
+    t.string   "project_result"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -118,6 +180,7 @@ ActiveRecord::Schema.define(version: 20140329034358) do
   end
 
   create_table "formulary_profiles", force: true do |t|
+    t.integer  "formulary_id"
     t.string   "name"
     t.string   "period"
     t.string   "region"
@@ -126,6 +189,24 @@ ActiveRecord::Schema.define(version: 20140329034358) do
     t.text     "objective"
     t.text     "discipline"
     t.text     "success"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "formulary_researches", force: true do |t|
+    t.string   "formulary_id"
+    t.boolean  "interaction"
+    t.string   "interaction_name"
+    t.boolean  "integrate_investigation"
+    t.string   "integtrate_investigation_yes"
+    t.string   "integrate_investigation_no"
+    t.boolean  "test_hypothesis"
+    t.boolean  "generate_knowledge"
+    t.boolean  "inlcude_actor"
+    t.boolean  "translate_knowledge"
+    t.boolean  "influencing_legislation"
+    t.boolean  "no_impact"
+    t.string   "other"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

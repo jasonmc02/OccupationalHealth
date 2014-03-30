@@ -1,5 +1,5 @@
 class FormularyContext < ActiveRecord::Base
-
+  
   has_one :formulary_context_ecosystem_feature, :dependent => :destroy
   has_one :formulary_context_description, :dependent => :destroy
 
