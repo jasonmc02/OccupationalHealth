@@ -15,7 +15,13 @@ pt:
       new: "New"
       edit: "Edit"
       destroy: "Delete"
+      cancel: "Cancel"
+      back: "Complete"
       confirm: "Are you sure?"
+    devise:
+      titles:
+        sign_up: "Sign Up"
+        sign_in: "Sign In"
   navbar_elements:
     language:
       language: "Language"
@@ -25,7 +31,7 @@ pt:
       pt: "Português"
     user:
       log_in: "Log In"
-      sign_up: "Sign up"
+      sign_up: "Sign Up"
       log_out: "Log Out"
     links:
       home: "Home"
@@ -56,6 +62,11 @@ pt:
     models:
       formulary: "Formulary"
     attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm Password"
+        remember_me: "Remember me"
       formulary:
         id: "Id"
         user_id: "User Email"

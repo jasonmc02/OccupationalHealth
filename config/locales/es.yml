@@ -16,7 +16,12 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       cancel: "Cancelar"
+      back: "Completar"
       confirm: "¿Estás seguro?"
+    devise:
+      titles:
+        sign_up: "Registrarse"
+        sign_in: "Iniciar sessión"
   navbar_elements:
     language:
       language: "Idioma"
@@ -57,6 +62,11 @@ es:
     models:
       formulary: "Formulario"
     attributes:
+      user:
+        email: "Correo electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        remember_me: "Recordarme"
       formulary:
         id: "Id"
         user_id: "Correo del usuario"

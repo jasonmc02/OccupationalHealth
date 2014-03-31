@@ -27,10 +27,10 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="/en"><%= t 'navbar_elements.language.en' %></a></li>
-              <li><a href="/es"><%= t 'navbar_elements.language.es' %></a></li>
-              <li><a href="/fr"><%= t 'navbar_elements.language.fr' %></a></li>
-              <li><a href="/pt"><%= t 'navbar_elements.language.pt' %></a></li>
+              <li><a href="<%= request.env['PATH_INFO'] %>?locale=en"><%= t 'navbar_elements.language.en' %></a></li>
+              <li><a href="<%= request.env['PATH_INFO'] %>?locale=es"><%= t 'navbar_elements.language.es' %></a></li>
+              <li><a href="<%= request.env['PATH_INFO'] %>?locale=fr"><%= t 'navbar_elements.language.fr' %></a></li>
+              <li><a href="<%= request.env['PATH_INFO'] %>?locale=pt"><%= t 'navbar_elements.language.pt' %></a></li>
             </ul>
           </li>
           <% if user_signed_in? %>
