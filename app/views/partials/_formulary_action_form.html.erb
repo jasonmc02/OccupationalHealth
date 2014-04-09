@@ -1,4 +1,10 @@
 <div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_action_1" %>
+  </label>
+  <div class="controls"></div>
+</div>
+<div class="control-group">
   <%= f.label :community_leader, :class => 'control-label' %>
   <div class="controls">
     <%= f.check_box :community_leader, :class => 'text_field' %>
@@ -41,34 +47,52 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :other, :class => 'control-label' %>
+  <%= f.label :other_participation, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :other, :class => 'text_field' %>
+    <%= f.check_box :other_participation, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :municipal, :class => 'control-label' %>
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_action_2" %>
+  </label>
+  <div class="controls"></div>
+</div>
+<div class="control-group">
+  <%= f.label :municipal_actors, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :municipal, :class => 'text_field' %>
+    <%= f.check_box :municipal_actors, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :regiona, :class => 'control-label' %>
+  <%= f.label :regional_actors, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :regiona, :class => 'text_field' %>
+    <%= f.check_box :regional_actors, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :national, :class => 'control-label' %>
+  <%= f.label :national_actors, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :national, :class => 'text_field' %>
+    <%= f.check_box :national_actors, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :none, :class => 'control-label' %>
+  <%= f.label :other_actors, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :none, :class => 'text_field' %>
+    <%= f.check_box :other_actors, :class => 'text_field' %>
   </div>
+</div>
+<div class="control-group">
+  <%= f.label :none_actors, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :none_actors, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_action_3" %>
+  </label>
+  <div class="controls"></div>
 </div>
 <div class="control-group">
   <%= f.label :entire_process, :class => 'control-label' %>
@@ -99,6 +123,12 @@
   <div class="controls">
     <%= f.text_field :factor_affects_name, :class => 'text_field' %>
   </div>
+</div>
+<div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_action_5" %>
+  </label>
+  <div class="controls"></div>
 </div>
 <div class="control-group">
   <%= f.label :implement, :class => 'control-label' %>
@@ -149,6 +179,12 @@
   </div>
 </div>
 <div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_action_6" %>
+  </label>
+  <div class="controls"></div>
+</div>
+<div class="control-group">
   <%= f.label :develop_understanding, :class => 'control-label' %>
   <div class="controls">
     <%= f.check_box :develop_understanding, :class => 'text_field' %>
@@ -173,26 +209,50 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :local, :class => 'control-label' %>
+  <%= f.label :other_changes, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :local, :class => 'text_field' %>
+    <%= f.check_box :other_changes, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :regional, :class => 'control-label' %>
+  <%= f.label :none_changes, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :regional, :class => 'text_field' %>
+    <%= f.check_box :none_changes, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :international, :class => 'control-label' %>
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_action_7" %>
+  </label>
+  <div class="controls"></div>
+</div>
+<div class="control-group">
+  <%= f.label :local_impacts, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :international, :class => 'text_field' %>
+    <%= f.check_box :local_impacts, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :global, :class => 'control-label' %>
+  <%= f.label :regional_impacts, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :global, :class => 'text_field' %>
+    <%= f.check_box :regional_impacts, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :national_impacts, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :national_impacts, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :international_impacts, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :international_impacts, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :global_impacts, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.check_box :global_impacts, :class => 'text_field' %>
   </div>
 </div>

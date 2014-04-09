@@ -20,7 +20,8 @@ class CreateFormularyContexts < ActiveRecord::Migration
       t.boolean :dry_forest
       t.boolean :old_growth_forest
       t.boolean :mixed_forest
-      t.string :other
+      t.boolean :other_scale
+      t.string :which_scale
       t.boolean :watershed
       t.string :watersheed_name
       t.boolean :wetland
@@ -48,7 +49,9 @@ class CreateFormularyContexts < ActiveRecord::Migration
       t.boolean :community_participation
       t.boolean :policy
       t.boolean :complexity
-      t.string :other
+      t.boolean :other_approach
+      t.string :which_approach
+
       t.timestamps
     end
   end

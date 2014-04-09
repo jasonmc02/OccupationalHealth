@@ -1,6 +1,6 @@
 class FormularyContext < ActiveRecord::Base
 
-  def self.optionsa
+  def self.intersectoral_aspect
     [
       {:key => 'research', :val => I18n.t("selects.formulary_context.research")},
       {:key => 'action', :val => I18n.t("selects.formulary_context.action")},
@@ -8,7 +8,7 @@ class FormularyContext < ActiveRecord::Base
     ]
   end
   
-  def self.optionsb
+  def self.project_term
     [
       {:key => 'short', :val => I18n.t("selects.formulary_context_description.short")},
       {:key => 'medium', :val => I18n.t("selects.formulary_context_description.medium")},

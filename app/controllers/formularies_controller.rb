@@ -23,8 +23,8 @@ class FormulariesController < ApplicationController
     @formulary.build_formulary_action
     @formulary.build_formulary_policy
 
-    @context_options = FormularyContext.optionsa
-    @description_options = FormularyContext.optionsb
+    @intersectoral_aspect = FormularyContext.intersectoral_aspect
+    @project_term = FormularyContext.project_term
     @intersectoral_design_options = FormularyPolicy.intersectoral_design
     @project_result_options = FormularyPolicy.project_result
   end
@@ -88,7 +88,7 @@ class FormulariesController < ApplicationController
       params.require(:formulary)
             .permit(
               :user_id,
-              :formulary_profile_attributes => [:formulary_id, :name, :period, :region, :institution, :mining, :pesticide, :occupational_health, :community_paticipation, :watershed_management, :solid_waste_management, :public_health, :animal_health, :determinant_of_health, :food_sovereignty, :indigenous_health, :climate_change, :forest_management, :other, :project, :part_program, :entire_program, :other, :which, :description, :objective, :discipline, :research, :action, :policy, :success],
+              :formulary_profile_attributes => [:formulary_id, :name, :period, :region, :institution, :mining, :pesticide, :occupational_health, :community_paticipation, :watershed_management, :solid_waste_management, :public_health, :animal_health, :determinant_of_health, :food_sovereignty, :indigenous_health, :climate_change, :forest_management, :training, :other, :project, :part_program, :entire_program, :other, :which, :objective, :discipline, :research, :action, :policy, :success],
               :formulary_context_attributes => [:formulary_id, :scale_description, :urban, :semiurban, :rural, :wilderness, :disrupted, :resource_extraction, :environmental_degradation, :climate_effect, :natural_force, :coastal, :agricultural, :forest, :rainfores, :cloud_forest, :dry_forest, :old_growth_forest, :mixed_forest, :other, :watershed, :watersheed_name, :wetland, :desert, :intersectoral_aspect, :intersectoral_aspect_name, :political_jurisdiction, :political_jurisdictions_name, :sociopolitical_context, :local_context, :local_context_name, :project_affect, :project_affect_name, :role_consideration, :role_consideration_name, :key_actors, :success_consideration, :success_considerantion_name, :project_term, :require_integration, :require_integration_name, :gender, :equity, :community_participation, :policy, :complexity, :other],
               :formulary_research_attributes => [:formulary_id, :interaction, :interaction_name, :integrate_investigation, :integtrate_investigation_yes, :integrate_investigation_no, :test_hypothesis, :generate_knowledge, :inlcude_actor, :translate_knowledge, :influencing_legislation, :no_impact, :other],
               :formulary_action_attributes => [:formulary_id, :community_leader, :decision_maker, :other_research_group, :community_group, :ngos, :business, :church, :other, :municipal, :regiona, :national, :other, :none, :entire_process, :research_part, :not_participatory_process, :factor_affects, :factor_affects_name, :implement, :implement_description, :new_methodologies, :new_methodologies_description, :other_incorporation, :other_incorporation_description, :influence, :inlfuence_description, :develop_understanding, :including_actor, :enhancing_participation, :improving_communication, :other, :none, :local, :regional, :national, :international, :global],

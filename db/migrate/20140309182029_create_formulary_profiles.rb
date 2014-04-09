@@ -19,14 +19,14 @@ class CreateFormularyProfiles < ActiveRecord::Migration
       t.boolean :indigenous_health
       t.boolean :climate_change
       t.boolean :forest_management
-      t.boolean :other
-      t.string :which
-      t.text :description
+      t.boolean :training
+      t.boolean :other_areas
+      t.string :which_areas
       t.boolean :project
       t.boolean :part_program
       t.boolean :entire_program
-      t.boolean :other
-      t.string :which
+      t.boolean :other_project
+      t.string :which_project
       t.text :objective
       t.text :discipline
       t.boolean :research

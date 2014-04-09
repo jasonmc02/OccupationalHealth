@@ -5,6 +5,12 @@
   </div>
 </div>
 <div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_context_2" %>
+  </label>
+  <div class="controls"></div>
+</div>
+<div class="control-group">
   <%= f.label :urban, :class => 'control-label' %>
   <div class="controls">
     <%= f.check_box :urban, :class => 'text_field' %>
@@ -107,9 +113,15 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :other, :class => 'control-label' %>
+  <%= f.label :other_scale, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :other, :class => 'text_field' %>
+    <%= f.check_box :other_scale, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :which_scale, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :which_scale, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
@@ -145,7 +157,7 @@
 <div class="control-group">
   <%= f.label :intersectoral_aspect_name, :class => 'control-label' %>
   <div class="controls">
-    <%= f.select(:intersectoral_aspect_name, @context_options.map { |value| [ value[:val], value[:key] ] }) %>
+    <%= f.select(:intersectoral_aspect_name, @intersectoral_aspect.map { |value| [ value[:val], value[:key] ] }) %>
   </div>
 </div>
 <div class="control-group">
@@ -193,13 +205,13 @@
 <div class="control-group">
   <%= f.label :role_consideration, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :role_consideration, :class => 'text_field' %>
+    <%= f.check_box :role_consideration, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
   <%= f.label :role_consideration_name, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :role_consideration_name, :class => 'text_field' %>
+    <%= f.text_field :role_consideration_name, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
@@ -221,6 +233,18 @@
   </div>
 </div>
 <div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_context_8" %>
+  </label>
+  <div class="controls"></div>
+</div>
+<div class="control-group">
+  <%= f.label :project_term, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select(:project_term, @project_term.map { |value| [ value[:val], value[:key] ] }) %>
+  </div>
+</div>
+<div class="control-group">
   <%= f.label :require_integration, :class => 'control-label' %>
   <div class="controls">
     <%= f.check_box :require_integration, :class => 'text_field' %>
@@ -231,6 +255,12 @@
   <div class="controls">
     <%= f.text_field :require_integration_name, :class => 'text_field' %>
   </div>
+</div>
+<div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_context_8_c" %>
+  </label>
+  <div class="controls"></div>
 </div>
 <div class="control-group">
   <%= f.label :gender, :class => 'control-label' %>
@@ -263,8 +293,14 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :other, :class => 'control-label' %>
+  <%= f.label :other_approach, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :other, :class => 'text_field' %>
+    <%= f.check_box :other_approach, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :which_approach, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :which_approach, :class => 'text_field' %>
   </div>
 </div>

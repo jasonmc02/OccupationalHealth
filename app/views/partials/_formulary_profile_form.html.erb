@@ -23,6 +23,12 @@
   </div>
 </div>
 <div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_profile_5" %>
+  </label>
+  <div class="controls"></div>
+</div>
+<div class="control-group">
   <%= f.label :mining, :class => 'control-label' %>
   <div class="controls">
     <%= f.check_box :mining, :class => 'text_field' %>
@@ -101,16 +107,28 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :other, :class => 'control-label' %>
+  <%= f.label :training, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :other, :class => 'text_field' %>
+    <%= f.check_box :training, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :which, :class => 'control-label' %>
+  <%= f.label :other_areas, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :which, :class => 'text_field' %>
+    <%= f.check_box :other_areas, :class => 'text_field' %>
   </div>
+</div>
+<div class="control-group">
+  <%= f.label :which_areas, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :which_areas, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_profile_6" %>
+  </label>
+  <div class="controls"></div>
 </div>
 <div class="control-group">
   <%= f.label :project, :class => 'control-label' %>
@@ -131,22 +149,22 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :other, :class => 'control-label' %>
+  <%= f.label :other_project, :class => 'control-label' %>
   <div class="controls">
-    <%= f.check_box :other, :class => 'text_field' %>
+    <%= f.check_box :other_project, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :which, :class => 'control-label' %>
+  <%= f.label :which_project, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :which, :class => 'text_field' %>
+    <%= f.text_field :which_project, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :description, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_area :description, :class => 'text_field' %>
-  </div>
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_profile_7" %>
+  </label>
+  <div class="controls"></div>
 </div>
 <div class="control-group">
   <%= f.label :objective, :class => 'control-label' %>
@@ -159,6 +177,12 @@
   <div class="controls">
     <%= f.text_area :discipline, :class => 'text_field' %>
   </div>
+</div>
+<div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_profile_9" %>
+  </label>
+  <div class="controls"></div>
 </div>
 <div class="control-group">
   <%= f.label :research, :class => 'control-label' %>

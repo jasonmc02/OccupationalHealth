@@ -17,9 +17,9 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :integtrate_investigation_, :class => 'control-label' %>
+  <%= f.label :integrate_investigation_yes, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :integtrate_investigation_yes, :class => 'text_field' %>
+    <%= f.text_field :integrate_investigation_yes, :class => 'text_field' %>
   </div>
 </div>
 <div class="control-group">
@@ -27,6 +27,12 @@
   <div class="controls">
     <%= f.text_field :integrate_investigation_no, :class => 'text_field' %>
   </div>
+</div>
+<div class="control-group">
+  <label class="control-label">
+    <%= I18n.t "formulary_fields.formulary_research_3" %>
+  </label>
+  <div class="controls"></div>
 </div>
 <div class="control-group">
   <%= f.label :test_hypothesis, :class => 'control-label' %>
@@ -65,8 +71,14 @@
   </div>
 </div>
 <div class="control-group">
-  <%= f.label :other, :class => 'control-label' %>
+  <%= f.label :other_integration, :class => 'control-label' %>
   <div class="controls">
-    <%= f.text_field :other, :class => 'text_field' %>
+    <%= f.text_field :other_integration, :class => 'text_field' %>
+  </div>
+</div>
+<div class="control-group">
+  <%= f.label :which_integration, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :which_integration, :class => 'text_field' %>
   </div>
 </div>

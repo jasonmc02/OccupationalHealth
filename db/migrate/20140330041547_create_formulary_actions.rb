@@ -9,12 +9,12 @@ class CreateFormularyActions < ActiveRecord::Migration
       t.boolean :ngos
       t.boolean :business
       t.boolean :church
-      t.string :other
-      t.boolean :municipal
-      t.boolean :regiona
-      t.boolean :national
-      t.boolean :other
-      t.boolean :none
+      t.boolean :other_participation
+      t.boolean :municipal_actors
+      t.boolean :regional_actors
+      t.boolean :national_actors
+      t.boolean :other_actors
+      t.boolean :none_actors
       t.boolean :entire_process
       t.boolean :research_part
       t.boolean :not_participatory_process
@@ -32,13 +32,13 @@ class CreateFormularyActions < ActiveRecord::Migration
       t.boolean :including_actor
       t.boolean :enhancing_participation
       t.boolean :improving_communication
-      t.boolean :other
-      t.boolean :none
-      t.boolean :local
-      t.boolean :regional
-      t.boolean :national
-      t.boolean :international
-      t.boolean :global
+      t.boolean :other_changes
+      t.boolean :none_changes
+      t.boolean :local_impacts
+      t.boolean :regional_impacts
+      t.boolean :national_impacts
+      t.boolean :international_impacts
+      t.boolean :global_impacts
 
       t.timestamps
     end
