@@ -6,6 +6,6 @@
 /config/database.yml
 /config/deploy.rb
 /config/nginx.conf
-/config/uniconr.rb
-/config/uniconr.sh
+/config/unicorn.rb
+/config/unicorn.sh
 /config/deploy/*
