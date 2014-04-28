@@ -1,34 +1,84 @@
 <%- model_class = Formulary -%>
 <%- model_subclass = FormularyProfile %>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_subclass.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%= t("helpers.links.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
+<div id="service_1">
+  <div class="container">
+    <div class="section_header">
+      <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+      <%= link_to t("helpers.links.new"), new_formulary_path, :class => 'btn btn-primary pull-right' %>
+    </div>
+    <div class="row service_wrapper">
+      <div class="col-sm-3">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:user_id) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_subclass.human_attribute_name(:name) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="feature last">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:created_at) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="feature last">
+          <div class="text">
+            <h6><%= t("helpers.links.actions") %></h6>
+          </div>
+        </div>
+      </div>
+    </div>
     <% @formularies.each do |formulary| %>
-      <tr>
-        <td><%= formulary.user.email %></td>
-        <td><%= formulary.formulary_profile.name %></td>
-        <td><%= formulary.created_at.to_date %></td>
-        <td>
-          <%= link_to t("helpers.links.edit"),
-                      edit_formulary_path(formulary), :class => 'btn btn-mini' %>
-          <%= link_to t("helpers.links.destroy"),
-                      formulary_path(formulary),
-                      :method => :delete,
-                      :data => { :confirm => t("helpers.links.confirm") },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
+      <div class="row service_wrapper">
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <p>
+                <%= formulary.user.email %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <p>
+                <%= formulary.formulary_profile.name %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature last">
+            <div class="text">
+              <p>
+                <%= formulary.created_at.to_date %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature last">
+            <div class="text">
+              <p>
+                <%= link_to t("helpers.links.destroy"),
+                        formulary_path(formulary),
+                        :method => :delete,
+                        :data => { :confirm => t("helpers.links.confirm") },
+                        :class => 'btn btn-mini btn-danger' %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-<%= link_to t("helpers.links.new"), new_formulary_path, :class => 'btn btn-primary' %>
+  </div>
+</div>

@@ -22,6 +22,9 @@ es:
       titles:
         sign_up: "Registrarse"
         sign_in: "Iniciar sessión"
+    booleans:
+      affirmative: "Sí"
+      negative: "No"
   navbar_elements:
     language:
       language: "Idioma"
@@ -73,6 +76,18 @@ es:
     formulary_action_6: "Durante su proyecto, cuales estrategias de evaluación se han utilizado en su proyecto que le permitieron hacer cambios para mejorar acciones en:"
     formulary_action_7: "Considera que el principal impacto de las acciones de su proyecto fue en un nivel:"
     formulary_policy_2: "Su proyecto logró incluir/intervenir o influir en alguna política de salud/ambiente:"
+  formulary_introductions:
+    registration: "Registro: Eko-santé es una colaboración de investigadores de América Latina, el Caribe y Canadá interesados en capturar un entendimiento participativo de cómo el campo, la teoría y la práctica de las investigaciones en ecosalud se enmarcan dentro de respuestas en los diversos contextos en los que cada investigador trabaja. Nuestra meta es ampliar y profundizar nuestro conocimiento sobre qué clase de problemas involucra la investigación en ecosalud, cómo se involucran a las comunidades, organizaciones y grupos de investigadores en la construcción de capacidades para hacer frente a estos problemas complejos. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    context: "Contexto: El contexto local, socio-ecológico y cultural, moldea la formación de los equipos y el proceso del diseño de investigación, implementación, evaluación y traducción del conocimiento. Un amplio entendimiento de las investigaciones en ecosalud debe también moldearse por el contexto local de aquellos que forman parte de este. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    research: "Investigación: Ecosalud es un enfoque abierto a las investigaciones académicas participativas que pueden facilitar los diversos diseños metodológicos y de análisis de los proyectos. La diversidad de experiencias fortalece este enfoque a través de la innovación y de aportes a nivel local. Este cuestionario está diseñado para conocer los enfoques en los diseños de investigación, metodología y análisis que se están utilizando. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    action: "Acción: Las investigaciones en ecosalud son participativas por naturaleza y se presta para mover conocimientos hacia acciones, pero esto puede ser de muchas formas. Grupos diversos de actores y tomadores de decisiones, en diferentes sectores, disciplinas e instituciones y roles sociales influencian la calidad de las “acciones” en el enfoque ecosalud. Proveyendo detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    policy: "Política: La sostenibilidad y el movimiento de conocimiento en acciones en las investigaciones de ecosalud a menudo incluye consideraciones sobre cómo trabajan la evaluación, análisis, recomendaciones y cambios en las políticas. Entendiendo las formas de los diversos proyectos y el esfuerzo dedicado con las políticas y el mecanismo de creación de políticas en contextos locales, regionales, nacionales e internacionales ayudará a tener claro oportunidades y sistemas de articulación pensando en el trabajo de ecosalud. Proveyendo detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”."
+  formulary_sections:
+    registration: "Registro"
+    context: "Contexto"
+    research: "Investigación"
+    action: "Acción"
+    policy: "Política"
   activerecord:
     errors:
       models:
@@ -122,7 +137,7 @@ es:
         which_project: "¿Cuál?"
       formulary_context:
         scale_description: "Describa brevemente la escala eco-geográfica de su proyecto: (por ejemplo: un pueblo, ciudad, región política, eco-región (desierto, manglares, pampas, chaco, cuenca fluvial, bosques, montañas, humedales)"
-        intersectoral_aspect: "¿Hay una dimensión intersectorial en su proyecto? Si es así, podría brindar breves detalles de las personas, instituciones o estrategias involucradas"
+        intersectoral_aspect: "¿Hay una dimensión intersectorial en su proyecto? Si es así, podría brindar breves detalles de las personas, instituciones o estrategias involucradas?"
         intersectoral_aspect_name: "¿Cuál?"
         political_jurisdiction: "¿Se vinculó su proyecto a través de jurisdicciones políticas o gobiernos locales, municipales, regionales, nacionales? "
         political_jurisdictions_name: "¿Cuáles jurisdicciones y cómo se vinculan?"
@@ -130,7 +145,7 @@ es:
         local_context: "Dentro de este contexto político-social, pero con atención específicamente al nivel local, ¿Existen dinámicas o presiones que usted considere limitan, complican, y/o ayudan en la realización del proyecto y en lograr los objetivos de su proyecto?"
         local_context_name: "¿Cuáles?"
         project_affect: "Considerando el contexto y el tema de estudio de su proyecto, ¿cuáles son los sistemas humanos específicos, las interacciones de los ecosistemas y el bienestar (afectan, afectados por, impulsados por un cambio) que rodea el ecosistema que directamente contribuye con el objetivo y el método de su proyecto?"
-        project_affect_name: "Cuáles son?"
+        project_affect_name: "¿Cuáles son?"
         role_consideration: "¿Su análisis incluye consideraciones del rol que juegan los actores claves en los cambios que afectan la relación del problema (s) que han investigado?"
         role_consideration_name: "Por favor explique"
         key_actors: "Dé ejemplos de cómo los actores claves identificados en su estudio (por ejemplo: comunidades, grupos organizados, instituciones estatales o comités interinstitucionales) tienen o planean incorporar los resultados de su proyecto en sus propias investigaciones o agendas?"
@@ -147,14 +162,14 @@ es:
         natural_force: "Fuerzas naturales (incendio, inundaciones, sismos, sequías)"
         coastal: "Sistema costero"
         agricultural: "Agrícola"
-        forest: "Bosque"
+        forest: "Bosque:"
         rainfores: "Lluvioso"
         cloud_forest: "Nuboso"
         dry_forest: "Seco"
         old_growth_forest: "Bosques primarios"
         mixed_forest: "Bosques mixtos"
         other_scale: "Otro"
-        which_scale: "¿Cuál"
+        which_scale: "¿Cuál?"
         watershed: "Cuenca"
         watersheed_name: "Nombre"
         wetland: "Humedales"

@@ -22,6 +22,9 @@ en:
       titles:
         sign_up: "Sign Up"
         sign_in: "Sign In"
+    booleans:
+      affirmative: "Yes"
+      negative: "No"
   navbar_elements:
     language:
       language: "Language"
@@ -73,6 +76,18 @@ en:
     formulary_action_6: "During your project, what evaluation strategies have you used to enable making changes that have improved project?"
     formulary_action_7: "On what level have the principle impacts of the project been achieved?"
     formulary_policy_2: "Has your project succeeded in including, intervening or influencing any health or environmental policies?"
+  formulary_introductions:
+    registration: "Registration: Eko-Santé is a collaboration of researchers across the Americas and the Caribbean interested in capturing a participatory understanding of how the field, theory and practice of EcoHealth research is evolving in response to the diverse contexts within which it is employed. Our goal is to broaden and deepen our knowledge about what kinds of issues EcoHealth research engages with, and how involved communities, organizations and research groups build capacity to address these complex problems. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    context: "Context: Local socio-ecological and cultural contexts shape the way that teams are formed and the process of research design, implementation, evaluation and knowledge translation. A broadened understanding of EcoHealth research must also be shaped by the local contexts of those who undertake it. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    research: "Research: ecohealth is an open approach to participatory academic research that can facilitate many different project design methodologies and analysis. Diversityof experience strengthens these approaches through local level innovation and input. This questionnaire is designed to find out about the approaches to research design, methodology and analysis that you are using. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    action: "Action: EcoHealth research is participatory in nature and lends itself to moving knowledge to action, but this can take many forms. Diverse groups of actors andstakeholders, in different sectors, disciplines and institutional and social roles influence the \"action\" quality of EcoHealth approaches. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    policy: "Policy: Sustainability and moving knowledge to action in EcoHealth research often includes considerations for and working on policy assessments, analyses, recommendations, and changes. Understanding the ways that diverse projectsand endeavours engage with policy and policy-making mechanisms in their local, regional, national and international contexts will help us to clarify opportunities and articulations of systems thinking and EcoHealth work. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+  formulary_sections:
+    registration: "Registration"
+    context: "Context"
+    research: "Research"
+    action: "Action"
+    policy: "Policy"
   activerecord:
     errors:
       models:
@@ -147,7 +162,7 @@ en:
         natural_force: "Natural forces (ie. fire, flood, quake, drought)"
         coastal: "Coastal"
         agricultural: "Agricultural"
-        forest: "Forest"
+        forest: "Forest:"
         rainfores: "Rainforest"
         cloud_forest: "Cloud Forest"
         dry_forest: "Dry Forest"

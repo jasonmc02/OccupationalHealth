@@ -1,40 +1,68 @@
 <%= form_for @formulary, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <div class="span12">
-    <div class="page-header">
-      <h1></h1>
+  <div id="portfolio">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="filters_container">
+          <ul id="filters">
+            <li><a href="#" data-step="1" class="active"><%= t "formulary_sections.registration" %></a></li>
+            <li class="separator">/</li>
+            <li><a href="#" data-step="2"><%= t "formulary_sections.context" %></a></li>
+            <li class="separator">/</li>
+            <li><a href="#" data-step="3"><%= t "formulary_sections.research" %></a></li>
+            <li class="separator">/</li>
+            <li><a href="#" data-step="4"><%= t "formulary_sections.action" %></a></li>
+            <li class="separator">/</li>
+            <li><a href="#" data-step="5"><%= t "formulary_sections.policy" %></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="span2">
-    <div class="sidebar-nav categories-bar">
-      <ul class="nav nav-list">
-        <li><a>Profile</a></li>
-        <li><a>Context</a></li>
-        <li><a>Research</a></li>
-        <li><a>Action</a></li>
-        <li><a>Policy</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="span10">
+  <div id="step1" class="steps">
+    <p>
+      <%= t "formulary_introductions.registration" %>
+    </p>
     <%= f.fields_for :formulary_profile do |builder| %>
       <%= render '/partials/formulary_profile_form', :f => builder %>
     <% end %>
+  </div>
+  <div id="step2" class="steps">
+    <p>
+      <%= t "formulary_introductions.context" %>
+    </p>
     <%= f.fields_for :formulary_context do |builder| %>
       <%= render '/partials/formulary_context_form', :f => builder %>
     <% end %>
+  </div>
+  <div id="step3" class="steps">
+    <p>
+      <%= t "formulary_introductions.research" %>
+    </p>
     <%= f.fields_for :formulary_research do |builder| %>
       <%= render '/partials/formulary_research_form', :f => builder %>
     <% end %>
+  </div>
+  <div id="step4" class="steps">
+    <p>
+      <%= t "formulary_introductions.action" %>
+    </p>
     <%= f.fields_for :formulary_action do |builder| %>
       <%= render '/partials/formulary_action_form', :f => builder %>
     <% end %>
+  </div>
+  <div id="step5" class="steps">
+    <p>
+      <%= t "formulary_introductions.policy" %>
+    </p>
     <%= f.fields_for :formulary_policy do |builder| %>
       <%= render '/partials/formulary_policy_form', :f => builder %>
     <% end %>
   </div>
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t("helpers.links.cancel"), formularies_path, :class => 'btn' %>
+  <div class="row submit">
+    <div class="col-md-12 box">
+      <%= link_to t("helpers.links.cancel"), formularies_path, :class => 'btn btn-default' %>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>

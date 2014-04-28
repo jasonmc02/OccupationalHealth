@@ -1,306 +1,336 @@
-<div class="control-group">
-  <%= f.label :scale_description, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_area :scale_description, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :scale_description, :class => '' %>
+    <div class="box">
+      <%= f.text_field :scale_description, :class => 'form-control spaceless' %>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <label class="control-label">
-    <%= I18n.t "formulary_fields.formulary_context_2" %>
-  </label>
-  <div class="controls"></div>
-</div>
-<div class="control-group">
-  <%= f.label :urban, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :urban, :class => 'text_field' %>
+<div class="row form marginless">
+  <div class="col-sm-12">
+    <label>
+      <%= I18n.t "formulary_fields.formulary_context_2" %>
+    </label>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :semiurban, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :semiurban, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes">
+      <%= f.check_box :urban, :class => '' %><%= f.label :urban, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :semiurban, :class => '' %><%= f.label :semiurban, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :rural, :class => '' %><%= f.label :rural, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :wilderness, :class => '' %><%= f.label :wilderness, :class => '' %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="col-lg-3">
+      <div class="three-column-checkboxes">
+        <%= f.check_box :disrupted, :class => '' %><%= f.label :disrupted, :class => '' %>
+      </div>
+    </div>
+    <div class="col-lg-9 disrupt_types">
+      <div class="three-column-checkboxes">
+        <%= f.check_box :resource_extraction, :class => '', :disabled => true %><%= f.label :resource_extraction, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :environmental_degradation, :class => '', :disabled => true %><%= f.label :environmental_degradation, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :climate_effect, :class => '', :disabled => true %><%= f.label :climate_effect, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :natural_force, :class => '', :disabled => true %><%= f.label :natural_force, :class => '' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes">
+      <%= f.check_box :coastal, :class => '' %><%= f.label :coastal, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :agricultural, :class => '' %><%= f.label :agricultural, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :rural, :class => '' %><%= f.label :rural, :class => '' %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="col-lg-3">
+      <div class="three-column-checkboxes">
+        <%= f.check_box :forest, :class => '' %><%= f.label :forest, :class => '' %>
+      </div>
+    </div>
+    <div class="col-lg-9 forest_types">
+      <div class="three-column-checkboxes">
+        <%= f.check_box :rainfores, :class => '', :disabled => true %><%= f.label :rainfores, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :cloud_forest, :class => '', :disabled => true %><%= f.label :cloud_forest, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :dry_forest, :class => '', :disabled => true %><%= f.label :dry_forest, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :old_growth_forest, :class => '', :disabled => true %><%= f.label :old_growth_forest, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :mixed_forest, :class => '', :disabled => true %><%= f.label :mixed_forest, :class => '' %>
+      </div>
+      <div class="three-column-checkboxes">
+        <%= f.check_box :other_scale, :class => '', :disabled => true %><%= f.label :other_scale, :class => '' %>
+        <div class="form-group which_scales">
+          <%= f.label :which_scale, :class => 'col-sm-1 input-label' %>
+          <div class="col-sm-7">
+            <%= f.text_field :which_scale, :class => 'form-control spaceless', :disabled => true %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="col-lg-3">
+      <div class="three-column-checkboxes">
+        <%= f.check_box :watershed, :class => '' %><%= f.label :watershed, :class => '' %>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="form-group marginless which_watersheeds">
+        <%= f.label :watersheed_name, :class => 'col-sm-1 input-label' %>
+        <div class="col-sm-7">
+          <%= f.text_field :watersheed_name, :class => 'form-control spaceless', :disabled => true %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes">
+      <%= f.check_box :wetland, :class => '' %><%= f.label :wetland, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :desert, :class => '' %><%= f.label :desert, :class => '' %>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :rural, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :rural, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :intersectoral_aspect, :class => '' %>
+    <div class="box">
+      <div class="radio">
+        <%= f.label :intersectoral_aspect, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
+        <%= f.radio_button :intersectoral_aspect, true, :class => "intersectoral_aspect" %>
+      </div>
+      <div class="radio">
+        <%= f.label :intersectoral_aspect, I18n.t("helpers.booleans.negative"), :value => "false" %>
+        <%= f.radio_button :intersectoral_aspect, false, :checked => true, :class => "intersectoral_aspect" %>
+      </div>
+      <div class="form-group which_intersectoral_aspect">
+        <%= f.label :intersectoral_aspect_name, :class => 'col-sm-4 input-label' %>
+        <div class="col-sm-6">
+          <%= f.select :intersectoral_aspect_name, @intersectoral_aspect.map { |value| [ value[:val], value[:key] ] }, {}, :disabled => true %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :wilderness, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :wilderness, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :political_jurisdiction, :class => '' %>
+    <div class="box">
+      <div class="radio">
+        <%= f.label :political_jurisdiction, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
+        <%= f.radio_button :political_jurisdiction, true, :class => "political_jurisdiction" %>
+      </div>
+      <div class="radio">
+        <%= f.label :political_jurisdiction, I18n.t("helpers.booleans.negative"), :value => "false" %>
+        <%= f.radio_button :political_jurisdiction, false, :checked => true, :class => "political_jurisdiction" %>
+      </div>
+      <div class="form-group marginless which_political_jurisdiction">
+        <%= f.label :political_jurisdictions_name, :class => 'col-sm-4 input-label' %>
+        <div class="col-sm-6">
+          <%= f.text_field :political_jurisdictions_name, :class => 'form-control spaceless', :disabled => true %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :disrupted, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :disrupted, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :sociopolitical_context, :class => '' %>
+    <div class="box">
+      <%= f.text_area :sociopolitical_context, :class => 'form-control' %>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :resource_extraction, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :resource_extraction, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :local_context, :class => '' %>
+    <div class="box">
+      <div class="radio">
+        <%= f.label :local_context, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
+        <%= f.radio_button :local_context, true, :class => "local_context" %>
+      </div>
+      <div class="radio">
+        <%= f.label :local_context, I18n.t("helpers.booleans.negative"), :value => "false" %>
+        <%= f.radio_button :local_context, false, :checked => true, :class => "local_context" %>
+      </div>
+      <div class="form-group marginless which_local_context">
+        <%= f.label :local_context_name, :class => 'col-sm-4 input-label' %>
+        <div class="col-sm-6">
+          <%= f.text_field :local_context_name, :class => 'form-control spaceless', :disabled => true %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :environmental_degradation, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :environmental_degradation, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :project_affect, :class => '' %>
+    <div class="box">
+      <div class="radio">
+        <%= f.label :project_affect, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
+        <%= f.radio_button :project_affect, true, :class => "project_affect" %>
+      </div>
+      <div class="radio">
+        <%= f.label :project_affect, I18n.t("helpers.booleans.negative"), :value => "false" %>
+        <%= f.radio_button :project_affect, false, :checked => true, :class => "project_affect" %>
+      </div>
+      <div class="form-group marginless which_project_affect">
+        <%= f.label :project_affect_name, :class => 'col-sm-4 input-label' %>
+        <div class="col-sm-6">
+          <%= f.text_field :project_affect_name, :class => 'form-control spaceless', :disabled => true %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :climate_effect, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :climate_effect, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :role_consideration, :class => '' %>
+    <div class="box">
+      <div class="radio">
+        <%= f.label :role_consideration, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
+        <%= f.radio_button :role_consideration, true, :class => "role_consideration" %>
+      </div>
+      <div class="radio">
+        <%= f.label :role_consideration, I18n.t("helpers.booleans.negative"), :value => "false" %>
+        <%= f.radio_button :role_consideration, false, :checked => true, :class => "role_consideration" %>
+      </div>
+      <div class="form-group marginless which_role_consideration">
+        <%= f.label :role_consideration_name, :class => 'col-sm-4 input-label' %>
+        <div class="col-sm-6">
+          <%= f.text_field :role_consideration_name, :class => 'form-control spaceless', :disabled => true %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :natural_force, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :natural_force, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :key_actors, :class => '' %>
+    <div class="box">
+      <%= f.text_area :key_actors, :class => 'form-control' %>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :coastal, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :coastal, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :success_consideration, :class => '' %>
+    <div class="box">
+      <div class="radio">
+        <%= f.label :success_consideration, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
+        <%= f.radio_button :success_consideration, true, :class => "success_consideration" %>
+      </div>
+      <div class="radio">
+        <%= f.label :success_consideration, I18n.t("helpers.booleans.negative"), :value => "false" %>
+        <%= f.radio_button :success_consideration, false, :checked => true, :class => "success_consideration" %>
+      </div>
+      <div class="form-group which_success_consideration">
+        <%= f.label :success_considerantion_name, :class => 'col-sm-4 input-label' %>
+        <div class="col-sm-6">
+          <%= f.text_field :success_considerantion_name, :class => 'form-control spaceless', :disabled => true %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :agricultural, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :agricultural, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <label>
+      <%= I18n.t "formulary_fields.formulary_context_8" %>
+    </label>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :forest, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :forest, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :project_term, :class => '' %>
+    <div class="box">
+      <%= f.select :project_term, @project_term.map { |value| [ value[:val], value[:key] ] }, {}, {} %>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :rainfores, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :rainfores, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :require_integration, :class => '' %>
+    <div class="box">
+      <div class="radio">
+        <%= f.label :require_integration, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
+        <%= f.radio_button :require_integration, true, :class => "require_integration" %>
+      </div>
+      <div class="radio">
+        <%= f.label :require_integration, I18n.t("helpers.booleans.negative"), :value => "false" %>
+        <%= f.radio_button :require_integration, false, :checked => true, :class => "require_integration" %>
+      </div>
+      <div class="form-group which_require_integration">
+        <%= f.label :require_integration_name, :class => 'col-sm-4 input-label' %>
+        <div class="col-sm-7">
+          <%= f.text_field :require_integration_name, :class => 'form-control spaceless', :disabled => true %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :cloud_forest, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :cloud_forest, :class => 'text_field' %>
+<div class="row form marginless">
+  <div class="col-sm-12">
+    <label>
+      <%= I18n.t "formulary_fields.formulary_context_8_c" %>
+    </label>
   </div>
 </div>
-<div class="control-group">
-  <%= f.label :dry_forest, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :dry_forest, :class => 'text_field' %>
+<div class="row form">
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes">
+      <%= f.check_box :gender, :class => '' %><%= f.label :gender, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :equity, :class => '' %><%= f.label :equity, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :community_participation, :class => '' %><%= f.label :community_participation, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :policy, :class => '' %><%= f.label :policy, :class => '' %>
+    </div>
+    <div class="three-column-checkboxes">
+      <%= f.check_box :complexity, :class => '' %><%= f.label :complexity, :class => '' %>
+    </div>
   </div>
-</div>
-<div class="control-group">
-  <%= f.label :old_growth_forest, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :old_growth_forest, :class => 'text_field' %>
+  <div class="col-lg-3">
+    <div class="three-column-checkboxes">
+      <%= f.check_box :other_approach, :class => '' %><%= f.label :other_approach, :class => '' %>
+    </div>
   </div>
-</div>
-<div class="control-group">
-  <%= f.label :mixed_forest, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :mixed_forest, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :other_scale, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :other_scale, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :which_scale, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :which_scale, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :watershed, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :watershed, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :watersheed_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :watersheed_name, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :wetland, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :wetland, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :desert, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :desert, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :intersectoral_aspect, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :intersectoral_aspect, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :intersectoral_aspect_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.select(:intersectoral_aspect_name, @intersectoral_aspect.map { |value| [ value[:val], value[:key] ] }) %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :political_jurisdiction, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :political_jurisdiction, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :political_jurisdictions_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :political_jurisdictions_name, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :sociopolitical_context, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_area :sociopolitical_context, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :local_context, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :local_context, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :local_context_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :local_context_name, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :project_affect, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :project_affect, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :project_affect_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :project_affect_name, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :role_consideration, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :role_consideration, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :role_consideration_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :role_consideration_name, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :key_actors, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_area :key_actors, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :success_consideration, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :success_consideration, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :success_considerantion_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :success_considerantion_name, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <label class="control-label">
-    <%= I18n.t "formulary_fields.formulary_context_8" %>
-  </label>
-  <div class="controls"></div>
-</div>
-<div class="control-group">
-  <%= f.label :project_term, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.select(:project_term, @project_term.map { |value| [ value[:val], value[:key] ] }) %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :require_integration, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :require_integration, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :require_integration_name, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :require_integration_name, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <label class="control-label">
-    <%= I18n.t "formulary_fields.formulary_context_8_c" %>
-  </label>
-  <div class="controls"></div>
-</div>
-<div class="control-group">
-  <%= f.label :gender, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :gender, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :equity, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :equity, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :community_participation, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :community_participation, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :policy, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :policy, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :complexity, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :complexity, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :other_approach, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.check_box :other_approach, :class => 'text_field' %>
-  </div>
-</div>
-<div class="control-group">
-  <%= f.label :which_approach, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.text_field :which_approach, :class => 'text_field' %>
+  <div class="col-lg-9">
+    <div class="form-group marginless which_approach">
+      <%= f.label :which_approach, :class => 'col-sm-3 input-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :which_approach, :class => 'form-control spaceless', :disabled => true %>
+      </div>
+    </div>
   </div>
 </div>

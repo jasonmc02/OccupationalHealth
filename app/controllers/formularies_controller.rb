@@ -4,7 +4,11 @@ class FormulariesController < ApplicationController
   # GET /formularies
   # GET /formularies.json
   def index
-    @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).load
+    if current_user.role_id == 1
+      @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).load
+    else
+      @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).where("formularies.user_id = ?", current_user.id).load
+    end
   end
 
   # GET /formularies/1

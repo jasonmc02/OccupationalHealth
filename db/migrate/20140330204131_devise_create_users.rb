@@ -31,7 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
       t.string :name
-      t.integer :role_id
+      t.integer :role_id, :default => 0
       t.boolean :verified
 
       t.timestamps

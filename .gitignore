@@ -3,3 +3,9 @@
 .Trashes
 /public/assets/
 /log/*
+/config/database.yml
+/config/deploy.rb
+/config/nginx.conf
+/config/uniconr.rb
+/config/uniconr.sh
+/config/deploy/*

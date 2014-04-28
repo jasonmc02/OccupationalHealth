@@ -1,66 +1,81 @@
-<div class="navbar navbar-top main-bar">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="/"><%= t 'application.title' %> </a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li>
-            <a href="<%= root_path %>">
-              <%= t 'navbar_elements.links.home' %>
-            </a>
-          </li>
-          <li>
-            <a href="<%= formularies_path %>">
-              <%= t 'navbar_elements.links.formulary' %>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav pull-right">
+      </button>
+      <a href="/" class="navbar-brand"><strong><%= t 'application.title' %></strong></a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="<%= root_path %>" class="upper-case">
+            <%= t 'navbar_elements.links.home' %>
+          </a>
+        </li>
+        <li>
+          <a href="<%= formularies_path %>" class="upper-case">
+            <%= t 'navbar_elements.links.formulary' %>
+          </a>
+        </li>
+        <% if user_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <%= t 'navbar_elements.language.language' %> 
+            <a href="#" class="dropdown-toggle upper-case" data-toggle="dropdown">
+              <%= current_user.email %>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="<%= request.env['PATH_INFO'] %>?locale=en"><%= t 'navbar_elements.language.en' %></a></li>
-              <li><a href="<%= request.env['PATH_INFO'] %>?locale=es"><%= t 'navbar_elements.language.es' %></a></li>
-              <li><a href="<%= request.env['PATH_INFO'] %>?locale=fr"><%= t 'navbar_elements.language.fr' %></a></li>
-              <li><a href="<%= request.env['PATH_INFO'] %>?locale=pt"><%= t 'navbar_elements.language.pt' %></a></li>
+              <li>
+                <a href="<%= destroy_user_session_path %>" data-method="delete">
+                  <%= t 'navbar_elements.user.log_out' %>
+                </a>
+              </li>
             </ul>
           </li>
-          <% if user_signed_in? %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= current_user.email %>
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="<%= destroy_user_session_path %>" data-method="delete">
-                    <%= t 'navbar_elements.user.log_out' %>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li class="dropdown">
-              <a href="<%= new_user_session_path %>" class="dropdown-toggle">
-                <%= t 'navbar_elements.user.log_in' %>
-              </a>
-            </li>
-            <li class="dropdown">
-              <a href="<%= new_user_registration_path %>" class="dropdown-toggle">
-                <%= t 'navbar_elements.user.sign_up' %>
+        <% else %>
+          <li>
+            <a href="<%= new_user_session_path %>" class="upper-case">
+              <%= t 'navbar_elements.user.log_in' %>
+            </a>
+          </li>
+          <li>
+            <a href="<%= new_user_registration_path %>" class="upper-case">
+              <%= t 'navbar_elements.user.sign_up' %>
+            </a>
+          </li>
+        <% end %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle upper-case" data-toggle="dropdown">
+            <%= t 'navbar_elements.language.language' %>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="<%= request.env['PATH_INFO'] %>?locale=en">
+                <%= t 'navbar_elements.language.en' %>
               </a>
             </li>
-          <% end %>
-        </ul>
-      </div>
+            <li>
+              <a href="<%= request.env['PATH_INFO'] %>?locale=es">
+                <%= t 'navbar_elements.language.es' %>
+              </a>
+            </li>
+            <li>
+              <a href="<%= request.env['PATH_INFO'] %>?locale=fr">
+                <%= t 'navbar_elements.language.fr' %>
+              </a>
+            </li>
+            <li>
+              <a href="<%= request.env['PATH_INFO'] %>?locale=pt">
+                <%= t 'navbar_elements.language.pt' %>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

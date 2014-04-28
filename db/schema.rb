@@ -201,7 +201,7 @@ ActiveRecord::Schema.define(version: 20140330204131) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.integer  "role_id"
+    t.integer  "role_id",                default: 0
     t.boolean  "verified"
     t.datetime "created_at"
     t.datetime "updated_at"
