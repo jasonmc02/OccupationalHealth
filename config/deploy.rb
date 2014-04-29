@@ -2,11 +2,11 @@
 lock '3.1.0'
 
 set :application, 'OccupationalHealth'
-set :deploy_user, 'ubuntu'
+set :deploy_user, 'root'
 set :scm, :git
 set :branch, :development
 set :repo_url, 'git@github.com:jasonmc02/OccupationalHealth.git'
-set :deploy_to, '/home/ubuntu/OccupationalHealth'
+set :deploy_to, '~/OccupationalHealth'
 set :keep_releases, 3
 set :pty, true
 

@@ -1,8 +1,8 @@
-role :web, %w{ubuntu@ec2-54-186-151-59.us-west-2.compute.amazonaws.com}
+role :web, %w{root@107.170.89.5}
 
-server 'ec2-54-186-151-59.us-west-2.compute.amazonaws.com', roles: [:web], user: 'ubuntu'
+server '107.170.89.5', roles: [:web], user: 'root'
 set :ssh_options, {
-  keys: %w{/home/jason/TestServer.pem}
+  #keys: %w{/home/jason/TestServer.pem}
 }
 # Simple Role Syntax
 # ==================
