@@ -15,74 +15,74 @@
 </div>
 <div class="row form">
   <div class="col-lg-12">
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :urban, :class => '' %><%= f.label :urban, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :semiurban, :class => '' %><%= f.label :semiurban, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :rural, :class => '' %><%= f.label :rural, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :wilderness, :class => '' %><%= f.label :wilderness, :class => '' %>
     </div>
   </div>
   <div class="clearfix">
     <div class="col-lg-3">
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :disrupted, :class => '' %><%= f.label :disrupted, :class => '' %>
       </div>
     </div>
     <div class="col-lg-9 disrupt_types">
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :resource_extraction, :class => '', :disabled => true %><%= f.label :resource_extraction, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :environmental_degradation, :class => '', :disabled => true %><%= f.label :environmental_degradation, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :climate_effect, :class => '', :disabled => true %><%= f.label :climate_effect, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :natural_force, :class => '', :disabled => true %><%= f.label :natural_force, :class => '' %>
       </div>
     </div>
   </div>
   <div class="col-lg-12">
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :coastal, :class => '' %><%= f.label :coastal, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :agricultural, :class => '' %><%= f.label :agricultural, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :rural, :class => '' %><%= f.label :rural, :class => '' %>
     </div>
   </div>
   <div class="clearfix">
     <div class="col-lg-3">
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :forest, :class => '' %><%= f.label :forest, :class => '' %>
       </div>
     </div>
     <div class="col-lg-9 forest_types">
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :rainfores, :class => '', :disabled => true %><%= f.label :rainfores, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :cloud_forest, :class => '', :disabled => true %><%= f.label :cloud_forest, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :dry_forest, :class => '', :disabled => true %><%= f.label :dry_forest, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :old_growth_forest, :class => '', :disabled => true %><%= f.label :old_growth_forest, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :mixed_forest, :class => '', :disabled => true %><%= f.label :mixed_forest, :class => '' %>
       </div>
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :other_scale, :class => '', :disabled => true %><%= f.label :other_scale, :class => '' %>
         <div class="form-group which_scales">
           <%= f.label :which_scale, :class => 'col-sm-1 input-label' %>
@@ -95,7 +95,7 @@
   </div>
   <div class="clearfix">
     <div class="col-lg-3">
-      <div class="three-column-checkboxes">
+      <div class="three-column-checkboxes checkbox">
         <%= f.check_box :watershed, :class => '' %><%= f.label :watershed, :class => '' %>
       </div>
     </div>
@@ -109,10 +109,10 @@
     </div>
   </div>
   <div class="col-lg-12">
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :wetland, :class => '' %><%= f.label :wetland, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :desert, :class => '' %><%= f.label :desert, :class => '' %>
     </div>
   </div>
@@ -288,7 +288,7 @@
       </div>
       <div class="form-group which_require_integration">
         <%= f.label :require_integration_name, :class => 'col-sm-4 input-label' %>
-        <div class="col-sm-7">
+        <div class="col-sm-6">
           <%= f.text_field :require_integration_name, :class => 'form-control spaceless', :disabled => true %>
         </div>
       </div>
@@ -303,25 +303,37 @@
   </div>
 </div>
 <div class="row form">
-  <div class="col-lg-12">
-    <div class="three-column-checkboxes">
+  <div class="col-lg-4">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :gender, :class => '' %><%= f.label :gender, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+  </div>
+  <div class="col-lg-4">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :equity, :class => '' %><%= f.label :equity, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+  </div>
+  <div class="col-lg-4">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :community_participation, :class => '' %><%= f.label :community_participation, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+  </div>
+</div>
+<div class="row form">
+  <div class="col-lg-4">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :policy, :class => '' %><%= f.label :policy, :class => '' %>
     </div>
-    <div class="three-column-checkboxes">
+  </div>
+  <div class="col-lg-4">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :complexity, :class => '' %><%= f.label :complexity, :class => '' %>
     </div>
   </div>
+</div>
+<div class="row form">
   <div class="col-lg-3">
-    <div class="three-column-checkboxes">
+    <div class="three-column-checkboxes checkbox">
       <%= f.check_box :other_approach, :class => '' %><%= f.label :other_approach, :class => '' %>
     </div>
   </div>

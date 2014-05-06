@@ -16,3 +16,5 @@
 //= require turbolinks
 //= require theme/theme
 //= require lib/index-slider
+//= require lib/bootbox.min
+//= require lib/underscore-min

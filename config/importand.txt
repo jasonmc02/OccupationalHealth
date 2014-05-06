@@ -1,5 +1,5 @@
 sudo ln -s ~/OccupationalHealth/shared/database.yml ~/OccupationalHealth/current/config/
 
-sudo ln -s /home/ubuntu/OccupationalHealth/current/config/nginx.conf /etc/nginx/sites-enabled/occupationa_health
+sudo ln -s ~/OccupationalHealth/shared/nginx.conf /etc/nginx/sites-enabled/occupationa_health_nginx_conf
 
-sudo ln -s /home/ubuntu/OccupationalHealth/current/config/unicorn.sh /etc/init.d/occupational_health
+sudo ln -s ~/OccupationalHealth/shared/unicorn.sh /etc/init.d/occupational_health_unicorn_init

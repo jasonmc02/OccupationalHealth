@@ -117,6 +117,14 @@ Formulary.unlockWhichInteraction = (self) ->
   if self.val() == "true"
     Formulary.thirdStep.find(".which_interaction input").removeAttr("disabled")
 
+Formulary.unlockWhichIntegrateInvestigation = (self) ->
+  if self.val() == "false"
+    Formulary.thirdStep.find(".which_integrate_investigation_no").removeClass("hide")
+    Formulary.thirdStep.find(".which_integrate_investigation_yes").addClass("hide")
+  else
+    Formulary.thirdStep.find(".which_integrate_investigation_no").addClass("hide")
+    Formulary.thirdStep.find(".which_integrate_investigation_yes").removeClass("hide")
+
 Formulary.unlockWhichIntegration = (self) ->
   Formulary.thirdStep.find(".which_integration input").attr("disabled", "disabled")
   if self.prop("checked")
@@ -185,6 +193,8 @@ $(document).ready ->
     Formulary.unlockWhichApproach($(@))
   Formulary.thirdStep.on "change", ".interaction", ->
     Formulary.unlockWhichInteraction($(@))
+  Formulary.thirdStep.on "change", ".integrate_investigation", ->
+    Formulary.unlockWhichIntegrateInvestigation($(@))
   Formulary.thirdStep.on "click", "#formulary_formulary_research_attributes_other_integration", ->
     Formulary.unlockWhichIntegration($(@))
   Formulary.fourthStep.on "change", ".factor_affects", ->
