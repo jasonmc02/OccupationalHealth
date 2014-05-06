@@ -1,5 +1,0 @@
-sudo ln -s ~/OccupationalHealth/shared/database.yml ~/OccupationalHealth/current/config/
-
-sudo ln -s ~/OccupationalHealth/shared/nginx.conf /etc/nginx/sites-enabled/occupationa_health_nginx_conf
-
-sudo ln -s ~/OccupationalHealth/shared/unicorn.sh /etc/init.d/occupational_health_unicorn_init
