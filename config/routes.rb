@@ -2,6 +2,7 @@ OccupationalHealth::Application.routes.draw do
 
   devise_for :users
   resources :formularies
+  resources :users, only: [:index]
   
   match "/" => "home#index", :via => :get
 

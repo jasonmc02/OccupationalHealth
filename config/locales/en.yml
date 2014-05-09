@@ -43,6 +43,9 @@ en:
       home: "Home"
       formulary: "Formularies"
       report: "Report"
+    configuration:
+      configuration: "Config"
+      users_settings: "Users Settings"
   selects:
     formulary_context:
       research: "Research"
@@ -95,6 +98,7 @@ en:
     errors:
       models:
     models:
+      user: "User"
       formulary: "Formulary"
     attributes:
       user:
@@ -102,6 +106,7 @@ en:
         password: "Password"
         password_confirmation: "Confirm Password"
         remember_me: "Remember me"
+        role_id: "Role"
       formulary:
         id: "Id"
         user_id: "User Email"

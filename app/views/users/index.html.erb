@@ -1,30 +1,28 @@
-<%- model_class = Formulary -%>
-<%- model_subclass = FormularyProfile %>
+<%- model_class = User -%>
 <div id="service_1">
   <div class="container">
     <div class="section_header">
       <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
-      <%= link_to t("helpers.links.new"), new_formulary_path, :class => 'btn btn-primary pull-right' %>
     </div>
     <div class="row service_wrapper">
       <div class="col-sm-3">
         <div class="feature">
           <div class="text">
-            <h6><%= model_class.human_attribute_name(:user_id) %></h6>
+            <h6><%= model_class.human_attribute_name(:email) %></h6>
           </div>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="feature">
           <div class="text">
-            <h6><%= model_subclass.human_attribute_name(:name) %></h6>
+            <h6><%= model_class.human_attribute_name(:role_id) %></h6>
           </div>
         </div>
       </div>
       <div class="col-sm-3">
-        <div class="feature last">
+        <div class="feature">
           <div class="text">
-            <h6><%= model_class.human_attribute_name(:created_at) %></h6>
+            <h6></h6>
           </div>
         </div>
       </div>
@@ -36,13 +34,13 @@
         </div>
       </div>
     </div>
-    <% @formularies.each do |formulary| %>
+    <% @users.each do |user| %>
       <div class="row service_wrapper">
         <div class="col-sm-3">
           <div class="feature">
             <div class="text">
               <p>
-                <%= formulary.user.email %>
+                <%= user.email %>
               </p>
             </div>
           </div>
@@ -51,7 +49,15 @@
           <div class="feature">
             <div class="text">
               <p>
-                <%= formulary.formulary_profile.name %>
+                <%= user.role_id %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <p>
               </p>
             </div>
           </div>
@@ -60,23 +66,7 @@
           <div class="feature last">
             <div class="text">
               <p>
-                <%= formulary.created_at.to_date %>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="feature last">
-            <div class="text">
-              <p>
-                <%= link_to t("helpers.links.edit"),
-                       edit_formulary_path(formulary),
-                       :class => 'btn btn-mini' %>
-                <%= link_to t("helpers.links.destroy"),
-                        formulary_path(formulary),
-                        :method => :delete,
-                        :data => { :confirm => t("helpers.links.confirm") },
-                        :class => 'btn btn-mini btn-danger' %>
+                <button class="btn btn-mini btn-warning">Role Assign</button>
               </p>
             </div>
           </div>
