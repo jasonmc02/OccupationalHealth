@@ -1,6 +1,6 @@
 en:
   application:
-    title: "Occupational Health"
+    title: "Ekosanté"
   dictionary:
     blank: &BLANK "Este campo no puede quedar en blanco"
     required: &REQUIRED "Campo requerido"
@@ -25,6 +25,9 @@ en:
     booleans:
       affirmative: "Yes"
       negative: "No"
+  index:
+    slides:
+      scene: "Ekosanté - A Latin American, Caribbean and Canadian Collaboration in ecohealth"
   navbar_elements:
     language:
       language: "Language"

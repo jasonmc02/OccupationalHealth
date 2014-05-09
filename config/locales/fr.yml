@@ -1,6 +1,6 @@
-en:
+fr:
   application:
-    title: "Occupational Health"
+    title: "Ekosanté"
   dictionary:
     blank: &BLANK "Este campo no puede quedar en blanco"
     required: &REQUIRED "Campo requerido"
@@ -22,9 +22,12 @@ en:
       titles:
         sign_up: "Sign Up"
         sign_in: "Sign In"
-  misc:
-    true: "Yes"
-    false: "No"
+    booleans:
+      affirmative: "Yes"
+      negative: "No"
+  index:
+    slides:
+      scene: "Ekosanté - Une collaboration Américaine Latine, Caraïbes et Canada latine en écosanté"
   navbar_elements:
     language:
       language: "Language"
