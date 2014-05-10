@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 header">
-        <h4>Log in to your account</h4>
+        <h4><%= t "helpers.devise.log_in_page.text_1" %></h4>
         <p>
-          There are many variations of passages of Lorem alteration in some form  injected humour these randomised words.
+          <%= t "helpers.devise.log_in_page.text_2" %>
         </p>
         <div class="col-md-4 social">
           <a href="#" class="circle facebook">
@@ -20,27 +20,27 @@
       </div>
       <div class="col-sm-3 division">
         <div class="line l"></div>
-        <span>or</span>
+        <span><%= t "helpers.devise.log_in_page.text_10" %></span>
         <div class="line r"></div>
       </div>
       <div class="col-md-12 footer">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { :class => "form-inline" } ) do |f| %>
-          <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
-          <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
-          <%= f.submit "Sign in" %>
+          <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => t("helpers.devise.log_in_page.text_8") %>
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => t("helpers.devise.log_in_page.text_9") %>
+          <%= f.submit t "helpers.devise.log_in_page.text_3" %>
         <% end %>
       </div>
       <div class="col-md-12 proof">
         <div class="col-md-6 remember">
           <label class="checkbox">
-            <input type="checkbox" name="user[remember_me]" form="new_user">Remember me
+            <input type="checkbox" name="user[remember_me]" form="new_user"><%= t "helpers.devise.log_in_page.text_4" %>
           </label>
-          <a href="reset.html">Forgot password?</a>
+          <a href="<%= new_password_path(resource_name) %>"><%= t "helpers.devise.log_in_page.text_5" %></a>
         </div>
         <div class="col-md-6">
           <div class="dosnt">
-            <span>Don’t have an account?</span>
-            <a href="<%= new_user_registration_path %>"><%= t 'navbar_elements.user.sign_up' %></a>
+            <span><%= t "helpers.devise.log_in_page.text_6" %></span>
+            <a href="<%= new_user_registration_path %>"><%= t "helpers.devise.log_in_page.text_7" %></a>
           </div>
         </div>
       </div>

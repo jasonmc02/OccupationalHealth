@@ -20,8 +20,35 @@ es:
       confirm: "¿Estás seguro?"
     devise:
       titles:
-        sign_up: "Registrarse"
-        sign_in: "Iniciar sessión"
+        sign_up: "Sign Up"
+        sign_in: "Sign In"
+      log_in_page:
+        text_1: "Inicie sesión en su cuenta"
+        text_2: ""
+        text_3: "Iniciar"
+        text_4: "Recordarme"
+        text_5: "Olvidé la contraseña"
+        text_6: "¿No tienes una cuenta?"
+        text_7: "Registrate"
+        text_8: "Correo electrónico"
+        text_9: "Contraseña"
+        text_10: "o también"
+      sign_up_page:
+        text_1: "Crear una cuenta"
+        text_2: ""
+        text_3: "o también"
+        text_4: "Correo electrónico"
+        text_5: "Contraseña"
+        text_6: "Confirma la contraseña"
+        text_7: "Registrate"
+        text_8: "¿Ya tienes una cuenta?"
+        text_9: "Inicia sesión"
+      reset_password_page:
+        text_1: "Ingrese su dirección de correo electrónico para recibir instrucciones sobre cómo restablecer la contraseña."
+        text_2: "Correo electrónico"
+        text_3: "Restablecer Contraseña"
+        text_4: "¿Conoces tu contraseña?"
+        text_5: "Inicia sesión"
     booleans:
       affirmative: "Sí"
       negative: "No"
@@ -36,8 +63,8 @@ es:
       fr: "Français"
       pt: "Português"
     user:
-      log_in: "Iniciar Sesión"
-      sign_up: "Registrarse"
+      log_in: "Inicia Sesión"
+      sign_up: "Registrate"
       log_out: "Cerrar Sesión"
     links:
       home: "Inicio"

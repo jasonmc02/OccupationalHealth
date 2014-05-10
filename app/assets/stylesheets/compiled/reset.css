@@ -46,7 +46,8 @@
     font-size: 15px;
     font-weight: bold;
     padding: 5px 0; }
-    .reset_page .box .form input[type="text"] {
+    .reset_page .box .form input[type="text"],
+    .reset_page .box .form input[type="email"] {
       border-color: #DBDBDB #EAEAEA #EAEAEA #DBDBDB;
       border-left: 1px solid #DBDBDB;
       border-style: solid;

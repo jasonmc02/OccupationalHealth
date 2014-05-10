@@ -14,6 +14,7 @@
  *= require compiled/theme
  *= require compiled/sign-in
  *= require compiled/sign-up
+ *= require compiled/reset
  *= require compiled/index
  *= require compiled/services
  *= require compiled/contact

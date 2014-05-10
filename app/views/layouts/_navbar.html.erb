@@ -16,12 +16,12 @@
             <%= t 'navbar_elements.links.home' %>
           </a>
         </li>
-        <li>
-          <a href="<%= formularies_path %>" class="upper-case">
-            <%= t 'navbar_elements.links.formulary' %>
-          </a>
-        </li>
         <% if user_signed_in? %>
+          <li>
+            <a href="<%= formularies_path %>" class="upper-case">
+              <%= t 'navbar_elements.links.formulary' %>
+            </a>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle upper-case" data-toggle="dropdown">
               <%= current_user.email %>

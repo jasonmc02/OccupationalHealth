@@ -22,6 +22,33 @@ en:
       titles:
         sign_up: "Sign Up"
         sign_in: "Sign In"
+      log_in_page:
+        text_1: "Log in to your account"
+        text_2: ""
+        text_3: "Sign in"
+        text_4: "Remember me"
+        text_5: "Forgot password"
+        text_6: "Don’t have an account?"
+        text_7: "Sign up"
+        text_8: "Email"
+        text_9: "Password"
+        text_10: "or"
+      sign_up_page:
+        text_1: "Create your account"
+        text_2: ""
+        text_3: "or"
+        text_4: "Email"
+        text_5: "Password"
+        text_6: "Confirm Password"
+        text_7: "Sign up"
+        text_8: "Already have an account?"
+        text_9: "Log In"
+      reset_password_page:
+        text_1: "Enter your email address below to receive instructions on how to reset your password."
+        text_2: "Email"
+        text_3: "Reset password"
+        text_4: "Know your password?"
+        text_5: "Log In"
     booleans:
       affirmative: "Yes"
       negative: "No"

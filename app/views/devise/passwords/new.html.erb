@@ -1,12 +1,23 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div id="reset_pwd" class="reset_page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 box_wrapper">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="head">
+              <h4><%= t "helpers.devise.reset_password_page.text_1" %></h4>
+              <div class="line"></div>
+            </div>
+            <div class="form">
+              <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                <%= f.email_field :email, :class =>"control-form", autofocus: true, :placeholder => t("helpers.devise.reset_password_page.text_2") %>
+                <%= f.submit t("helpers.devise.reset_password_page.text_3") %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <p class="already"><%= t "helpers.devise.reset_password_page.text_4" %><a href="<%= new_user_session_path %>"><%= t "helpers.devise.reset_password_page.text_5" %></a></p>
+      </div>
+    </div>
+  </div>
+</div>
