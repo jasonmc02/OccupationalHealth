@@ -8,7 +8,7 @@
       </div>
       <div class="radio">
         <%= f.label :interaction, I18n.t("helpers.booleans.negative"), :value => "false" %>
-        <%= f.radio_button :interaction, false, :checked => true, :class => "interaction" %>
+        <%= f.radio_button :interaction, false, :class => "interaction" %>
       </div>
       <div class="form-group which_interaction">
         <%= f.label :interaction_name, :class => 'col-sm-4 input-label' %>
@@ -29,7 +29,7 @@
       </div>
       <div class="radio">
         <%= f.label :integrate_investigation, I18n.t("helpers.booleans.negative"), :value => "false" %>
-        <%= f.radio_button :integrate_investigation, false, :checked => true, :class => "integrate_investigation" %>
+        <%= f.radio_button :integrate_investigation, false, :class => "integrate_investigation" %>
       </div>
       <div class="form-group which_integrate_investigation_no">
         <%= f.label :integrate_investigation_no, :class => 'col-sm-4 input-label' %>
