@@ -39,7 +39,8 @@ Formulary.removeLinkProyectChecks = ->
   Formulary.firstStep.find(".linked_proyect input").prop("checked", false)
 
 Formulary.addLinkProyectCheck = (self) ->
-  Formulary.removeLinkProyectChecks()
+  unless self.attr("id") == "formulary_formulary_profile_attributes_which_project"
+    Formulary.removeLinkProyectChecks()
   if Formulary.previousSelectedId == self.attr("id")
     self.prop("checked", false)
     Formulary.previousSelectedId = null
@@ -47,7 +48,7 @@ Formulary.addLinkProyectCheck = (self) ->
     self.prop("checked", true)
     Formulary.previousSelectedId = self.attr("id")
   Formulary.firstStep.find("#formulary_formulary_profile_attributes_which_project").attr("disabled", "disabled")
-  if self.attr("id") == "formulary_formulary_profile_attributes_other_project" && self.prop("checked")
+  if (self.attr("id") == "formulary_formulary_profile_attributes_other_project" && self.prop("checked")) || (self.attr("id") == "formulary_formulary_profile_attributes_which_project" && Formulary.firstStep.find("#formulary_formulary_profile_attributes_other_project").prop("checked"))
     Formulary.firstStep.find("#formulary_formulary_profile_attributes_which_project").removeAttr("disabled")
 
 Formulary.unlockDisruptTypes = (self) ->

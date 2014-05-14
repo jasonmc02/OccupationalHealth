@@ -1,8 +1,14 @@
 Home = 
-  screenWidth: (screen.width / 2) - 425
+  screenWidth: window.innerWidth
 
 Home.initialize = ->
-  $("#ideas img").css("right", Home.screenWidth)
+  if Home.screenWidth > 1200
+    $("#ideas img").css("right", (Home.screenWidth / 2 - 425))
+  else
+    $("#ideas img").css("right", (Home.screenWidth / 2 - 300))
 
 $(document).ready ->
   Home.initialize()
+  $(window).resize ->
+    Home.screenWidth = window.innerWidth
+    Home.initialize()

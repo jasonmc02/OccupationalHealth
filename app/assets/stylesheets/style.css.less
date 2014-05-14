@@ -26,6 +26,11 @@ body {
 	.index-scene {
 		width: 850px;
 	}
+	@media (max-width: 1200px) {
+		.index-scene {
+			width: 600px;
+		}
+	}
 	.scene1 {
 		background: url("/assets/backgrounds/landscape.png");
 	}
@@ -63,5 +68,35 @@ body {
 	}
 	#portfolio {
 		margin-top: 0px;
+	}
+	@media (min-width: 1200px) {
+		.navbar-static-top {
+			.container {
+				width: 1140px;
+				.navbar-header {
+					.navbar-brand {
+						padding-top: 0px;
+						padding-bottom: 0px;
+						small {
+							display: block;
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 1200px) {
+		.navbar-static-top {
+			.container {
+				.navbar-header {
+					.navbar-brand {
+						small {
+							display: none;
+						}
+					}
+				}
+			}
+		}
 	}
 }

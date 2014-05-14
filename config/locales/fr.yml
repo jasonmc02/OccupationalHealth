@@ -1,6 +1,6 @@
 fr:
   application:
-    title: "Ekosanté"
+    title: "EkoSanté"
   dictionary:
     blank: &BLANK "Este campo no puede quedar en blanco"
     required: &REQUIRED "Campo requerido"
@@ -22,12 +22,42 @@ fr:
       titles:
         sign_up: "Sign Up"
         sign_in: "Sign In"
+      log_in_page:
+        text_1: "Log in to your account"
+        text_2: ""
+        text_3: "Sign in"
+        text_4: "Remember me"
+        text_5: "Forgot password"
+        text_6: "Don’t have an account?"
+        text_7: "Sign up"
+        text_8: "Email"
+        text_9: "Password"
+        text_10: "or"
+      sign_up_page:
+        text_1: "Create your account"
+        text_2: ""
+        text_3: "or"
+        text_4: "Email"
+        text_5: "Password"
+        text_6: "Confirm Password"
+        text_7: "Sign up"
+        text_8: "Already have an account?"
+        text_9: "Log In"
+      reset_password_page:
+        text_1: "Enter your email address below to receive instructions on how to reset your password."
+        text_2: "Email"
+        text_3: "Reset password"
+        text_4: "Know your password?"
+        text_5: "Log In"
     booleans:
       affirmative: "Yes"
       negative: "No"
   index:
     slides:
-      scene: "Ekosanté - Une collaboration Américaine Latine, Caraïbes et Canada latine en écosanté"
+      scene: "Une collaboration Américaine Latine, Caraïbes et Canada latine en écosanté"
+      scene1: "Una colaboración América Latina, el Caribe y Canadá en ecosalud"
+      scene2: "Une collaboration Américaine Latine, Caraïbes et Canada latine en écosanté"
+      scene3: "Ama colaboração da América Latina, Caribes e Canadá em ecossaúde"
   navbar_elements:
     language:
       language: "Language"
@@ -43,6 +73,9 @@ fr:
       home: "Home"
       formulary: "Formularies"
       report: "Report"
+    configuration:
+      configuration: "Config"
+      users_settings: "Users Settings"
   selects:
     formulary_context:
       research: "Research"
@@ -95,6 +128,7 @@ fr:
     errors:
       models:
     models:
+      user: "User"
       formulary: "Formulary"
     attributes:
       user:
@@ -102,6 +136,7 @@ fr:
         password: "Password"
         password_confirmation: "Confirm Password"
         remember_me: "Remember me"
+        role_id: "Role"
       formulary:
         id: "Id"
         user_id: "User Email"

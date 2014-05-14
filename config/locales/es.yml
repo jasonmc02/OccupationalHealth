@@ -1,6 +1,6 @@
 es:
   application:
-    title: "Ekosanté"
+    title: "EkoSanté"
   dictionary:
     blank: &BLANK "Este campo no puede quedar en blanco"
     required: &REQUIRED "Campo requerido"
@@ -54,7 +54,10 @@ es:
       negative: "No"
   index:
     slides:
-      scene: "Ekosanté - Una colaboración América Latina, el Caribe y Canadá en ecosalud"
+      scene: "Una colaboración América Latina, el Caribe y Canadá en ecosalud"
+      scene1: "A Latin American, Caribbean and Canadian Collaboration in ecohealth"
+      scene2: "Une collaboration Américaine Latine, Caraïbes et Canada latine en écosanté"
+      scene3: "Ama colaboração da América Latina, Caribes e Canadá em ecossaúde"
   navbar_elements:
     language:
       language: "Idioma"
