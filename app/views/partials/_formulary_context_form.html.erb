@@ -132,7 +132,7 @@
       <div class="form-group which_intersectoral_aspect">
         <%= f.label :intersectoral_aspect_name, :class => 'col-sm-4 input-label' %>
         <div class="col-sm-6">
-          <%= f.select :intersectoral_aspect_name, @intersectoral_aspect.map { |value| [ value[:val], value[:key] ] }, {}, :disabled => true %>
+          <%= f.select :intersectoral_aspect_name, @intersectoral_aspect.map { |value| [ value[:val], value[:key] ] }, {}, :disabled => true, :class => "form-control" %>
         </div>
       </div>
     </div>
@@ -270,7 +270,7 @@
   <div class="col-sm-12">
     <%= f.label :project_term, :class => '' %>
     <div class="box">
-      <%= f.select :project_term, @project_term.map { |value| [ value[:val], value[:key] ] }, {}, {} %>
+      <%= f.select :project_term, @project_term.map { |value| [ value[:val], value[:key] ] }, {}, :class => "form-control" %>
     </div>
   </div>
 </div>

@@ -4,8 +4,8 @@ OccupationalHealth::Application.routes.draw do
 
   devise_for :users
   resources :formularies
-  resources :users, only: [:index]
-  
+  resources :users, only: [:index, :update]
+
   match "/" => "home#index", :via => :get
 
   scope "/:locale", :locale => /en|es|fr|pt/ do

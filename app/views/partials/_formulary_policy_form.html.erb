@@ -2,7 +2,7 @@
   <div class="col-sm-12">
     <%= f.label :intersectoral_design, :class => '' %>
     <div class="box">
-      <%= f.select(:intersectoral_design, @intersectoral_design_options.map { |value| [ value[:val], value[:key] ] }) %>
+      <%= f.select :intersectoral_design, @intersectoral_design_options.map { |value| [ value[:val], value[:key] ] }, {}, :class => "form-control" %>
     </div>
   </div>
 </div>
@@ -72,7 +72,7 @@
   <div class="col-sm-12">
     <%= f.label :project_result, :class => '' %>
     <div class="box">
-      <%= f.select :project_result, @project_result_options.map { |value| [ value[:val], value[:key] ] }, {}, {} %>
+      <%= f.select :project_result, @project_result_options.map { |value| [ value[:val], value[:key] ] }, {}, :class => "form-control" %>
     </div>
   </div>
 </div>

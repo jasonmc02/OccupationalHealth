@@ -18,6 +18,7 @@ en:
       cancel: "Cancel"
       back: "Complete"
       confirm: "Are you sure?"
+      save: "Save"
     devise:
       titles:
         sign_up: "Sign Up"
@@ -76,7 +77,14 @@ en:
     configuration:
       configuration: "Config"
       users_settings: "Users Settings"
+  user_roles_page:
+    modal_title: "Change User Role"
+    modal_select_role: "Select the role"
+    button_role_assign: "Role Assign"
   selects:
+    user_roles:
+      admin: "Administrator"
+      normal: "Normal User"
     formulary_context:
       research: "Research"
       action: "Action"
