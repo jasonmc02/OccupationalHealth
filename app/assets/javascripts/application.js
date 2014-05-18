@@ -15,5 +15,3 @@
 //= require bootstrap/bootstrap.min
 //= require turbolinks
 //= require theme/theme
-//= require lib/bootbox.min
-//= require lib/underscore-min

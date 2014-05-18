@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:update]
 
   def index
-    @users = User.all
+    @users = User.where("id != 1")
   end
 
   def update
