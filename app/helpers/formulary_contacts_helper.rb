@@ -1,0 +1,2 @@
+module FormularyContactsHelper
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330204131) do
+ActiveRecord::Schema.define(version: 20140516025903) do
 
   create_table "formularies", force: true do |t|
     t.integer  "user_id"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 20140330204131) do
     t.boolean  "national_impacts"
     t.boolean  "international_impacts"
     t.boolean  "global_impacts"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "formulary_contacts", force: true do |t|
+    t.string   "formulary_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "project_role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

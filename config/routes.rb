@@ -1,5 +1,7 @@
 OccupationalHealth::Application.routes.draw do
 
+  resources :formulary_contacts
+
   devise_for :users
   resources :formularies
   resources :users, only: [:index]

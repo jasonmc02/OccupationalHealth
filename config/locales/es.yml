@@ -101,6 +101,7 @@ es:
     formulary_profile_7: "Describa brevemente el principal problema sobre el cual el proyecto está actuando:"
     formulary_profile_9: "Dado el alcance o interés de su proyecto, su trabajo se centra en:"
     formulary_profile_11: "¿Cuál (es) personas (miembros del equipo, personas de la comunidad, tomadores de decisión) podrían darnos más información sobre el diseño, ejecución y resultados del proyecto?"
+    formulary_contact_1: "¿Cuál (es) personas (miembros del equipo, personas de la comunidad, tomadores de decisión) podrían darnos más información sobre el diseño, ejecución y resultados del proyecto?"
     formulary_context_2: "De acuerdo al área donde se desarrolló su proyecto, el ecosistema fue predominantemente:"
     formulary_context_8: "Describa brevemente los aspectos del trabajo de su proyecto, objetivos y pregunta/problemática central que refleje el vínculo entre salud humana y bienestar"
     formulary_context_8_c: "Cuál de los siguientes temas su proyecto se enfoca explícitamente:"
@@ -173,6 +174,11 @@ es:
         entire_program: "Un programa"
         other_project: "Otro"
         which_project: "¿Cuál?"
+      formulary_contact:
+        name: "Nombre"
+        email: "Correo electrónico"
+        phone: "Teléfono"
+        project_role: "Papel dentro del proyecto"
       formulary_context:
         scale_description: "Describa brevemente la escala eco-geográfica de su proyecto: (por ejemplo: un pueblo, ciudad, región política, eco-región (desierto, manglares, pampas, chaco, cuenca fluvial, bosques, montañas, humedales)"
         intersectoral_aspect: "¿Hay una dimensión intersectorial en su proyecto? Si es así, podría brindar breves detalles de las personas, instituciones o estrategias involucradas?"

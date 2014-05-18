@@ -158,6 +158,15 @@ Formulary.unlockWhichMultipleKind = (self) ->
   if self.val() == "true"
     Formulary.fifthStep.find(".which_multiple_kind input").removeAttr("disabled")
 
+Formulary.addContact = (self) ->
+  time = new Date().getTime()
+  regexp = new RegExp(self.data("id"), "g")
+  Formulary.firstStep.find(".contact-rows").append(self.data("fields").replace(regexp, time))
+
+Formulary.removeContact = (self) ->
+  self.closest("tr").find("input[type=hidden]").val(1)
+  self.closest("tr").hide()
+
 $(document).ready ->
   Formulary.initialize()
   Formulary.showCurrentStep()
@@ -206,3 +215,9 @@ $(document).ready ->
     Formulary.unlockWhichOtherDescription($(@))
   Formulary.fifthStep.on "change", ".multiple_kind", ->
     Formulary.unlockWhichMultipleKind($(@))
+  Formulary.firstStep.on "click", ".add-contact", (w) ->
+    w.preventDefault()
+    Formulary.addContact($(@))
+  Formulary.firstStep.on "click", ".remove-contact", (w) ->
+    w.preventDefault()
+    Formulary.removeContact($(@))

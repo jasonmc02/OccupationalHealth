@@ -25,6 +25,40 @@
     <%= f.fields_for :formulary_profile do |builder| %>
       <%= render '/partials/formulary_profile_form', :f => builder %>
     <% end %>
+
+    <div class="row form marginless">
+      <div class="col-sm-12">
+        <label>
+          <%= I18n.t "formulary_fields.formulary_contact_1" %>
+        </label>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="text-centered">
+            <%= I18n.t "activerecord.attributes.formulary_contact.name" %>
+            </th>
+          <th class="text-centered">
+            <%= I18n.t "activerecord.attributes.formulary_contact.email" %>
+          </th>
+          <th class="text-centered">
+            <%= I18n.t "activerecord.attributes.formulary_contact.phone" %>
+          </th>
+          <th class="text-centered">
+            <%= I18n.t "activerecord.attributes.formulary_contact.project_role" %>
+          </th>
+          <th>
+            <%= link_to_add_fields("", f, :formulary_contacts, :button_item, "btn btn-info btn-mini glyphicon glyphicon-plus add-contact") %>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="contact-rows">
+        <%= f.fields_for :formulary_contacts do |contacts| %>
+          <%= render 'partials/formulary_contact_form', :f => contacts %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
   <div id="step2" class="steps">
     <p class="text-justified">

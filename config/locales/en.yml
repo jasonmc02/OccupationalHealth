@@ -101,6 +101,7 @@ en:
     formulary_profile_7: "Briefly describe the core problem or issue that your project deals with:"
     formulary_profile_9: "Overall, is your work centered in:"
     formulary_profile_11: "Which members of your team and broader group of collaborators, could provide us more information about the design, objectives, methodology, execution, and results of your project?"
+    formulary_contact_1: "Which members of your team and broader group of collaborators, could provide us more information about the design, objectives, methodology, execution, and results of your project?"
     formulary_context_2: "Within the ecological or geographical scale of your project, the main features of the ecosystem are:"
     formulary_context_8: "Briefly describe the aspects of your project work, objectives, and central question/problematic that reflects the links with human health and well-being."
     formulary_context_8_c: "Which of the following issues does your project focus on explicitly: (You can select more than one option)"
@@ -173,6 +174,11 @@ en:
         entire_program: "An entire Program"
         other_project: "Other"
         which_project: "Which?"
+      formulary_contact:
+        name: "Name"
+        email: "Email"
+        phone: "Telephone"
+        project_role: "Role/Capacity within project"
       formulary_context:
         scale_description: "Briefly describe the ecological and/or geographical scale of your project (i.e. village, city, political region, ecoregion – desert, mangroves, wetlands, watershed, forest, prairie, mountains, coastal, etc.)"
         intersectoral_aspect: "Is there an intersectoral aspect of your project? If so, please provide brief details of the people, institutions or strategies involved"
