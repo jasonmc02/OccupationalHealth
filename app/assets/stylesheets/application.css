@@ -21,5 +21,6 @@
  *= require compiled/portfolio
  *= require lib/animate
  *= require lib/flexslider
+ *= require lib/datepicker
  *= require style
  */

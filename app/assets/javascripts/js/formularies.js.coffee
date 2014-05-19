@@ -7,6 +7,7 @@ Formulary =
   previousImpactLevelId: null
 
 Formulary.initialize = ->
+  $(".datepicker").datepicker({format: "yyyy-mm-dd"})
   Formulary.filters = $("#portfolio #filters")
   Formulary.firstStep = $("#step1")
   Formulary.secondStep = $("#step2")

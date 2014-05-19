@@ -152,7 +152,7 @@ en:
         created_at: "Created"
       formulary_profile:
         name: "Project Title"
-        period: "Project duration (beginning and end dates): mm/yyyy – mm-yyyy"
+        project_begins: "Project duration (beginning and end dates): yyyy-mm-dd"
         region: "Country (or countries) and Region(s) of the project"
         institution: "Complete names of institution(s) involved in the project "
         objective: "What are the main objectives of your project?"

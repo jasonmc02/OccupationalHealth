@@ -8,9 +8,14 @@
 </div>
 <div class="row form">
   <div class="col-sm-12">
-    <%= f.label :period, :class => '' %>
+    <%= f.label :project_begins, :class => '' %>
     <div class="box">
-      <%= f.text_field :period, :class => 'form-control spaceless' %>
+      <div class="col-sm-4 paddigless">
+        <%= f.text_field :project_begins, :class => 'form-control spaceless datepicker' %>  
+      </div>
+      <div class="col-sm-4 paddigless">
+        <%= f.text_field :project_ends, :class => 'form-control spaceless datepicker' %>
+      </div>
     </div>
   </div>
 </div>

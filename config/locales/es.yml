@@ -152,7 +152,7 @@ es:
         created_at: "Creado"
       formulary_profile:
         name: "Nombre del proyecto"
-        period: "Periodo que abarca el proyecto"
+        project_begins: "Periodo que abarca el proyecto (yyyy-mm-dd)"
         region: "País(es) / Región (es) donde el proyecto se llevó a cabo"
         institution: "Nombre completo de la(s) institución (nes) de investigación involucradas en el proyecto: No queremos saber todas las instituciones involucradas?"
         objective: "¿Cuáles son los objetivos principales del proyecto? "
