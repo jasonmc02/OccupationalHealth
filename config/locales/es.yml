@@ -10,6 +10,9 @@ es:
     not_a_number: &NOT_A_NUMBER "Solo números"
     less_than: &LESS_THAN "Menor a %{count}"
   helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
     links:
       actions: "Acciones"
       new: "Nuevo"
