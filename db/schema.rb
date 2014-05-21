@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519025500) do
+ActiveRecord::Schema.define(version: 20140521034346) do
 
   create_table "formularies", force: true do |t|
     t.integer  "user_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140519025500) do
     t.boolean  "other_incorporation"
     t.string   "other_incorporation_description"
     t.boolean  "influence"
-    t.string   "inlfuence_description"
+    t.string   "influence_description"
     t.boolean  "develop_understanding"
     t.boolean  "including_actor"
     t.boolean  "enhancing_participation"

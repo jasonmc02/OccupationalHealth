@@ -130,86 +130,56 @@
     </label>
   </div>
 </div>
-<div class="row form marginless">
-  <div class="col-sm-12">
-    <%= f.label :implement, :class => '' %>
-    <div class="box">
-      <div class="radio">
-        <%= f.label :implement, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
-        <%= f.radio_button :implement, true, :class => "" %>
-      </div>
-      <div class="radio">
-        <%= f.label :implement, I18n.t("helpers.booleans.negative"), :value => "false" %>
-        <%= f.radio_button :implement, false, :class => "" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :implement_description, :class => 'col-sm-4 input-label' %>
-        <div class="col-sm-6">
-          <%= f.text_field :implement_description, :class => 'form-control spaceless' %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row form marginless">
-  <div class="col-sm-12">
-    <%= f.label :new_methodologies, :class => '' %>
-    <div class="box">
-      <div class="radio">
-        <%= f.label :new_methodologies, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
-        <%= f.radio_button :new_methodologies, true, :class => "" %>
-      </div>
-      <div class="radio">
-        <%= f.label :new_methodologies, I18n.t("helpers.booleans.negative"), :value => "false" %>
-        <%= f.radio_button :new_methodologies, false, :class => "" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :new_methodologies_description, :class => 'col-sm-4 input-label' %>
-        <div class="col-sm-6">
-          <%= f.text_field :new_methodologies_description, :class => 'form-control spaceless' %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row form marginless">
-  <div class="col-sm-12">
-    <%= f.label :other_incorporation, :class => '' %>
-    <div class="box">
-      <div class="radio">
-        <%= f.label :other_incorporation, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
-        <%= f.radio_button :other_incorporation, true, :class => "" %>
-      </div>
-      <div class="radio">
-        <%= f.label :other_incorporation, I18n.t("helpers.booleans.negative"), :value => "false" %>
-        <%= f.radio_button :other_incorporation, false, :class => "" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :other_incorporation_description, :class => 'col-sm-4 input-label' %>
-        <div class="col-sm-6">
-          <%= f.text_field :other_incorporation_description, :class => 'form-control spaceless' %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="row form">
-  <div class="col-sm-12">
-    <%= f.label :influence, :class => '' %>
-    <div class="box">
-      <div class="radio">
-        <%= f.label :influence, I18n.t("helpers.booleans.affirmative"), :value => "true"  %>
-        <%= f.radio_button :influence, true, :class => "" %>
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes checkbox">
+      <%= f.check_box :implement, :class => '' %><%= f.label :implement, :class => '' %>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="form-group marginless which_integration">
+      <%= f.label :implement_description, :class => 'col-sm-4 input-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :implement_description, :class => 'form-control spaceless' %>
       </div>
-      <div class="radio">
-        <%= f.label :influence, I18n.t("helpers.booleans.negative"), :value => "false" %>
-        <%= f.radio_button :influence, false, :class => "" %>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes checkbox">
+      <%= f.check_box :new_methodologies, :class => '' %><%= f.label :new_methodologies, :class => '' %>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="form-group marginless which_integration">
+      <%= f.label :new_methodologies_description, :class => 'col-sm-4 input-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :new_methodologies_description, :class => 'form-control spaceless' %>
       </div>
-      <div class="form-group">
-        <%= f.label :inlfuence_description, :class => 'col-sm-4 input-label' %>
-        <div class="col-sm-6">
-          <%= f.text_field :inlfuence_description, :class => 'form-control spaceless' %>
-        </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes checkbox">
+      <%= f.check_box :other_incorporation, :class => '' %><%= f.label :other_incorporation, :class => '' %>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="form-group marginless which_integration">
+      <%= f.label :other_incorporation_description, :class => 'col-sm-4 input-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :other_incorporation_description, :class => 'form-control spaceless' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="three-column-checkboxes checkbox">
+      <%= f.check_box :influence, :class => '' %><%= f.label :influence, :class => '' %>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="form-group marginless which_integration">
+      <%= f.label :influence_description, :class => 'col-sm-4 input-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :influence_description, :class => 'form-control spaceless' %>
       </div>
     </div>
   </div>
