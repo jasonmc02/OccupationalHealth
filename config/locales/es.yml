@@ -154,6 +154,7 @@ es:
         user_id: "Correo del usuario"
         created_at: "Creado"
       formulary_profile:
+        project_name: "Nombre del proyecto"
         name: "1. Nombre del proyecto"
         project_begins: "2. Periodo que abarca el proyecto (yyyy-mm-dd)"
         region: "3. País(es) / Región (es) donde el proyecto se llevó a cabo"

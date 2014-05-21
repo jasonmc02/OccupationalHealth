@@ -154,6 +154,7 @@ en:
         user_id: "User Email"
         created_at: "Created"
       formulary_profile:
+        project_name: "Project Title"
         name: "1. Project Title"
         project_begins: "2. Project duration (beginning and end dates): yyyy-mm-dd"
         region: "3. Country (or countries) and Region(s) of the project"
