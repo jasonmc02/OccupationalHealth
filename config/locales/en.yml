@@ -59,9 +59,9 @@ en:
   index:
     slides:
       scene: "A Latin American, Caribbean and Canadian Collaboration in ecohealth"
-      scene1: "Una colaboración América Latina, el Caribe y Canadá en ecosalud"
-      scene2: "Une collaboration Américaine Latine, Caraïbes et Canada latine en écosanté"
-      scene3: "Ama colaboração da América Latina, Caribes e Canadá em ecossaúde"
+      scene1: "Una colaboración América Latina, Caribe y Canadá en ecosalud"
+      scene2: "Une collaboration Amérique latine, Caraïbes et Canada en écosanté"
+      scene3: "Uma colaboração América latina, Caribes e Canadá em ecosaúde"
   navbar_elements:
     language:
       language: "Language"
