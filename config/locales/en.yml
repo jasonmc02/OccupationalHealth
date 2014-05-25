@@ -53,6 +53,13 @@ en:
         text_3: "Reset password"
         text_4: "Know your password?"
         text_5: "Log In"
+      change_password_page:
+        text_1: "Change your password"
+        text_2: "New password"
+        text_3: "Confirm your password"
+        text_4: "Change it!"
+        text_5: "Know your password?"
+        text_6: "Log In"
     booleans:
       affirmative: "Yes"
       negative: "No"

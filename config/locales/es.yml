@@ -53,6 +53,13 @@ es:
         text_3: "Restablecer Contraseña"
         text_4: "¿Conoces tu contraseña?"
         text_5: "Inicia sesión"
+      change_password_page:
+        text_1: "Cambiar tu contraseña"
+        text_2: "Nueva contraseña"
+        text_3: "Confirma la contraseña"
+        text_4: "Cambiarla!"
+        text_5: "¿Conoces tu contraseña?"
+        text_6: "Inicia sesión"
     booleans:
       affirmative: "Sí"
       negative: "No"

@@ -76,8 +76,19 @@ OccupationalHealth::Application.configure do
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
-  config.action_mailer.default_url_options = { host: '54.186.151.59' }
-
+  config.action_mailer.default_url_options = { host: '107.170.89.5' }
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    :port                 => Rails.configuration.smtp_port,
+    #:domain               => Rails.configuration.smtp_domain,
+    :address              => Rails.configuration.smtp_host,
+    :password             => Rails.configuration.smtp_password,
+    :user_name            => Rails.configuration.smtp_user,
+    :authentication       => :login,
+    :enable_starttls_auto => true
+  }
+  
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end

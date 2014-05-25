@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:update]
 
   def index
-    @users = User.where("id != 1")
+    @users = User.where("id != 1").page(params[:page]).per(Rails.configuration.per_page)
   end
 
   def update

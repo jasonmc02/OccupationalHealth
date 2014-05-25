@@ -5,9 +5,9 @@ class FormulariesController < ApplicationController
   # GET /formularies.json
   def index
     if current_user.role_id == 1
-      @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).load
+      @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).load.page(params[:page]).per(Rails.configuration.per_page)
     else
-      @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).where("formularies.user_id = ?", current_user.id).load
+      @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).where("formularies.user_id = ?", current_user.id).load.page(params[:page]).per(Rails.configuration.per_page)
     end
   end
 
