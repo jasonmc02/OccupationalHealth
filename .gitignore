@@ -2,6 +2,7 @@
 .DS_Store
 .Trashes
 /public/assets/
+/public/uploads/
 /log/*
 /config/database.yml
 /config/nginx.conf

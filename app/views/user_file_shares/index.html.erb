@@ -1,0 +1,29 @@
+<h1>Listing user_file_shares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>File</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_file_shares.each do |user_file_share| %>
+      <tr>
+        <td><%= user_file_share.user_id %></td>
+        <td><%= user_file_share.file_id %></td>
+        <td><%= link_to 'Show', user_file_share %></td>
+        <td><%= link_to 'Edit', edit_user_file_share_path(user_file_share) %></td>
+        <td><%= link_to 'Destroy', user_file_share, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User file share', new_user_file_share_path %>

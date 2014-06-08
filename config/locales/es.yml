@@ -13,6 +13,7 @@ es:
     submit:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
+      add: "Agregar %{model}"
     links:
       actions: "Acciones"
       new: "Nuevo"
@@ -22,6 +23,9 @@ es:
       back: "Completar"
       confirm: "¿Estás seguro?"
       save: "Guardar"
+      download: "Descargar"
+      share: "Compartir"
+      add: "Agregar"
     devise:
       titles:
         sign_up: "Sign Up"
@@ -80,6 +84,7 @@ es:
       log_in: "Inicia Sesión"
       sign_up: "Registrate"
       log_out: "Cerrar Sesión"
+      repository: "Repositorio"
     links:
       home: "Inicio"
       formulary: "Formularios"
@@ -91,6 +96,8 @@ es:
     modal_title: "Cambiar Rol del Usuario"
     modal_select_role: "Seleccione el rol"
     button_role_assign: "Asignar Role"
+  user_files_page:
+    modal_title: "Agregar personas para compartir el archivo"
   selects:
     user_roles:
       admin: "Administrador"
@@ -143,12 +150,18 @@ es:
     research: "Investigación"
     action: "Acción"
     policy: "Política"
+  user_file_sections:
+    my_files: "Mis archivos"
+    shared_with_me: "Compartidos conmigo"
   activerecord:
     errors:
       models:
     models:
       user: "Usuario"
       formulary: "Formulario"
+      user_file:
+        model_name: "Repositorio"
+        model_util: "Archivo"
     attributes:
       user:
         email: "Correo electrónico"
@@ -156,6 +169,8 @@ es:
         password_confirmation: "Confirmar contraseña"
         remember_me: "Recordarme"
         role_id: "Rol"
+        is_shared: "¿Está compartido?"
+        owner: "Dueño"
       formulary:
         id: "Id"
         user_id: "Correo del usuario"
@@ -310,3 +325,9 @@ es:
         multiple_kind_name: "¿Cuáles?"
         improve_policies: "4. ¿Cuántos grupos de la comunidad y fuera de ella, se han apropiado  profundamente de los resultados del proyecto para desarrollar y/o ejecutar (en aquellos casos donde existen y no se aplican) políticas que les beneficien? Describa brevemente"
         project_result: "5. ¿Logró su proyecto hacer una intervención exitosa o un cambio en las políticas de salud y/ambiente a:"
+      user_file:
+        file: "Archivo"
+        name: "Nombre"
+        share: "Compartido"
+        note: "Notas"
+        misc: "Otros"

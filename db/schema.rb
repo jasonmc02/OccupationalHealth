@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521034346) do
+ActiveRecord::Schema.define(version: 20140608155044) do
 
   create_table "formularies", force: true do |t|
     t.integer  "user_id"
@@ -198,6 +198,24 @@ ActiveRecord::Schema.define(version: 20140521034346) do
     t.string   "which_integration"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "user_file_shares", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "user_file_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_files", force: true do |t|
+    t.integer  "user_id"
+    t.string   "file"
+    t.string   "name"
+    t.boolean  "share"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "misc"
   end
 
   create_table "users", force: true do |t|

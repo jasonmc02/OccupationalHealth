@@ -35,6 +35,13 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <% if current_user.role_id == Rails.configuration.admin_role %>
+                <li>
+                  <a href="<%= user_files_path %>">
+                    <%= t 'navbar_elements.user.repository' %>
+                  </a>
+                </li>
+              <% end %>
               <li>
                 <a href="<%= destroy_user_session_path %>" data-method="delete">
                   <%= t 'navbar_elements.user.log_out' %>

@@ -10,11 +10,20 @@ module ApplicationHelper
   end
 
   def submit_button(model)
-    model_name = I18n.t "activerecord.models.#{model.class.name.underscore}"
-    if model.new_record?
-      I18n.t("helpers.submit.create", :model => model_name)
+    if model.class.name.underscore == "user_file"
+      model_name = I18n.t "activerecord.models.user_file.model_util"
+      if model.new_record?
+        I18n.t("helpers.submit.add", :model => model_name)
+      else
+        I18n.t("helpers.submit.update", :model => model_name)
+      end
     else
-      I18n.t("helpers.submit.update", :model => model_name)
+      model_name = I18n.t "activerecord.models.#{model.class.name.underscore}"
+      if model.new_record?
+        I18n.t("helpers.submit.create", :model => model_name)
+      else
+        I18n.t("helpers.submit.update", :model => model_name)
+      end
     end
   end
 end

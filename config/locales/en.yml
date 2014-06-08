@@ -13,6 +13,7 @@ en:
     submit:
       create: "Create %{model}"
       update: "Update %{model}"
+      add: "Add %{model}"
     links:
       actions: "Actions"
       new: "New"
@@ -22,6 +23,9 @@ en:
       back: "Complete"
       confirm: "Are you sure?"
       save: "Save"
+      download: "Download"
+      share: "Share"
+      add: "Add"
     devise:
       titles:
         sign_up: "Sign Up"
@@ -80,6 +84,7 @@ en:
       log_in: "Log In"
       sign_up: "Sign Up"
       log_out: "Log Out"
+      repository: "Repository"
     links:
       home: "Home"
       formulary: "Formularies"
@@ -91,6 +96,8 @@ en:
     modal_title: "Change User Role"
     modal_select_role: "Select the role"
     button_role_assign: "Role Assign"
+  user_files_page:
+    modal_title: "Add people to share the file"
   selects:
     user_roles:
       admin: "Administrator"
@@ -143,12 +150,18 @@ en:
     research: "Research"
     action: "Action"
     policy: "Policy"
+  user_file_sections:
+    my_files: "My files"
+    shared_with_me: "Shared with me"
   activerecord:
     errors:
       models:
     models:
       user: "User"
       formulary: "Formulary"
+      user_file:
+        model_name: "Repository"
+        model_util: "File"
     attributes:
       user:
         email: "Email"
@@ -156,6 +169,8 @@ en:
         password_confirmation: "Confirm Password"
         remember_me: "Remember me"
         role_id: "Role"
+        is_shared: "It's shared?"
+        owner: "Owner"
       formulary:
         id: "Id"
         user_id: "User Email"
@@ -310,3 +325,9 @@ en:
         multiple_kind_name: "Which ones?"
         improve_policies: "4. Which community groups, and non-community groups, have taken-up and used the results of your project to develop and/or undertake (in those cases where they exist, and did not have existing similar policies) initiative to change and improve their policies?"
         project_result: "5. Has your project resulted in an intervention, or a policy change pertaining to health and ecosystems/environment"
+      user_file:
+        file: "Archive"
+        name: "Name"
+        share: "Shared"
+        note: "Notes"
+        misc: "Other"

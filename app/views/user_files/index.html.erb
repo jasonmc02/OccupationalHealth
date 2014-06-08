@@ -1,0 +1,207 @@
+<%- model_class = UserFile -%>
+<%- model_subclass = User -%>
+<script type="text/javascript">
+  var UserFile = {};
+  UserFile.currentStep = <%= @currentStep %>;
+</script>
+<div id="service_1">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= t 'activerecord.models.user_file.model_name' %></h3>
+      <%= link_to t("helpers.links.new"), new_user_file_path, :class => 'btn btn-primary pull-right' %>
+    </div>
+    <div id="portfolio">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="filters_container">
+            <ul id="filters">
+              <li><a href="#" data-step="1" <%= @currentStep.to_s.eql?("1") ? "class=active" : "" %>><%= t "user_file_sections.my_files" %></a></li>
+              <li class="separator">/</li>
+              <li><a href="#" data-step="2" <%= @currentStep.to_s.eql?("2") ? "class=active" : "" %>><%= t "user_file_sections.shared_with_me" %></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="step1" class="steps">
+      <div class="row" align="center">
+        <%= paginate @my_files, :params => {:step => "1"} %>
+      </div>
+      <div class="row service_wrapper">
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <h6><%= model_class.human_attribute_name(:name) %></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="feature">
+            <div class="text">
+              <h6><%= model_class.human_attribute_name(:note) %></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="feature last">
+            <div class="text">
+              <h6><%= t("helpers.links.actions") %></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% @my_files.each do |my_file| %>
+        <div class="row service_wrapper">
+          <div class="col-sm-3">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= my_file.file.blank? ? '' : my_file.file.file.original_filename %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= my_file.note %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="feature last">
+              <div class="text">
+                <p>
+                  <%= link_to t("helpers.links.edit"),
+                          edit_user_file_path(my_file),
+                          :class => 'btn btn-sm btn-info' %>
+                  <%= link_to t("helpers.links.destroy"),
+                          user_file_path(my_file),
+                          :method => :delete,
+                          :data => { :confirm => t("helpers.links.confirm") },
+                          :class => 'btn btn-sm btn-danger' %>
+                  <% unless my_file.file.blank? %>
+                    <%= link_to t("helpers.links.download"),
+                            download_user_file_path(my_file),
+                            :class => "btn btn-sm btn-success" %>
+                    <a href="" class="btn btn-sm btn-warning share" data-id="<%= my_file.id %>">
+                      <%= I18n.t("helpers.links.share") %>
+                    </a>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div id="step2" class="steps">
+      <div class="row" align="center">
+        <%= paginate @shared_with_me, :params => {:step => "2"} %>
+      </div>
+      <div class="row service_wrapper">
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <h6><%= model_class.human_attribute_name(:name) %></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <h6><%= model_class.human_attribute_name(:note) %></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <h6><%= model_subclass.human_attribute_name(:owner) %></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature last">
+            <div class="text">
+              <h6><%= t("helpers.links.actions") %></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% @shared_with_me.each do |shared| %>
+        <div class="row service_wrapper">
+          <div class="col-sm-3">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= shared.file.blank? ? '' : shared.file.file.original_filename %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= shared.note %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= shared.user.email %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="feature last">
+              <div class="text">
+                <p>
+                  <%= link_to t("helpers.links.destroy"),
+                          stop_sharing_user_file_share_path(shared),
+                          :method => :delete,
+                          :data => { :confirm => t("helpers.links.confirm") },
+                          :class => 'btn btn-sm btn-danger' %>
+                  <%= link_to t("helpers.links.download"),
+                          download_user_file_path(shared),
+                          :class => "btn btn-sm btn-success" %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div id="modal-share-file" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= I18n.t "user_files_page.modal_title" %></h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <th><%= model_subclass.human_attribute_name(:email) %></th>
+            <th><%= model_subclass.human_attribute_name(:is_shared) %></th>
+          </thead>
+          <tbody id="users"></tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal"><%= I18n.t "helpers.links.cancel" %></button>
+        <button class="btn btn-primary share" data-dismiss="modal"><%= I18n.t "helpers.links.share" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "js/user_files" %>

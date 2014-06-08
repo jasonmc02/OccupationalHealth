@@ -1,0 +1,20 @@
+<%= form_for @user_file, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :file, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-4">
+      <%= f.file_field :file, :class => "" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :note, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :note, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-md-4">
+      <%= link_to t("helpers.links.cancel"), user_files_path, :class => 'btn btn-default' %>
+      <%= f.submit submit_button(@user_file), :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
