@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  form_wrapper_id: 1
+  title_en: MyString
+  title_es: MyString
+  title_fr: MyString
+  title_pt: MyString
+  description_en: MyString
+  description_es: MyString
+  description_fr: MyString
+  description_pt: MyString
+  sort_index: 1
+
+two:
+  form_wrapper_id: 1
+  title_en: MyString
+  title_es: MyString
+  title_fr: MyString
+  title_pt: MyString
+  description_en: MyString
+  description_es: MyString
+  description_fr: MyString
+  description_pt: MyString
+  sort_index: 1

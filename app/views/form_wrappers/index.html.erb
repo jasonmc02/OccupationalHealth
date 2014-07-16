@@ -1,0 +1,116 @@
+<%- model_class = FormWrapper -%>
+<%- model_subclass = CustomForm -%>
+<div id="service_1">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= I18n.t('activerecord.models.form_wrapper.plural').pluralize %></h3>
+      <%= link_to t("helpers.links.new"), new_form_wrapper_path, :class => 'btn btn-primary pull-right' %>
+    </div>
+    <div class="row" align="center">
+      <%= paginate @form_wrappers %>
+    </div>
+    <div class="row service_wrapper">
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:title_index) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:description_index) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="feature last">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:active) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="feature last">
+          <div class="text">
+            <h6><%= t("helpers.links.actions") %></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% @form_wrappers.each do |form_wrapper| %>
+      <div class="row service_wrapper">
+        <div class="col-sm-4">
+          <div class="feature">
+            <div class="text">
+              <p>
+                <%= form_wrapper["title_#{locale}"] %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="feature">
+            <div class="text">
+              <p>
+                <%= form_wrapper["description_#{locale}"] %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <div class="feature last">
+            <div class="text">
+              <p>
+                <%= form_wrapper.active ? t("helpers.booleans.affirmative") : t("helpers.booleans.negative") %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="feature last">
+            <div class="text">
+              <p>
+                <%= link_to t("helpers.links.edit"),
+                      edit_form_wrapper_path(form_wrapper),
+                      :class => 'btn btn-sm btn-info' %>
+                <%= link_to t("helpers.links.destroy"),
+                      form_wrapper_path(form_wrapper),
+                      :method => :delete,
+                      :data => { :confirm => t("helpers.links.confirm") },
+                      :class => 'btn btn-sm btn-danger' %>
+                <%= link_to model_class.human_attribute_name(:show_sections),
+                      sections_section_path(form_wrapper),
+                      :class => "btn btn-xs btn-success" %>
+                <%= link_to model_class.human_attribute_name(:add_section),
+                      new_section_path(:form_wrapper_id => form_wrapper.id),
+                      :class => "btn btn-sm btn-primary" %>
+                <%= link_to model_class.human_attribute_name(:show_questions),
+                      questions_custom_form_path(form_wrapper),
+                      :class => "btn btn-xs btn-success" %>
+                <%= link_to model_class.human_attribute_name(:add_question),
+                      new_custom_form_path(:form_wrapper_id => form_wrapper.id),
+                      :class => "btn btn-sm btn-primary" %>
+                <% if form_wrapper.active %>
+                  <%= link_to t("helpers.links.deactivate"),
+                        deactive_form_wrappers_path,
+                        :method => :post,
+                        :data => { :confirm => t("helpers.alerts.deactivate_form_wrapper") },
+                        :class => 'btn btn-sm btn-warning' %>
+                <% else %>
+                  <%= link_to t("helpers.links.active"),
+                        active_form_wrapper_path(form_wrapper),
+                        :method => :post,
+                        :data => { :confirm => t("helpers.alerts.active_form_wrapper") },
+                        :class => 'btn btn-sm btn-warning' %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= javascript_include_tag "js/form_wrappers" %>

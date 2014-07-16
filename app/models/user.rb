@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :formularies
   has_many :files
+  has_many :answers
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

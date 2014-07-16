@@ -1,0 +1,39 @@
+<h1>Listing custom_forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Type</th>
+      <th>En</th>
+      <th>Es</th>
+      <th>Fr</th>
+      <th>Pt</th>
+      <th>Required</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custom_forms.each do |custom_form| %>
+      <tr>
+        <td><%= custom_form.section_id %></td>
+        <td><%= custom_form.type %></td>
+        <td><%= custom_form.en %></td>
+        <td><%= custom_form.es %></td>
+        <td><%= custom_form.fr %></td>
+        <td><%= custom_form.pt %></td>
+        <td><%= custom_form.required %></td>
+        <td><%= link_to 'Show', custom_form %></td>
+        <td><%= link_to 'Edit', edit_custom_form_path(custom_form) %></td>
+        <td><%= link_to 'Destroy', custom_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custom form', new_custom_form_path %>

@@ -17,6 +17,29 @@ module ApplicationHelper
       else
         I18n.t("helpers.submit.update", :model => model_name)
       end
+    elsif model.class.name.underscore == "form_wrapper"
+      if model.new_record?
+        model_name = I18n.t "activerecord.models.custom_form.plural"
+        I18n.t("helpers.submit.add", :model => model_name)
+      else
+        model_name = I18n.t "activerecord.models.form_wrapper.single"
+        I18n.t("helpers.submit.update", :model => model_name)
+      end
+    elsif model.class.name.underscore == "section"
+      if model.new_record?
+        model_name = I18n.t "activerecord.models.section.single"
+        I18n.t("helpers.submit.add", :model => model_name)
+      else
+        model_name = I18n.t "activerecord.models.section.single"
+        I18n.t("helpers.submit.update", :model => model_name)
+      end
+    elsif model.class.name.underscore == "custom_form"
+      model_name = I18n.t "activerecord.models.custom_form.single"
+      if model.new_record?
+        I18n.t("helpers.submit.add", :model => model_name)
+      else
+        I18n.t("helpers.submit.update", :model => model_name)
+      end
     else
       model_name = I18n.t "activerecord.models.#{model.class.name.underscore}"
       if model.new_record?

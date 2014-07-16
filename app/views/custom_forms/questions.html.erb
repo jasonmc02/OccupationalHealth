@@ -1,0 +1,102 @@
+<%- model_class = Section -%>
+<%- model_subclass = CustomForm -%>
+<div id="service_1">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= @form_wrapper["title_#{locale}"] + " " %><%= I18n.t("activerecord.models.custom_form.plural") %></h3>
+      <%= link_to t("helpers.links.new"), new_custom_form_path(:form_wrapper_id => @form_wrapper.id), :class => 'btn btn-primary pull-right' %>
+      <%= link_to t("helpers.links.return_to") + t("activerecord.models.form_wrapper.plural"), form_wrappers_path, :class => 'btn btn-default pull-right button-margin-rigth' %>
+    </div>
+    <div class="row" align="center">
+      <%= paginate @sections %>
+    </div>
+    <div class="row service_wrapper">
+      <div class="col-sm-1">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_subclass.human_attribute_name(:sort_index_text) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_subclass.human_attribute_name(:text_index) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_subclass.human_attribute_name(:field_type_index) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="feature last">
+          <div class="text">
+            <h6><%= t("helpers.links.actions") %></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% @sections.each do |section| %>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="p-no-margin">
+            <strong><%= section["title_#{locale}"] %>: </strong><%= section["description_#{locale}"]%>
+          </p>
+        </div>
+      </div>
+      <hr>
+      <% section.custom_forms.each do |question| %>
+        <div class="row service_wrapper">
+          <div class="col-sm-1">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= question.sort_index %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= question["text_#{locale}"] %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="feature">
+              <div class="text">
+                <p>
+                  <%= I18n.t("selects.question_types.#{question.field_type}") %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="feature last">
+              <div class="text">
+                <p>
+                  <%= link_to t("helpers.links.edit"),
+                        edit_custom_form_path(question),
+                        :class => 'btn btn-sm btn-info' %>
+                  <%= link_to t("helpers.links.destroy"),
+                        custom_form_path(question),
+                        :method => :delete,
+                        :data => { :confirm => t("helpers.links.confirm") },
+                        :class => 'btn btn-sm btn-danger' %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

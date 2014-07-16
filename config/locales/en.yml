@@ -17,6 +17,7 @@ en:
     links:
       actions: "Actions"
       new: "New"
+      new_female: "New"
       edit: "Edit"
       destroy: "Delete"
       cancel: "Cancel"
@@ -26,6 +27,20 @@ en:
       download: "Download"
       share: "Share"
       add: "Add"
+      next: "Next Step"
+      other: "Add More"
+      show: "Show"
+      active: "Activate"
+      deactivate: "Deactivate"
+      save_continue: "Save and add more"
+      return: "Return "
+      return_to: "Return to "
+      submit: "Submit"
+      remove: "Remove"
+      go_to: "Go to "
+    alerts:
+      active_form_wrapper: "Activating this form will appear as default form for all users, other assets forms are disabled! \n Do you want to continue?"
+      deactivate_form_wrapper: "Disabling this form the form is activated by default for all users! \n Do you want to continue?"
     devise:
       titles:
         sign_up: "Sign Up"
@@ -67,12 +82,27 @@ en:
     booleans:
       affirmative: "Yes"
       negative: "No"
+      true: "Yes"
+      false: "No"
   index:
     slides:
       scene: "A Latin American, Caribbean and Canadian Collaboration in ecohealth"
       scene1: "Una colaboración América Latina, Caribe y Canadá en ecosalud"
       scene2: "Une collaboration Amérique latine, Caraïbes et Canada en écosanté"
       scene3: "Uma colaboração América latina, Caribes e Canadá em ecosaúde"
+  language:
+    en: "English"
+    es: "Spanish"
+    fr: "French"
+    pt: "Portuguese"
+  steps:
+    step_1: "Step 1: "
+    step_2: "Step 2: "
+    step_3: "Step 3: "
+    step_4: "Step 4: "
+    step_5: "Step 5: "
+    step_6: "Step 6: "
+    step_7: "Step 7: "
   navbar_elements:
     language:
       language: "Language"
@@ -92,6 +122,7 @@ en:
     configuration:
       configuration: "Config"
       users_settings: "Users Settings"
+      form_wrapper: "Formularies Settings"
   user_roles_page:
     modal_title: "Change User Role"
     modal_select_role: "Select the role"
@@ -99,6 +130,10 @@ en:
   user_files_page:
     modal_title: "Add people to share the file"
   selects:
+    question_types:
+      input: "Input text"
+      checkbox: "Multiple selection"
+      select: "Single choice"
     user_roles:
       admin: "Administrator"
       normal: "Normal User"
@@ -138,21 +173,28 @@ en:
     formulary_action_6: "6. During your project, what evaluation strategies have you used to enable making changes that have improved project?"
     formulary_action_7: "7. On what level have the principle impacts of the project been achieved?"
     formulary_policy_2: "2. Has your project succeeded in including, intervening or influencing any health or environmental policies?"
-  formulary_introductions:
-    registration: "Registration: Eko-Santé is a collaboration of researchers across the Americas and the Caribbean interested in capturing a participatory understanding of how the field, theory and practice of EcoHealth research is evolving in response to the diverse contexts within which it is employed. Our goal is to broaden and deepen our knowledge about what kinds of issues EcoHealth research engages with, and how involved communities, organizations and research groups build capacity to address these complex problems. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
-    context: "Context: Local socio-ecological and cultural contexts shape the way that teams are formed and the process of research design, implementation, evaluation and knowledge translation. A broadened understanding of EcoHealth research must also be shaped by the local contexts of those who undertake it. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
-    research: "Research: ecohealth is an open approach to participatory academic research that can facilitate many different project design methodologies and analysis. Diversityof experience strengthens these approaches through local level innovation and input. This questionnaire is designed to find out about the approaches to research design, methodology and analysis that you are using. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
-    action: "Action: EcoHealth research is participatory in nature and lends itself to moving knowledge to action, but this can take many forms. Diverse groups of actors andstakeholders, in different sectors, disciplines and institutional and social roles influence the \"action\" quality of EcoHealth approaches. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
-    policy: "Policy: Sustainability and moving knowledge to action in EcoHealth research often includes considerations for and working on policy assessments, analyses, recommendations, and changes. Understanding the ways that diverse projectsand endeavours engage with policy and policy-making mechanisms in their local, regional, national and international contexts will help us to clarify opportunities and articulations of systems thinking and EcoHealth work. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
   formulary_sections:
     registration: "Registration"
     context: "Context"
     research: "Research"
     action: "Action"
     policy: "Policy"
+  formulary_introductions:
+    registration: "Registration: Eko-Santé is a collaboration of researchers across the Americas and the Caribbean interested in capturing a participatory understanding of how the field, theory and practice of EcoHealth research is evolving in response to the diverse contexts within which it is employed. Our goal is to broaden and deepen our knowledge about what kinds of issues EcoHealth research engages with, and how involved communities, organizations and research groups build capacity to address these complex problems. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    context: "Context: Local socio-ecological and cultural contexts shape the way that teams are formed and the process of research design, implementation, evaluation and knowledge translation. A broadened understanding of EcoHealth research must also be shaped by the local contexts of those who undertake it. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    research: "Research: ecohealth is an open approach to participatory academic research that can facilitate many different project design methodologies and analysis. Diversityof experience strengthens these approaches through local level innovation and input. This questionnaire is designed to find out about the approaches to research design, methodology and analysis that you are using. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    action: "Action: EcoHealth research is participatory in nature and lends itself to moving knowledge to action, but this can take many forms. Diverse groups of actors andstakeholders, in different sectors, disciplines and institutional and social roles influence the \"action\" quality of EcoHealth approaches. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+    policy: "Policy: Sustainability and moving knowledge to action in EcoHealth research often includes considerations for and working on policy assessments, analyses, recommendations, and changes. Understanding the ways that diverse projectsand endeavours engage with policy and policy-making mechanisms in their local, regional, national and international contexts will help us to clarify opportunities and articulations of systems thinking and EcoHealth work. By providing details and experiences from your own research, your project can contribute to this greater understanding around “who is doing EcoHealth research?”, “how are they doing it?”, and “what do the hope to achieve with it?”"
+  custom_form_introductions:
+    form_wrapper: "In this first step you should write a title for the new form and give a description to distinguish it, then you can proceed to the second step."
+    section: "This step creates the sections you want to split form, the system will create a section blank by default, so you can leave this part and complete it or add more sections later."
+    custom_form: "This is the final step, this is where each question is created, you must add the text that will define the question, also, you must add the type of response you want to receive and add to that response options if necessary, you must also select the section to which belongs to this new question, and finally, indicates whether this question should be answered compulsorily by the user."
   user_file_sections:
     my_files: "My files"
     shared_with_me: "Shared with me"
+  custom_forms:
+    field_type_option: "Option"
+    misc: "Title for these options"
   activerecord:
     errors:
       models:
@@ -162,6 +204,17 @@ en:
       user_file:
         model_name: "Repository"
         model_util: "File"
+      form_wrapper: 
+        single: "Custom Formulary"
+        plural: "Custom Formulary"
+      section: 
+        single: "Section"
+        plural: "Sections"
+        titlelize: "Formulary Sections"
+      custom_form: 
+        single: "Question"
+        plural: "Questions"
+      answer: "Formulary"
     attributes:
       user:
         email: "Email"
@@ -331,3 +384,32 @@ en:
         share: "Shared"
         note: "Notes"
         misc: "Other"
+      form_wrapper:
+        title_index: "Title"
+        title_new: "Add a Title for the new form you are creating"
+        description_index: "Description"
+        description_new: "Add a Description for this new form"
+        active: "Active"
+        show_sections: "Show Sections"
+        add_section: "Add Section"
+        show_questions: "Show Questions"
+        add_question: "Add Question"
+      section:
+        title: "Add a Title for the new form you are creating"
+        description: "Add a Description for this new form"
+        sort_index: "What is the numeric Order or Position of this section?"
+        title_index: "Title"
+        description_index: "Description"
+        sort: "Order"
+      custom_form:
+        field_type: "What kind of question should be?"
+        field_type_index: "Type of question"
+        text: "What text should have the question?"
+        text_index: "Text of question"
+        required: "Is it a required question?"
+        section_id: "Which section belongs this question?"
+        sort_index_text: "Number"
+        sort_index: "What is the number of the question?"
+      answer:
+        project_name: "Form's Title"
+        created_at: "Created"

@@ -16,3 +16,4 @@
 //= require turbolinks
 //= require theme/theme
 //= require lib/bootstrap-datepicker
+//= require lib/dist/jquery.validate.min

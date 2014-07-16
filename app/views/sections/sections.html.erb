@@ -1,0 +1,96 @@
+<%- model_class = Section -%>
+<div id="service_1">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= @form_wrapper["title_#{locale}"] + " " %><%= I18n.t("activerecord.models.section.plural") %></h3>
+      <%= link_to t("helpers.links.new"), new_section_path(:form_wrapper_id => @form_wrapper.id), :class => 'btn btn-primary pull-right' %>
+      <%= link_to t("helpers.links.return_to") + t("activerecord.models.form_wrapper.plural"), form_wrappers_path, :class => 'btn btn-default pull-right button-margin-rigth' %>
+    </div>
+    <div class="row" align="center">
+      <%= paginate @sections %>
+    </div>
+    <div class="row service_wrapper">
+      <div class="col-sm-3">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:title_index) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:description_index) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="feature">
+          <div class="text">
+            <h6><%= model_class.human_attribute_name(:sort) %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="feature last">
+          <div class="text">
+            <h6><%= t("helpers.links.actions") %></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% @sections.each do |section| %>
+      <div class="row service_wrapper">
+        <div class="col-sm-3">
+          <div class="feature">
+            <div class="text">
+              <p>
+                <%= section["title_#{locale}"] %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="feature">
+            <div class="text">
+              <p>
+                <%= section["description_#{locale}"] %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <div class="feature">
+            <div class="text">
+              <p>
+                <%= section.sort_index %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature last">
+            <div class="text">
+              <p>
+                <%= link_to t("helpers.links.edit"),
+                      edit_section_path(section),
+                      :class => 'btn btn-sm btn-info' %>
+                <%= link_to t("helpers.links.destroy"),
+                      section_path(section),
+                      :method => :delete,
+                      :data => { :confirm => t("helpers.links.confirm") },
+                      :class => 'btn btn-sm btn-danger' %>
+                <%= link_to model_class.human_attribute_name(:show_questions),
+                      questions_custom_form_path(@form_wrapper),
+                      :class => "btn btn-xs btn-success" %>
+                <%= link_to model_class.human_attribute_name(:add_question),
+                      new_custom_form_path(:form_wrapper_id => @form_wrapper.id),
+                      :class => "btn btn-sm btn-primary" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

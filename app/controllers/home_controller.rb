@@ -4,4 +4,8 @@ class HomeController < ApplicationController
   
   def index
   end
+
+  def custom_form
+  	
+  end
 end

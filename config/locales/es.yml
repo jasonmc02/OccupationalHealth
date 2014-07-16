@@ -17,6 +17,7 @@ es:
     links:
       actions: "Acciones"
       new: "Nuevo"
+      new_female: "Nueva"
       edit: "Editar"
       destroy: "Eliminar"
       cancel: "Cancelar"
@@ -26,6 +27,20 @@ es:
       download: "Descargar"
       share: "Compartir"
       add: "Agregar"
+      next: "Paso Siguiente"
+      other: "Agregar Más"
+      show: "Ver"
+      active: "Activar"
+      deactivate: "Desactivar"
+      save_continue: "Guardar y agregar más"
+      return: "Volver "
+      return_to: "Volver a "
+      submit: "Enviar"
+      remove: "Remover"
+      go_to: "Ir a "
+    alerts:
+      active_form_wrapper: "¡Al activar este formulario aparecerá como formulario por defecto para todos los usuarios, los demás formularios activos se desactivarán! \n ¿Deseas continuar?"
+      deactivate_form_wrapper: "¡Al desactivar este formulario se activará el formulario por defecto para todos los usuarios! \n ¿Deseas continuar?"
     devise:
       titles:
         sign_up: "Sign Up"
@@ -67,12 +82,34 @@ es:
     booleans:
       affirmative: "Sí"
       negative: "No"
+      true: "Sí"
+      false: "No"
+  views:
+    pagination:
+      first: "&laquo; Primera"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Siguiente &rsaquo;"
+      truncate: "&hellip;"
   index:
     slides:
       scene: "Una colaboración América Latina, Caribe y Canadá en ecosalud"
       scene1: "Una colaboración América Latina, Caribe y Canadá en ecosalud"
       scene2: "Une collaboration Amérique latine, Caraïbes et Canada en écosanté"
       scene3: "Uma colaboração América latina, Caribes e Canadá em ecosaúde"
+  language:
+    en: "Inglés"
+    es: "Español"
+    fr: "Francés"
+    pt: "Portugués"
+  steps:
+    step_1: "Paso 1: "
+    step_2: "Paso 2: "
+    step_3: "Paso 3: "
+    step_4: "Paso 4: "
+    step_5: "Paso 5: "
+    step_6: "Paso 6: "
+    step_7: "Paso 7: "
   navbar_elements:
     language:
       language: "Idioma"
@@ -91,7 +128,8 @@ es:
       report: "Reportes"
     configuration:
       configuration: "Config"
-      users_settings: "Configurar usuarios"
+      users_settings: "Configurar Usuarios"
+      form_wrapper: "Configurar Formularios"
   user_roles_page:
     modal_title: "Cambiar Rol del Usuario"
     modal_select_role: "Seleccione el rol"
@@ -99,6 +137,10 @@ es:
   user_files_page:
     modal_title: "Agregar personas para compartir el archivo"
   selects:
+    question_types:
+      input: "Campo de texto"
+      checkbox: "Selección multiple"
+      select: "Selección única"
     user_roles:
       admin: "Administrador"
       normal: "Usuario Normal"
@@ -138,21 +180,28 @@ es:
     formulary_action_6: "6. Durante su proyecto, cuales estrategias de evaluación se han utilizado en su proyecto que le permitieron hacer cambios para mejorar acciones en:"
     formulary_action_7: "7. Considera que el principal impacto de las acciones de su proyecto fue en un nivel:"
     formulary_policy_2: "2. Su proyecto logró incluir/intervenir o influir en alguna política de salud/ambiente:"
-  formulary_introductions:
-    registration: "Registro: Eko-santé es una colaboración de investigadores de América Latina, el Caribe y Canadá interesados en capturar un entendimiento participativo de cómo el campo, la teoría y la práctica de las investigaciones en ecosalud se enmarcan dentro de respuestas en los diversos contextos en los que cada investigador trabaja. Nuestra meta es ampliar y profundizar nuestro conocimiento sobre qué clase de problemas involucra la investigación en ecosalud, cómo se involucran a las comunidades, organizaciones y grupos de investigadores en la construcción de capacidades para hacer frente a estos problemas complejos. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
-    context: "Contexto: El contexto local, socio-ecológico y cultural, moldea la formación de los equipos y el proceso del diseño de investigación, implementación, evaluación y traducción del conocimiento. Un amplio entendimiento de las investigaciones en ecosalud debe también moldearse por el contexto local de aquellos que forman parte de este. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
-    research: "Investigación: Ecosalud es un enfoque abierto a las investigaciones académicas participativas que pueden facilitar los diversos diseños metodológicos y de análisis de los proyectos. La diversidad de experiencias fortalece este enfoque a través de la innovación y de aportes a nivel local. Este cuestionario está diseñado para conocer los enfoques en los diseños de investigación, metodología y análisis que se están utilizando. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
-    action: "Acción: Las investigaciones en ecosalud son participativas por naturaleza y se presta para mover conocimientos hacia acciones, pero esto puede ser de muchas formas. Grupos diversos de actores y tomadores de decisiones, en diferentes sectores, disciplinas e instituciones y roles sociales influencian la calidad de las “acciones” en el enfoque ecosalud. Proveyendo detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
-    policy: "Política: La sostenibilidad y el movimiento de conocimiento en acciones en las investigaciones de ecosalud a menudo incluye consideraciones sobre cómo trabajan la evaluación, análisis, recomendaciones y cambios en las políticas. Entendiendo las formas de los diversos proyectos y el esfuerzo dedicado con las políticas y el mecanismo de creación de políticas en contextos locales, regionales, nacionales e internacionales ayudará a tener claro oportunidades y sistemas de articulación pensando en el trabajo de ecosalud. Proveyendo detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”."
   formulary_sections:
     registration: "Registro"
     context: "Contexto"
     research: "Investigación"
     action: "Acción"
     policy: "Política"
+  formulary_introductions:
+    registration: "Registro: Eko-santé es una colaboración de investigadores de América Latina, el Caribe y Canadá interesados en capturar un entendimiento participativo de cómo el campo, la teoría y la práctica de las investigaciones en ecosalud se enmarcan dentro de respuestas en los diversos contextos en los que cada investigador trabaja. Nuestra meta es ampliar y profundizar nuestro conocimiento sobre qué clase de problemas involucra la investigación en ecosalud, cómo se involucran a las comunidades, organizaciones y grupos de investigadores en la construcción de capacidades para hacer frente a estos problemas complejos. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    context: "Contexto: El contexto local, socio-ecológico y cultural, moldea la formación de los equipos y el proceso del diseño de investigación, implementación, evaluación y traducción del conocimiento. Un amplio entendimiento de las investigaciones en ecosalud debe también moldearse por el contexto local de aquellos que forman parte de este. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    research: "Investigación: Ecosalud es un enfoque abierto a las investigaciones académicas participativas que pueden facilitar los diversos diseños metodológicos y de análisis de los proyectos. La diversidad de experiencias fortalece este enfoque a través de la innovación y de aportes a nivel local. Este cuestionario está diseñado para conocer los enfoques en los diseños de investigación, metodología y análisis que se están utilizando. Proporcionando detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    action: "Acción: Las investigaciones en ecosalud son participativas por naturaleza y se presta para mover conocimientos hacia acciones, pero esto puede ser de muchas formas. Grupos diversos de actores y tomadores de decisiones, en diferentes sectores, disciplinas e instituciones y roles sociales influencian la calidad de las “acciones” en el enfoque ecosalud. Proveyendo detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”"
+    policy: "Política: La sostenibilidad y el movimiento de conocimiento en acciones en las investigaciones de ecosalud a menudo incluye consideraciones sobre cómo trabajan la evaluación, análisis, recomendaciones y cambios en las políticas. Entendiendo las formas de los diversos proyectos y el esfuerzo dedicado con las políticas y el mecanismo de creación de políticas en contextos locales, regionales, nacionales e internacionales ayudará a tener claro oportunidades y sistemas de articulación pensando en el trabajo de ecosalud. Proveyendo detalles y experiencias de su propia investigación, su proyecto puede contribuir a este gran entendimiento acerca de “¿Quién hace investigaciones en ecosalud?”, “¿Cómo lo están haciendo?”, y “¿Qué se espera lograr con ella?”."
+  custom_form_introductions:
+    form_wrapper: "En este primer paso debes escribir un título para el nuevo formulario y darle una descripción que lo distinga, entonces podrás continuar con el segundo paso."
+    section: "En este paso crea las secciones en las que deseas dividir formulario, el sistema creara una seccion en blanco por defecto, por lo cual, puedes dejar esta parte y completarla o agregar más secciones después."
+    custom_form: "Este es el paso final, aquí es donde se creará cada pregunta, debes de agregar el que texto tendrá la pregunta, definir el tipo de respuesta quieres recibir y agregar las opciones para esa respuesta de ser necesario, también debes seleccionar la seccion a la que pertenece esta nueva pregunta, y por ultimo, indica si esta pregunta debe ser respondida de forma obligatoria por el usuario."
   user_file_sections:
     my_files: "Mis archivos"
     shared_with_me: "Compartidos conmigo"
+  custom_forms:
+    field_type_option: "Opción"
+    misc: "Título para estas opciones"
   activerecord:
     errors:
       models:
@@ -162,6 +211,17 @@ es:
       user_file:
         model_name: "Repositorio"
         model_util: "Archivo"
+      form_wrapper: 
+        single: "Formulario Personalizado"
+        plural: "Formularios Personalizado"
+      section: 
+        single:  "Sección"
+        plural: "Secciones"
+        titlelize: "Secciones del Formulario"
+      custom_form: 
+        single: "Pregunta"
+        plural: "Preguntas"
+      answer: "Formulario"
     attributes:
       user:
         email: "Correo electrónico"
@@ -331,3 +391,34 @@ es:
         share: "Compartido"
         note: "Notas"
         misc: "Otros"
+      form_wrapper:
+        title_index: "Título"
+        title_new: "Agrega un Título para el nuevo formulario que estás creando"
+        description_index: "Descripción"
+        description_new: "Agrega una Descripción para este nuevo formulario"
+        active: "Activo"
+        show_sections: "Ver Secciones"
+        add_section: "Agregar Sección"
+        show_questions: "Ver Preguntas"
+        add_question: "Agregar Pregunta"
+      section:
+        title: "Agrega un Título para la nueva sección que estás creando"
+        description: "Agrega una Descripción para esta nueva sección"
+        sort_index: "¿Cuál es el Orden o Posición numérico de esta sección?"
+        title_index: "Título"
+        description_index: "Descripción"
+        sort: "Orden"
+        show_questions: "Ver Preguntas"
+        add_question: "Agregar Pregunta"
+      custom_form:
+        field_type: "¿Qué tipo de pregunta debe ser?"
+        field_type_index: "Tipo de pregunta"
+        text: "¿Qué texto debe tener la pregunta?"
+        text_index: "Texto de la pregunta"
+        required: "¿Es una pregunta requerida?"
+        section_id: "¿A cuál sección pertenece esta pregunta?"
+        sort_index_text: "Número"
+        sort_index: "¿Cuál es el número de la pregunta?"
+      answer:
+        project_name: "Título del Formulario"
+        created_at: "Creado"

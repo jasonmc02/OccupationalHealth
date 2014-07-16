@@ -1,0 +1,28 @@
+<%= form_for @answer_form do |f| %>
+  <%= f.hidden_field :language, :value => locale %>
+  <% if @edit %>
+    <%= f.hidden_field :user_counter, :value => @user_counter %>
+    <%= f.hidden_field :editing, :value => @edit %>
+  <% end %>
+  <% unless @sections.blank? %>
+    <% @sections.each do |section| %>
+      <p class="text-justified">
+        <strong><%= section["title_#{locale}"] %></strong> <%= section["description_#{locale}"] %>
+      </p>
+      <% section.custom_forms.each do |custom_form| %>
+        <% if @edit && custom_form.field_type.eql?("input") %>
+          <% new_answer = custom_form["question_#{locale}"].gsub("value=''", "value='#{@answers.find_by_custom_form_id(custom_form.id).answer_text}'")%>
+          <%= new_answer.html_safe %>
+        <% else %>
+          <%= custom_form["question_#{locale}"].html_safe %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <div class="row submit">
+    <div class="col-md-12 box">
+      <%= link_to t("helpers.links.cancel"), answers_path, :class => 'btn btn-default' %>
+      <input type="submit" class="btn btn-primary" value="<%= t('helpers.links.submit') %>">
+    </div>
+  </div>
+<% end %>

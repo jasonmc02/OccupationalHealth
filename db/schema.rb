@@ -11,7 +11,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608155044) do
+ActiveRecord::Schema.define(version: 20140715045423) do
+
+  create_table "answers", force: true do |t|
+    t.integer  "custom_form_id"
+    t.string   "answer_text"
+    t.string   "question_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "question_text"
+    t.string   "language",       default: "en"
+    t.integer  "user_counter",   default: 0
+  end
+
+  create_table "custom_form_options", force: true do |t|
+    t.integer  "custom_form_id"
+    t.string   "description_en"
+    t.string   "field_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "description_es"
+    t.string   "description_fr"
+    t.string   "description_pt"
+    t.string   "misc_en"
+    t.string   "misc_es"
+    t.string   "misc_fr"
+    t.string   "misc_pt"
+  end
+
+  create_table "custom_forms", force: true do |t|
+    t.integer  "section_id"
+    t.string   "field_type"
+    t.string   "text_en"
+    t.string   "text_es"
+    t.string   "text_fr"
+    t.string   "text_pt"
+    t.boolean  "required"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "question_en"
+    t.text     "question_es"
+    t.text     "question_fr"
+    t.text     "question_pt"
+    t.string   "sort_index"
+  end
+
+  create_table "form_wrappers", force: true do |t|
+    t.string   "title_en"
+    t.string   "title_es"
+    t.string   "title_fr"
+    t.string   "title_pt"
+    t.string   "description_en"
+    t.string   "description_es"
+    t.string   "description_fr"
+    t.string   "description_pt"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "formularies", force: true do |t|
     t.integer  "user_id"
@@ -196,6 +254,21 @@ ActiveRecord::Schema.define(version: 20140608155044) do
     t.boolean  "no_impact"
     t.boolean  "other_integration"
     t.string   "which_integration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", force: true do |t|
+    t.integer  "form_wrapper_id"
+    t.string   "title_en"
+    t.string   "title_es"
+    t.string   "title_fr"
+    t.string   "title_pt"
+    t.string   "description_en"
+    t.string   "description_es"
+    t.string   "description_fr"
+    t.string   "description_pt"
+    t.string   "sort_index"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

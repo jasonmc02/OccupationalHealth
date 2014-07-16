@@ -1,0 +1,13 @@
+<%- model_class = FormWrapper -%>
+<%- model_subclass = Section -%>
+<div id="contact">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= I18n.t("helpers.links.new") + ' '+ I18n.t("activerecord.models.form_wrapper.single") %></h3>
+    </div>
+    <div class="row contact">
+      <%= render :partial => 'form' %>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "js/form_wrappers" %>

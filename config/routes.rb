@@ -1,5 +1,31 @@
 OccupationalHealth::Application.routes.draw do
 
+  resources :form_wrappers do
+    member do
+      post :active
+    end
+    collection do
+      post :deactive
+    end
+  end
+  resources :sections do
+    member do
+      get :sections
+    end
+  end
+
+  resources :answers do
+    member do
+      delete :destroy_responses
+    end
+  end
+  
+  resources :custom_forms do
+    member do
+      get :questions
+    end
+  end
+
   resources :user_file_shares do
     collection do
       get :fetch_user_file_shares
@@ -16,6 +42,12 @@ OccupationalHealth::Application.routes.draw do
     end
   end
 
+  resources :home do
+    collection do
+      get :custom_form
+    end
+  end
+
   devise_for :users
   resources :formularies
   resources :users, only: [:index, :update]
@@ -25,5 +57,13 @@ OccupationalHealth::Application.routes.draw do
   scope "/:locale", :locale => /en|es|fr|pt/ do
     root 'home#index'
     resources :formularies
+    resources :user_files
+    resources :user_file_shares
+    resources :users
+    resources :home
+    resources :form_wrappers
+    resources :sections
+    resources :answers
+    resources :custom_forms
   end
 end

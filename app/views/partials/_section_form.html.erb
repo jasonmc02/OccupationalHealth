@@ -1,0 +1,43 @@
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :title, :class => '' %>
+    <div class="box">
+      <%= f.text_field :title_en, :class => 'form-control spaceless', :placeholder => I18n.t("language.en") %>
+    </div>
+    <div class="box">
+      <%= f.text_field :title_es, :class => 'form-control spaceless', :placeholder => I18n.t("language.es") %>
+    </div>
+    <div class="box">
+      <%= f.text_field :title_fr, :class => 'form-control spaceless', :placeholder => I18n.t("language.fr") %>
+    </div>
+    <div class="box">
+      <%= f.text_field :title_pt, :class => 'form-control spaceless', :placeholder => I18n.t("language.pt") %>
+    </div>
+  </div>
+</div>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :description, :class => '' %>
+    <div class="box">
+      <%= f.text_field :description_en, :class => 'form-control spaceless', :placeholder => I18n.t("language.en") %>
+    </div>
+    <div class="box">
+      <%= f.text_field :description_es, :class => 'form-control spaceless', :placeholder => I18n.t("language.es") %>
+    </div>
+    <div class="box">
+      <%= f.text_field :description_fr, :class => 'form-control spaceless', :placeholder => I18n.t("language.fr") %>
+    </div>
+    <div class="box">
+      <%= f.text_field :description_pt, :class => 'form-control spaceless', :placeholder => I18n.t("language.pt") %>
+    </div>
+  </div>
+</div>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :sort_index, :class => '' %>
+    <div class="box">
+      <%= f.text_field :sort_index, :class => 'form-control spaceless' %>
+    </div>
+  </div>
+</div>
+<hr/>

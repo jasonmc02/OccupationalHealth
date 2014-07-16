@@ -1,0 +1,64 @@
+<%= form_for @form_wrapper, :html => { :class => 'form-horizontal' } do |f| %>
+  <div id="step1" class="steps">
+    <p class="text-justified">
+      <strong><%= t "steps.step_1" %></strong><%= t "custom_form_introductions.form_wrapper" %>
+    </p>
+    <div class="row form">
+      <div class="col-sm-12">
+        <%= f.label :title_new, :class => '' %>
+        <div class="box">
+          <%= f.text_field :title_en, :class => 'form-control spaceless', :placeholder => I18n.t("language.en") %>
+        </div>
+        <div class="box">
+          <%= f.text_field :title_es, :class => 'form-control spaceless', :placeholder => I18n.t("language.es") %>
+        </div>
+        <div class="box">
+          <%= f.text_field :title_fr, :class => 'form-control spaceless', :placeholder => I18n.t("language.fr") %>
+        </div>
+        <div class="box">
+          <%= f.text_field :title_pt, :class => 'form-control spaceless', :placeholder => I18n.t("language.pt") %>
+        </div>
+      </div>
+    </div>
+    <div class="row form">
+      <div class="col-sm-12">
+        <%= f.label :description_new, :class => '' %>
+        <div class="box">
+          <%= f.text_field :description_en, :class => 'form-control spaceless', :placeholder => I18n.t("language.en") %>
+        </div>
+        <div class="box">
+          <%= f.text_field :description_es, :class => 'form-control spaceless', :placeholder => I18n.t("language.es") %>
+        </div>
+        <div class="box">
+          <%= f.text_field :description_fr, :class => 'form-control spaceless', :placeholder => I18n.t("language.fr") %>
+        </div>
+        <div class="box">
+          <%= f.text_field :description_pt, :class => 'form-control spaceless', :placeholder => I18n.t("language.pt") %>
+        </div>
+      </div>
+    </div>
+    <div class="row submit">
+      <div class="col-md-12 box">
+        <%= link_to t("helpers.links.cancel"), form_wrappers_path, :class => 'btn btn-default' %>
+        <button class="btn btn-primary pull-right next-step" data-step="2"><%= t "helpers.links.next" %></button>
+      </div>
+    </div>
+  </div>
+  <div id="step2" class="steps">
+    <p class="text-justified">
+      <strong><%= t "steps.step_2" %></strong><%= t "custom_form_introductions.section" %>
+    </p>
+    <div class="section-rows">
+      <%= f.fields_for :sections do |section| %>
+        <%= render 'partials/section_form', :f => section %>
+      <% end %>
+    </div>
+    <div class="row submit">
+      <div class="col-md-12 box">
+        <%= link_to t("helpers.links.cancel"), form_wrappers_path, :class => 'btn btn-default' %>
+        <%= link_to_add_fields(I18n.t("helpers.links.other") + " " + I18n.t("activerecord.models.section.plural"), f, :sections, :button_item, "btn btn-info add-section") %>
+        <%= f.submit submit_button(@form_wrapper), :class => "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

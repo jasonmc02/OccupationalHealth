@@ -1,0 +1,45 @@
+<h1>Listing sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Form wrapper</th>
+      <th>Title en</th>
+      <th>Title es</th>
+      <th>Title fr</th>
+      <th>Title pt</th>
+      <th>Description en</th>
+      <th>Description es</th>
+      <th>Description fr</th>
+      <th>Description pt</th>
+      <th>Sort index</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.form_wrapper_id %></td>
+        <td><%= section.title_en %></td>
+        <td><%= section.title_es %></td>
+        <td><%= section.title_fr %></td>
+        <td><%= section.title_pt %></td>
+        <td><%= section.description_en %></td>
+        <td><%= section.description_es %></td>
+        <td><%= section.description_fr %></td>
+        <td><%= section.description_pt %></td>
+        <td><%= section.sort_index %></td>
+        <td><%= link_to 'Show', section %></td>
+        <td><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Section', new_section_path %>

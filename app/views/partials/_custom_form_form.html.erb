@@ -1,0 +1,33 @@
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :en, :class => '' %>
+    <div class="box">
+      <%= f.text_field :en, :class => 'form-control spaceless', :placeholder => "en" %>
+    </div>
+    <div class="box">
+      <%= f.text_field :es, :class => 'form-control spaceless', :placeholder => "es" %>
+    </div>
+    <div class="box">
+      <%= f.text_field :fr, :class => 'form-control spaceless', :placeholder => "fr" %>
+    </div>
+    <div class="box">
+      <%= f.text_field :pt, :class => 'form-control spaceless', :placeholder => "pt" %>
+    </div>
+  </div>
+</div>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :title_en, :class => '' %>
+    <div class="box">
+      <%= f.collection_select :section_id, @sections, :id, :title_en, {}, { :class => '', :include_blank => false } %>
+    </div>
+  </div>
+</div>
+<div class="row form">
+  <div class="col-sm-12">
+    <%= f.label :required, :class => '' %>
+    <div class="box">
+      <%= f.check_box :required, :class => 'form-control spaceless' %>
+    </div>
+  </div>
+</div>

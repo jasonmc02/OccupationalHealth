@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @custom_form.section_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @custom_form.type %>
+</p>
+
+<p>
+  <strong>En:</strong>
+  <%= @custom_form.en %>
+</p>
+
+<p>
+  <strong>Es:</strong>
+  <%= @custom_form.es %>
+</p>
+
+<p>
+  <strong>Fr:</strong>
+  <%= @custom_form.fr %>
+</p>
+
+<p>
+  <strong>Pt:</strong>
+  <%= @custom_form.pt %>
+</p>
+
+<p>
+  <strong>Required:</strong>
+  <%= @custom_form.required %>
+</p>
+
+<%= link_to 'Edit', edit_custom_form_path(@custom_form) %> |
+<%= link_to 'Back', custom_forms_path %>
