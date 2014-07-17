@@ -18,7 +18,8 @@ class UserFileShare < ActiveRecord::Base
     result
   end
 
-  def self.upsert_user_file_shares(users, file_id)
+  def self.upsert_user_file_shares(users, file_id, user_email)
+    email_users = []
     users.map do |user|
       share = UserFileShare.where(:user_id => user[1][:user_id], :user_file_id => file_id).first
       unless share.blank?
@@ -29,6 +30,11 @@ class UserFileShare < ActiveRecord::Base
         if user[1][:share].eql?("true")
           share = UserFileShare.new(:user_id => user[1][:user_id], :user_file_id => file_id)
           share.save
+          params = {
+            :shared_to => User.find(user[1][:user_id]).email,
+            :shared_from => user_email
+          }
+          FileShare.file_shared(params).deliver
         end
       end
     end

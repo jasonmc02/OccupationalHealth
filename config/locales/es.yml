@@ -91,6 +91,11 @@ es:
       previous: "&lsaquo; Anterior"
       next: "Siguiente &rsaquo;"
       truncate: "&hellip;"
+  mailit:
+    subjects:
+      file_shared: "Archivo Compartido"
+    file_shared_1: "¡Hola! Este correo electrónico es para notificarte que "
+    file_shared_2: " ha compartido un archivo contigo, lo podrás encontrar en el Repositorio de EkoSanté, en la sección de Archivos Compartidos Comigo."
   index:
     slides:
       scene: "Una colaboración América Latina, Caribe y Canadá en ecosalud"

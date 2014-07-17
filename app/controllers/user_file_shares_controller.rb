@@ -67,7 +67,7 @@ class UserFileSharesController < ApplicationController
   end
 
   def upsert_user_file_shares
-    @shares = UserFileShare.upsert_user_file_shares(params[:users], params[:file_id])
+    @shares = UserFileShare.upsert_user_file_shares(params[:users], params[:file_id], current_user.email)
     render json: @shares
   end
 

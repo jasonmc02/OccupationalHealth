@@ -84,6 +84,11 @@ en:
       negative: "No"
       true: "Yes"
       false: "No"
+  mailit:
+    subjects:
+      file_shared: "File Shared"
+    file_shared_1: "Hello there! This email is to notify you that "
+    file_shared_2: " has shared a file with you, you can find it in the EkoSanté's Repository, in the section Files Shared With Me."
   index:
     slides:
       scene: "A Latin American, Caribbean and Canadian Collaboration in ecohealth"
