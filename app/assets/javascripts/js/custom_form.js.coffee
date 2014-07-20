@@ -18,7 +18,6 @@ CustomForm.initialize = ->
 CustomForm.rename_all = () ->
   labels = CustomForm.form.find(".field_type_options").find("label")
   labels.map (index, label) ->
-    #unless CustomForm.field_type_element.val() == "checkbox" && index == 0
     CustomForm.options_index++
     label = $(label)
     text = label.text()
@@ -83,7 +82,6 @@ $(document).ready ->
     if CustomForm.field_type_element.val() == "select"
       CustomForm.add_select_option_choices()
     else if CustomForm.field_type_element.val() == "checkbox"
-      #CustomForm.add_checkbox_misc_choices()
       CustomForm.add_checkbox_option_choices()
   CustomForm.form.on "click", ".add-more-fields", (w) ->
     w.preventDefault()

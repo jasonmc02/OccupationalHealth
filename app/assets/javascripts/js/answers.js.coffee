@@ -3,6 +3,7 @@ Answer =
 
 Answer.initialize = ->
   Answer.form = $("form")
+  Answer.form.find(".datepicker").datepicker({format: "yyyy-mm-dd"})
 
 $(document).ready ->
   Answer.initialize()

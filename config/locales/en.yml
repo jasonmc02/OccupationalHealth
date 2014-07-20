@@ -139,6 +139,7 @@ en:
       input: "Input text"
       checkbox: "Multiple selection"
       select: "Single choice"
+      date: "Date"
     user_roles:
       admin: "Administrator"
       normal: "Normal User"
@@ -341,7 +342,7 @@ en:
         community_group: "Community Groups "
         ngos: "NGOs"
         business: "Business"
-        church: "Churches (which denomination?) "
+        church: "Churches"
         other_participation: "Others"
         municipal_actors: "Municipal"
         regional_actors: "Regional"

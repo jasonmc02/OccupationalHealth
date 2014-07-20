@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :check_user_ability
   before_action :set_user, only: [:update]
 
   def index

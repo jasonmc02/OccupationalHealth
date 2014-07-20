@@ -27,7 +27,7 @@ class CreateFormularyActions < ActiveRecord::Migration
       t.boolean :other_incorporation
       t.string :other_incorporation_description
       t.boolean :influence
-      t.string :inlfuence_description
+      t.string :influence_description
       t.boolean :develop_understanding
       t.boolean :including_actor
       t.boolean :enhancing_participation

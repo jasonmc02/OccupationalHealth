@@ -1,6 +1,6 @@
 OccupationalHealth::Application.routes.draw do
 
-  resources :form_wrappers do
+  resources :form_wrappers, :except => [:show] do
     member do
       post :active
     end
@@ -8,7 +8,7 @@ OccupationalHealth::Application.routes.draw do
       post :deactive
     end
   end
-  resources :sections do
+  resources :sections, :except => [:index, :show] do
     member do
       get :sections
     end
@@ -20,7 +20,7 @@ OccupationalHealth::Application.routes.draw do
     end
   end
   
-  resources :custom_forms do
+  resources :custom_forms, :except => [:index, :show] do
     member do
       get :questions
     end

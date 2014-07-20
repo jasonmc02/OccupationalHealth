@@ -1,4 +1,5 @@
 class UserFileSharesController < ApplicationController
+  before_action :check_user_ability
   before_action :set_user_file_share, only: [:show, :edit, :update, :destroy]
 
   # GET /user_file_shares

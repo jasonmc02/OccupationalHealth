@@ -1,4 +1,5 @@
 class SectionsController < ApplicationController
+  before_action :check_user_ability
   before_action :set_section, only: [:show, :edit, :update, :destroy]
 
   # GET /sections

@@ -19,6 +19,7 @@
  *= require compiled/services
  *= require compiled/contact
  *= require compiled/portfolio
+ *= require compiled/about
  *= require lib/animate
  *= require lib/flexslider
  *= require lib/datepicker

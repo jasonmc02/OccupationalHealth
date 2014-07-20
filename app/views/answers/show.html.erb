@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Custom form:</strong>
-  <%= @answer.custom_form_id %>
-</p>
-
-<p>
-  <strong>Answer text:</strong>
-  <%= @answer.answer_text %>
-</p>
-
-<p>
-  <strong>Question type:</strong>
-  <%= @answer.question_type %>
-</p>
-
-<%= link_to 'Edit', edit_answer_path(@answer) %> |
-<%= link_to 'Back', answers_path %>
+<div id="aboutus">
+  <div class="container">
+    <% unless @sections.blank? %>
+      <% @sections.each do |section| %>
+        <div class="section_header">
+          <h3><%= section["title_#{locale}"] %></h3>
+        </div>
+        <% section.custom_forms.each do |custom_form| %>
+          <div class="row extra-margin">
+            <div class="col-sm-12 intro">
+              <h6>
+                <%= custom_form["sort_index"] %>) <%= custom_form["text_#{locale}"] %>
+              </h6>
+              <p>
+                <%= @answers.find_by_custom_form_id(custom_form.id).answer_text %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <div class="row">
+      <div class="col-md-12 box">
+        <%= link_to t('.back', :default => t("helpers.links.back")),
+                  answers_path, :class => 'btn btn-primary'  %>
+        <% if current_user.id == @answers.first.user_id%>
+          <%= link_to t("helpers.links.edit"),
+                edit_answer_path(@answers.first.id, :user_counter => @answers.first.user_counter),
+                :class => 'btn btn-info' %>
+          <%= link_to t("helpers.links.destroy"),
+                destroy_responses_answer_path(@form_wrapper.id),
+                :method => :delete,
+                :data => { :confirm => t("helpers.links.confirm") },
+                :class => 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+  </div>  
+</div>

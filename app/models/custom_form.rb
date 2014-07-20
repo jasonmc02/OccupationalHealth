@@ -11,6 +11,7 @@ class CustomForm < ActiveRecord::Base
       {:key => 'input', :val => I18n.t("selects.question_types.input")},
       {:key => 'checkbox', :val => I18n.t("selects.question_types.checkbox")},
       {:key => 'select', :val => I18n.t("selects.question_types.select")},
+      {:key => 'date', :val => I18n.t("selects.question_types.date")},
     ]
   end
 
@@ -160,6 +161,48 @@ class CustomForm < ActiveRecord::Base
       end
       template_pt += "</select>"
       template_pt += "</div>"
+    elsif self.field_type.eql?("date")
+      if self.required
+        template_en += "<label for='custom_form_en_#{self.id}'>#{self.sort_index}) #{self.text_en}</label>"
+        template_en += "<div class='box'>"
+        template_en += "<input value='' class='form-control spaceless required datepicker' date='true' id='custom_form_en_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_en += "</div>"
+
+        template_es += "<label for='custom_form_es_#{self.id}'>#{self.sort_index}) #{self.text_es}</label>"
+        template_es += "<div class='box'>"
+        template_es += "<input value='' class='form-control spaceless required datepicker' date='true' id='custom_form_es_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_es += "</div>"
+        
+        template_fr += "<label for='custom_form_fr_#{self.id}'>#{self.sort_index}) #{self.text_fr}</label>"
+        template_fr += "<div class='box'>"
+        template_fr += "<input value='' class='form-control spaceless required datepicker' date='true' id='custom_form_fr_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_fr += "</div>"
+
+        template_pt += "<label for='custom_form_pt_#{self.id}'>#{self.sort_index}) #{self.text_pt}</label>"
+        template_pt += "<div class='box'>"
+        template_pt += "<input value='' class='form-control spaceless required datepicker' date='true' id='custom_form_pt_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_pt += "</div>"
+      else
+        template_en += "<label for='custom_form_en_#{self.id}'>#{self.sort_index}) #{self.text_en}</label>"
+        template_en += "<div class='box'>"
+        template_en += "<input value='' class='form-control spaceless datepicker' date='true' id='custom_form_en_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_en += "</div>"
+      
+        template_es += "<label for='custom_form_es_#{self.id}'>#{self.sort_index}) #{self.text_es}</label>"
+        template_es += "<div class='box'>"
+        template_es += "<input value='' class='form-control spaceless datepicker' date='true' id='custom_form_es_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_es += "</div>"
+
+        template_fr += "<label for='custom_form_fr_#{self.id}'>#{self.sort_index}) #{self.text_fr}</label>"
+        template_fr += "<div class='box'>"
+        template_fr += "<input value='' class='form-control spaceless datepicker' date='true' id='custom_form_fr_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_fr += "</div>"
+
+        template_pt += "<label for='custom_form_pt_#{self.id}'>#{self.sort_index}) #{self.text_pt}</label>"
+        template_pt += "<div class='box'>"
+        template_pt += "<input value='' class='form-control spaceless datepicker' date='true' id='custom_form_pt_#{self.id}' name='answer[responses][#{self.id}]' type='text'>"
+        template_pt += "</div>"
+      end
     end
 
     self.update_attributes(

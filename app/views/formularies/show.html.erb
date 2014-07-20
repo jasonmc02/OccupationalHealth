@@ -1,21 +1,482 @@
 <%- model_class = Formulary -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @formulary.user_id %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              formularies_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_formulary_path(@formulary), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              formulary_path(@formulary),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<%- model_subclassone = FormularyProfile -%>
+<%- model_subclasstwo = FormularyContext -%>
+<%- model_subclassthree = FormularyResearch -%>
+<%- model_subclassfour = FormularyAction -%>
+<%- model_subclassfive = FormularyPolicy -%>
+<div id="aboutus">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= t "formulary_sections.registration" %></h3>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassone.human_attribute_name(:name) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_profile.name %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassone.human_attribute_name(:project_begins) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_profile.project_begins %> - <%= @formulary.formulary_profile.project_ends %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassone.human_attribute_name(:region) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_profile.region %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassone.human_attribute_name(:institution) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_profile.institution %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_profile_5" %>
+        </h6>
+        <p>
+          <%= checked_formulary_profile_fields_one(@formulary.formulary_profile) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_profile_6" %>
+        </h6>
+        <p>
+          <%= checked_formulary_profile_fields_two(@formulary.formulary_profile) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_profile_7" %>
+        </h6>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassone.human_attribute_name(:objective) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_profile.objective %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassone.human_attribute_name(:discipline) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_profile.discipline %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_profile_9" %>
+        </h6>
+        <p>
+          <%= checked_formulary_profile_fields_three(@formulary.formulary_profile) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassone.human_attribute_name(:success) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_profile.success %>
+        </p>
+      </div>
+    </div>
+    <div class="section_header">
+      <h3><%= t "formulary_sections.context" %></h3>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:scale_description) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_context.scale_description %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_context_2" %>
+        </h6>
+        <p>
+          <%= checked_formulary_context_fields_one(@formulary.formulary_context) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:intersectoral_aspect) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_context.intersectoral_aspect %>
+            <%= t "helpers.booleans.affirmative" %> - <%= I18n.t("selects.formulary_context." + @formulary.formulary_context.intersectoral_aspect_name) %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:political_jurisdiction) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_context.political_jurisdiction %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_context.political_jurisdictions_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_context_8" %>
+        </h6>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:local_context) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_context.local_context %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_context.local_context_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_context_7" %>
+        </h6>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:project_affect) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_context.project_affect %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_context.project_affect_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:role_consideration) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_context.role_consideration %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_context.role_consideration_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:key_actors) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_context.key_actors %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:success_consideration) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_context.success_consideration %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_context.success_considerantion_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_context_8" %>
+        </h6>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:project_term) %>
+        </h6>
+        <p>
+          <%= I18n.t("selects.formulary_context_description." + @formulary.formulary_context.project_term) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclasstwo.human_attribute_name(:require_integration) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_context.require_integration %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_context.require_integration_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_context_8_c" %>
+        </h6>
+        <p>
+          <%= checked_formulary_context_fields_two(@formulary.formulary_context) %>
+        </p>
+      </div>
+    </div>
+    <div class="section_header">
+      <h3><%= t "formulary_sections.research" %></h3>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassthree.human_attribute_name(:interaction) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_research.interaction %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_research.interaction_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassthree.human_attribute_name(:integrate_investigation) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_research.integrate_investigation %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_research.integrate_investigation_yes %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %> - <%= @formulary.formulary_research.integrate_investigation_no %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_research_3" %>
+        </h6>
+        <p>
+          <%= checked_formulary_research_fields_one(@formulary.formulary_research) %>
+        </p>
+      </div>
+    </div>
+    <div class="section_header">
+      <h3><%= t "formulary_sections.action" %></h3>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_action_1" %>
+        </h6>
+        <p>
+          <%= checked_formulary_action_fields_one(@formulary.formulary_action) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_action_2" %>
+        </h6>
+        <p>
+          <%= checked_formulary_action_fields_two(@formulary.formulary_action) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_action_3" %>
+        </h6>
+        <p>
+          <%= checked_formulary_action_fields_three(@formulary.formulary_action) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassfour.human_attribute_name(:factor_affects) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_action.factor_affects %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_action.factor_affects_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_action_5" %>
+        </h6>
+        <p>
+          <%= checked_formulary_action_fields_four(@formulary.formulary_action) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_action_6" %>
+        </h6>
+        <p>
+          <%= checked_formulary_action_fields_five(@formulary.formulary_action) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_action_7" %>
+        </h6>
+        <p>
+          <%= checked_formulary_action_fields_six(@formulary.formulary_action) %>
+        </p>
+      </div>
+    </div>
+    <div class="section_header">
+      <h3><%= t "formulary_sections.policy" %></h3>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassfive.human_attribute_name(:intersectoral_design) %>
+        </h6>
+        <p>
+          <%= I18n.t("selects.formulary_policy_intersectoral_design." + @formulary.formulary_policy.intersectoral_design) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= I18n.t "formulary_fields.formulary_policy_2" %>
+        </h6>
+        <p>
+          <%= checked_formulary_policy_fields_one(@formulary.formulary_policy) %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassfive.human_attribute_name(:multiple_kind) %>
+        </h6>
+        <p>
+          <% if @formulary.formulary_policy.multiple_kind %>
+            <%= t "helpers.booleans.affirmative" %> - <%= @formulary.formulary_policy.multiple_kind_name %>
+          <% else %>
+            <%= t "helpers.booleans.negative" %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassfive.human_attribute_name(:improve_policies) %>
+        </h6>
+        <p>
+          <%= @formulary.formulary_policy.improve_policies %>
+        </p>
+      </div>
+    </div>
+    <div class="row extra-margin">
+      <div class="col-sm-12 intro">
+        <h6>
+          <%= model_subclassfive.human_attribute_name(:project_result) %>
+        </h6>
+        <p>
+          <%= I18n.t("selects.formulary_policy_project_result." + @formulary.formulary_policy.project_result) %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 box">
+        <%= link_to t('.back', :default => t("helpers.links.back")),
+                  formularies_path, :class => 'btn btn-primary'  %>
+        <% if current_user.id == @formulary.user_id %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                    edit_formulary_path(@formulary), :class => 'btn btn-success' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                    formulary_path(@formulary),
+                    :method => 'delete',
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                    :class => 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

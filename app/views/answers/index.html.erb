@@ -73,14 +73,19 @@
           <div class="feature last">
             <div class="text">
               <p>
-                <%= link_to t("helpers.links.edit"),
+                <%= link_to t("helpers.links.show"),
+                      answer_path(formulary.answer_id, :user_counter => formulary.user_counter, :user_id => formulary.user_id),
+                     :class => 'btn btn-mini btn-success' %>
+                <% if current_user.id == formulary.user_id%>
+                  <%= link_to t("helpers.links.edit"),
                         edit_answer_path(formulary.answer_id, :user_counter => formulary.user_counter),
                         :class => 'btn btn-mini btn-info' %>
-                <%= link_to t("helpers.links.destroy"),
+                  <%= link_to t("helpers.links.destroy"),
                         destroy_responses_answer_path(formulary.form_wrapper_id),
                         :method => :delete,
                         :data => { :confirm => t("helpers.links.confirm") },
                         :class => 'btn btn-mini btn-danger' %>
+                <% end %>
               </p>
             </div>
           </div>

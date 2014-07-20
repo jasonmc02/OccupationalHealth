@@ -1,4 +1,5 @@
 class FormWrappersController < ApplicationController
+  before_action :check_user_ability
   before_action :set_form_wrapper, only: [:show, :edit, :update, :destroy]
 
   # GET /form_wrappers

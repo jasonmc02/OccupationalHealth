@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
     def self.default_url_options
       { :locale => I18n.locale }
     end
+
+    def check_user_ability
+      unless current_user.role_id == Rails.configuration.admin_role
+        redirect_to home_index_path
+      end
+    end
 end

@@ -26,10 +26,13 @@ class Answer < ActiveRecord::Base
             answer.question_type = "input"
           when "checkbox"
             answer.answer_text = val.join(", ")
-            answer.question_type = "select"
+            answer.question_type = "checkbox"
           when "select"
             answer.answer_text = val
             answer.question_type = "select"
+          when "date"
+            answer.answer_text = val
+            answer.question_type = "date"
           end
           answer.save()
         end
@@ -71,7 +74,7 @@ class Answer < ActiveRecord::Base
     lastest = Answer.where(:custom_form_id => custom_form_id, :user_id => user_id)
     next_index = 1
     unless lastest.blank?
-      if lastest.size > 1
+      if lastest.size > 0
         next_index = lastest.last().user_counter.next
       end
     end

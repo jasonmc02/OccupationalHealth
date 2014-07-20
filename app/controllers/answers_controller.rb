@@ -4,16 +4,19 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    if current_user.role_id == 1
-      @formularies = Answer.select("answers.id as answer_id, answers.user_id, answers.created_at, answers.user_counter, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).group(:user_counter).page(params[:page]).per(Rails.configuration.per_page)
+    if current_user.role_id == Rails.configuration.admin_role
+      @formularies = Answer.select("answers.id as answer_id, answers.user_id as user_id, answers.created_at as created_at, answers.user_counter as user_counter, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).group(:user_id, :user_counter).page(params[:page]).per(Rails.configuration.per_page)
     else
-      @formularies = Answer.select("answers.id as answer_id, answers.user_id, answers.created_at, answers.user_counter, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).where(:user_id => current_user.id).group(:user_counter).page(params[:page]).per(Rails.configuration.per_page)
+      @formularies = Answer.select("answers.id as answer_id, answers.user_id as user_id, answers.created_at as created_at, answers.user_counter as user_counter, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).where(:user_id => current_user.id).group(:user_counter).page(params[:page]).per(Rails.configuration.per_page)
     end
   end
 
   # GET /answers/1
   # GET /answers/1.json
   def show
+    @form_wrapper = FormWrapper.where(:active => true).first
+    @sections = @form_wrapper.sections.order(:sort_index).includes(:custom_forms).order("custom_forms.sort_index")
+    @answers = Answer.where(:user_counter => params[:user_counter], :user_id => params[:user_id])
   end
 
   # GET /answers/new
@@ -30,12 +33,16 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
-    @answer_form = Answer.new
-    @form_wrapper = FormWrapper.where(:active => true).first
-    @sections = @form_wrapper.sections.order(:sort_index).includes(:custom_forms).order("custom_forms.sort_index")
-    @edit = true
     @answers = Answer.where(:user_counter => params[:user_counter], :user_id => current_user.id)
-    @user_counter = params[:user_counter]
+    if @answers.first.user_id == current_user.id
+      @answer_form = Answer.new
+      @form_wrapper = FormWrapper.where(:active => true).first
+      @sections = @form_wrapper.sections.order(:sort_index).includes(:custom_forms).order("custom_forms.sort_index")
+      @edit = true
+      @user_counter = params[:user_counter]
+    else
+      redirect_to answers_path
+    end
   end
 
   # POST /answers

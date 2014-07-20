@@ -4,7 +4,7 @@ class FormulariesController < ApplicationController
   # GET /formularies
   # GET /formularies.json
   def index
-    if current_user.role_id == 1
+    if current_user.role_id == Rails.configuration.admin_role
       @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).load.page(params[:page]).per(Rails.configuration.per_page)
     else
       @formularies = Formulary.select('formularies.*, formulary_profiles.name, users.email').joins(:formulary_profile, :user).where("formularies.user_id = ?", current_user.id).load.page(params[:page]).per(Rails.configuration.per_page)
@@ -14,6 +14,9 @@ class FormulariesController < ApplicationController
   # GET /formularies/1
   # GET /formularies/1.json
   def show
+    unless @formulary.user_id == current_user.id
+      check_user_ability
+    end
   end
 
   # GET /formularies/new
@@ -35,10 +38,14 @@ class FormulariesController < ApplicationController
 
   # GET /formularies/1/edit
   def edit
-    @intersectoral_aspect = FormularyContext.intersectoral_aspect
-    @project_term = FormularyContext.project_term
-    @intersectoral_design_options = FormularyPolicy.intersectoral_design
-    @project_result_options = FormularyPolicy.project_result
+    if @formulary.user_id == current_user.id
+      @intersectoral_aspect = FormularyContext.intersectoral_aspect
+      @project_term = FormularyContext.project_term
+      @intersectoral_design_options = FormularyPolicy.intersectoral_design
+      @project_result_options = FormularyPolicy.project_result
+    else
+      redirect_to formularies_path
+    end
   end
 
   # POST /formularies
@@ -74,10 +81,14 @@ class FormulariesController < ApplicationController
   # DELETE /formularies/1
   # DELETE /formularies/1.json
   def destroy
-    @formulary.destroy
-    respond_to do |format|
-      format.html { redirect_to formularies_url }
-      format.json { head :no_content }
+    unless @formulary.user_id == current_user.id
+      @formulary.destroy
+      respond_to do |format|
+        format.html { redirect_to formularies_url }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to formularies_path
     end
   end
 

@@ -1,4 +1,5 @@
 class UserFilesController < ApplicationController
+  before_action :check_user_ability
   before_action :set_user_file, only: [:show, :edit, :update, :destroy, :download]
 
   # GET /user_files

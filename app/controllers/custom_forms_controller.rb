@@ -1,4 +1,5 @@
 class CustomFormsController < ApplicationController
+  before_action :check_user_ability
   before_action :set_custom_form, only: [:show, :edit, :update, :destroy]
 
   # GET /custom_forms

@@ -146,6 +146,7 @@ es:
       input: "Campo de texto"
       checkbox: "Selección multiple"
       select: "Selección única"
+      date: "Fecha"
     user_roles:
       admin: "Administrador"
       normal: "Usuario Normal"
@@ -348,7 +349,7 @@ es:
         community_group: "Grupos comunales"
         ngos: "ONGs"
         business: "Empresas"
-        church: "Iglesias (¿qué denominación?)"
+        church: "Iglesias"
         other_participation: "Otros"
         municipal_actors: "Municipal"
         regional_actors: "Regional"
