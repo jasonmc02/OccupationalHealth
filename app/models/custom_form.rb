@@ -22,6 +22,10 @@ class CustomForm < ActiveRecord::Base
     template_es = ""
     template_fr = ""
     template_pt = ""
+    self.text_en = Sanitize.fragment(self.text_en)
+    self.text_es = Sanitize.fragment(self.text_es)
+    self.text_fr = Sanitize.fragment(self.text_fr)
+    self.text_pt = Sanitize.fragment(self.text_pt)
     if self.field_type.eql?("input")
       if self.required
         template_en += "<label for='custom_form_en_#{self.id}'>#{self.sort_index}) #{self.text_en}</label>"
@@ -86,6 +90,7 @@ class CustomForm < ActiveRecord::Base
         option_index = 1
 
         checkbox[:en].each do |option|
+          option = Sanitize.fragment(option)
           template_en += "<div class='col-sm-4'>"
           template_en += "<div class='checkbox'>"
           template_en += "<input id='custom_form_en_#{self.id}_#{option_index}' name='answer[responses][#{self.id}][]' type='checkbox' value='#{option}'>"
@@ -96,6 +101,7 @@ class CustomForm < ActiveRecord::Base
         end
         option_index = 1
         checkbox[:es].each do |option|
+          option = Sanitize.fragment(option)
           template_es += "<div class='col-sm-4'>"
           template_es += "<div class='checkbox'>"
           template_es += "<input id='custom_form_es_#{self.id}_#{option_index}' name='answer[responses][#{self.id}][]' type='checkbox' value='#{option}'>"
@@ -106,6 +112,7 @@ class CustomForm < ActiveRecord::Base
         end
         option_index = 1
         checkbox[:fr].each do |option|
+          option = Sanitize.fragment(option)
           template_fr += "<div class='col-sm-4'>"
           template_fr += "<div class='checkbox'>"
           template_fr += "<input id='custom_form_fr_#{self.id}_#{option_index}' name='answer[responses][#{self.id}][]' type='checkbox' value='#{option}'>"
@@ -116,6 +123,7 @@ class CustomForm < ActiveRecord::Base
         end
         option_index = 1
         checkbox[:pt].each do |option|
+          option = Sanitize.fragment(option)
           template_pt += "<div class='col-sm-4'>"
           template_pt += "<div class='checkbox'>"
           template_pt += "<input id='custom_form_fr_#{self.id}_#{option_index}' name='answer[responses][#{self.id}][]' type='checkbox' value='#{option}'>"
@@ -130,7 +138,10 @@ class CustomForm < ActiveRecord::Base
       template_en += "<div class='box'>"
       template_en += "<select class='form-control' id='custom_form_en_#{self.id}' name='answer[responses][#{self.id}]'>"
       unless select[:en].blank?
-        select[:en].each {|option| template_en += "<option value='#{option}'>#{option}</option>" }
+        select[:en].each do |option|
+          option = Sanitize.fragment(option)
+          template_en += "<option value='#{option}'>#{option}</option>"
+        end
       end
       template_en += "</select>"
       template_en += "</div>"
@@ -139,7 +150,10 @@ class CustomForm < ActiveRecord::Base
       template_es += "<div class='box'>"
       template_es += "<select class='form-control' id='custom_form_es_#{self.id}' name='answer[responses][#{self.id}]'>"
       unless select[:es].blank?
-        select[:es].each {|option| template_es += "<option value='#{option}'>#{option}</option>" }
+        select[:es].each do |option|
+          option = Sanitize.fragment(option)
+          template_es += "<option value='#{option}'>#{option}</option>"
+        end
       end
       template_es += "</select>"
       template_es += "</div>"
@@ -148,7 +162,10 @@ class CustomForm < ActiveRecord::Base
       template_fr += "<div class='box'>"
       template_fr += "<select class='form-control' id='custom_form_fr_#{self.id}' name='answer[responses][#{self.id}]'>"
       unless select[:fr].blank?
-        select[:fr].each {|option| template_fr += "<option value='#{option}'>#{option}</option>" }
+        select[:fr].each do |option|
+          option = Sanitize.fragment(option)
+          template_fr += "<option value='#{option}'>#{option}</option>"
+        end
       end
       template_fr += "</select>"
       template_fr += "</div>"
@@ -157,7 +174,10 @@ class CustomForm < ActiveRecord::Base
       template_pt += "<div class='box'>"
       template_pt += "<select class='form-control' id='custom_form_pt_#{self.id}' name='answer[responses][#{self.id}]'>"
       unless select[:pt].blank?
-        select[:pt].each {|option| template_pt += "<option value='#{option}'>#{option}</option>" }
+        select[:pt].each do |option| 
+          option = Sanitize.fragment(option)
+          template_pt += "<option value='#{option}'>#{option}</option>"
+        end
       end
       template_pt += "</select>"
       template_pt += "</div>"

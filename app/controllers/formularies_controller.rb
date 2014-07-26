@@ -81,7 +81,7 @@ class FormulariesController < ApplicationController
   # DELETE /formularies/1
   # DELETE /formularies/1.json
   def destroy
-    unless @formulary.user_id == current_user.id
+    if @formulary.user_id == current_user.id
       @formulary.destroy
       respond_to do |format|
         format.html { redirect_to formularies_url }

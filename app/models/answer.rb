@@ -13,25 +13,27 @@ class Answer < ActiveRecord::Base
         unless key.blank?
           answer = Answer.new()
           question = CustomForm.find(key)
+          wrapper_id = question.section.form_wrapper.id
 
           answer.custom_form_id = key
           answer.user_id = user.id
           answer.question_text = question["text_#{language}"]
           answer.language = language
-          answer.user_counter = update_counter(key, user.id)
+          answer.user_counter = update_counter(key, user.id, wrapper_id)
+          answer.wrapper_id = wrapper_id
 
           case question[:field_type]
           when "input"
-            answer.answer_text = val
+            answer.answer_text = Sanitize.fragment(val)
             answer.question_type = "input"
           when "checkbox"
-            answer.answer_text = val.join(", ")
+            answer.answer_text = Sanitize.fragment(valval.join(", "))
             answer.question_type = "checkbox"
           when "select"
-            answer.answer_text = val
+            answer.answer_text = Sanitize.fragment(val)
             answer.question_type = "select"
           when "date"
-            answer.answer_text = val
+            answer.answer_text = Sanitize.fragment(val)
             answer.question_type = "date"
           end
           answer.save()
@@ -50,11 +52,11 @@ class Answer < ActiveRecord::Base
           answer = Answer.where(:user_id => user.id, :custom_form_id => key, :user_counter => user_counter).first
           case answer.question_type
           when "input"
-            answer.update_attribute(:answer_text, val)
+            answer.update_attribute(:answer_text, Sanitize.fragment(val))
           when "checkbox"
-            answer.update_attribute(:answer_text, val.join(", "))
+            answer.update_attribute(:answer_text, Sanitize.fragment(val.join(", ")))
           when "select"
-            answer.update_attribute(:answer_text, val)
+            answer.update_attribute(:answer_text, Sanitize.fragment(val))
           end
         end
       end
@@ -70,8 +72,8 @@ class Answer < ActiveRecord::Base
     end
   end
 
-  def self.update_counter(custom_form_id, user_id)
-    lastest = Answer.where(:custom_form_id => custom_form_id, :user_id => user_id)
+  def self.update_counter(custom_form_id, user_id, wrapper_id)
+    lastest = Answer.where(:custom_form_id => custom_form_id, :user_id => user_id, :wrapper_id => wrapper_id)
     next_index = 1
     unless lastest.blank?
       if lastest.size > 0

@@ -14,7 +14,7 @@ OccupationalHealth::Application.routes.draw do
     end
   end
 
-  resources :answers do
+  resources :answers, :except => [:destroy] do
     member do
       delete :destroy_responses
     end

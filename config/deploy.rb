@@ -93,23 +93,22 @@ namespace :deploy do
       run "#{sudo} service #{unicorn_daemon} restart"
     end
   end
-
-  desc "Restart memcached..."
-  task :restart_memcached do
-    on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
-      puts "Restarting memcached...\n"
-      run "#{sudo} service memcached restart"
-    end
+=end
+  desc "Symlinks"
+  task :symlinks do
+    run "sudo ln -s ~/OccupationalHealth/shared/database.yml ~/OccupationalHealth/current/config/"
+    run "sudo ln -s ~/OccupationalHealth/shared/configuration.yml ~/OccupationalHealth/current/config/"
+    run "sudo ln -s ~/OccupationalHealth/shared/unicorn.rb ~/OccupationalHealth/current/config/"
   end
 
-  desc "Restart Nginx server"
-  task :restart_nginx do
+  desc "Restarts"
+  task :restarts do
     on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
       puts "Restarting nginx...\n"
-      run "#{sudo} service nginx restart"
+      run "sudo service nginx restart"
     end
   end
 
-  after :finishing, 'deploy:assets', 'deploy:bundle', 'deploy:database', 'deploy:migrate'
-=end
+  after :finishing, 'deploy:symlinks', 'deploy:restarts'
+
 end

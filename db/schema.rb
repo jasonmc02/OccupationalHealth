@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715045423) do
+ActiveRecord::Schema.define(version: 20140726190923) do
 
   create_table "answers", force: true do |t|
     t.integer  "custom_form_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140715045423) do
     t.string   "question_text"
     t.string   "language",       default: "en"
     t.integer  "user_counter",   default: 0
+    t.integer  "wrapper_id"
   end
 
   create_table "custom_form_options", force: true do |t|

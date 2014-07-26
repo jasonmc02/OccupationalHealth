@@ -1,22 +1,25 @@
 class AnswersController < ApplicationController
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  #before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
   # GET /answers.json
   def index
     if current_user.role_id == Rails.configuration.admin_role
-      @formularies = Answer.select("answers.id as answer_id, answers.user_id as user_id, answers.created_at as created_at, answers.user_counter as user_counter, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).group(:user_id, :user_counter).page(params[:page]).per(Rails.configuration.per_page)
+      @formularies = Answer.select("answers.id as answer_id, answers.user_id as user_id, answers.created_at as created_at, answers.user_counter as user_counter, answers.wrapper_id as wrapper_id, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).group(:user_id, :wrapper_id, :user_counter).page(params[:page]).per(Rails.configuration.per_page)
     else
-      @formularies = Answer.select("answers.id as answer_id, answers.user_id as user_id, answers.created_at as created_at, answers.user_counter as user_counter, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).where(:user_id => current_user.id).group(:user_counter).page(params[:page]).per(Rails.configuration.per_page)
+      @formularies = Answer.select("answers.id as answer_id, answers.user_id as user_id, answers.created_at as created_at, answers.user_counter as user_counter, answers.wrapper_id as wrapper_id, users.email as user_email, form_wrappers.id as form_wrapper_id, form_wrappers.title_#{locale} as title").joins(:user, :custom_form => [:section => :form_wrapper]).where(:user_id => current_user.id).group(:user_counter, :wrapper_id).page(params[:page]).per(Rails.configuration.per_page)
     end
   end
 
   # GET /answers/1
   # GET /answers/1.json
   def show
-    @form_wrapper = FormWrapper.where(:active => true).first
+    @form_wrapper = FormWrapper.where(:id => params[:id]).first
     @sections = @form_wrapper.sections.order(:sort_index).includes(:custom_forms).order("custom_forms.sort_index")
     @answers = Answer.where(:user_counter => params[:user_counter], :user_id => params[:user_id])
+    unless @answers.first.user_id == current_user.id
+      check_user_ability
+    end
   end
 
   # GET /answers/new
@@ -33,10 +36,11 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
-    @answers = Answer.where(:user_counter => params[:user_counter], :user_id => current_user.id)
+    @answers = Answer.where(:user_counter => params[:user_counter], :wrapper_id => params[:wrapper_id], :user_id => current_user.id)
+    Rails.logger.info "-->1<--"
     if @answers.first.user_id == current_user.id
       @answer_form = Answer.new
-      @form_wrapper = FormWrapper.where(:active => true).first
+      @form_wrapper = FormWrapper.where(:id => params[:wrapper_id]).first
       @sections = @form_wrapper.sections.order(:sort_index).includes(:custom_forms).order("custom_forms.sort_index")
       @edit = true
       @user_counter = params[:user_counter]
@@ -51,7 +55,7 @@ class AnswersController < ApplicationController
     if params.blank? == false && params[:answer][:editing]
       Answer.update_stored_answers(params, current_user)
       redirect_to answers_path
-    else
+    else    
       Answer.store_answers(params, current_user)
       redirect_to answers_path
     end
@@ -93,11 +97,13 @@ class AnswersController < ApplicationController
   end
 
   def destroy_responses
-    answers = FormWrapper.where("form_wrappers.id = ? and answers.user_id = ?", params[:id], current_user.id).joins(:sections => [:custom_forms => :answers])
-    answers.destroy_all
-    respond_to do |format|
-      format.html { redirect_to answers_url }
-      format.json { head :no_content }
+    answers = Answer.where(:user_counter => params[:id], :wrapper_id => params[:wrapper_id], :user_id => current_user.id)
+    if answers.first.user_id == current_user.id
+      answers.destroy_all
+      respond_to do |format|
+        format.html { redirect_to answers_url }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -109,6 +115,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:id, :custom_form_id, :user_id, :answer_text, :question_type, :question_text, :language)
+      params.require(:answer).permit(:id, :custom_form_id, :user_id, :answer_text, :question_type, :question_text, :language, :wrapper_id)
     end
 end
