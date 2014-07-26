@@ -104,6 +104,15 @@ namespace :deploy do
     end
   end
 
+  desc "Railers"
+  task :railers do
+    puts "Running rails task...\n"
+    on roles(:web) do
+      execute "cd ~/OccupationalHealth/current/ && bundle install"
+      execute "cd ~/OccupationalHealth/current/ && rake db:migrate RAILS_ENV=production"
+    end
+  end
+
   desc "Restarts"
   task :restarts do
     puts "Restarting workers...\n"
@@ -112,6 +121,6 @@ namespace :deploy do
     end
   end
 
-  after :finishing, 'deploy:symlinks', 'deploy:restarts'
+  after :finishing, 'deploy:symlinks', 'deploy:restarts', 'deploy:railers'
 
 end
