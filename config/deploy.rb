@@ -96,11 +96,12 @@ namespace :deploy do
 =end
   desc "Symlinks"
   task :symlinks do
+    puts "Creating symlinks...\n"
     run "sudo ln -s ~/OccupationalHealth/shared/database.yml ~/OccupationalHealth/current/config/"
     run "sudo ln -s ~/OccupationalHealth/shared/configuration.yml ~/OccupationalHealth/current/config/"
     run "sudo ln -s ~/OccupationalHealth/shared/unicorn.rb ~/OccupationalHealth/current/config/"
   end
-
+=begin
   desc "Restarts"
   task :restarts do
     on 'ubuntu@ec2-54-186-30-232.us-west-2.compute.amazonaws.com' do
@@ -108,7 +109,7 @@ namespace :deploy do
       run "sudo service nginx restart"
     end
   end
-
-  after :finishing, 'deploy:symlinks', 'deploy:restarts'
+=end
+  after :finishing, 'deploy:symlinks', ''
 
 end
