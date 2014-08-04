@@ -48,7 +48,7 @@ gem 'choices', '~> 0.4.0'
 gem 'kaminari', '~> 0.15.1'
 
 gem 'carrierwave', '~> 0.10.0'
-
+gem 'nokogiri', '~> 1.6.3.1'
 gem 'sanitize', '~> 3.0.0'
 
 group :doc do

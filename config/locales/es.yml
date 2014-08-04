@@ -38,6 +38,7 @@ es:
       submit: "Enviar"
       remove: "Remover"
       go_to: "Ir a "
+      add_param: "Agregar Parámetro"
     alerts:
       active_form_wrapper: "¡Al activar este formulario aparecerá como formulario por defecto para todos los usuarios, los demás formularios activos se desactivarán! \n ¿Deseas continuar?"
       deactivate_form_wrapper: "¡Al desactivar este formulario se activará el formulario por defecto para todos los usuarios! \n ¿Deseas continuar?"
@@ -141,6 +142,9 @@ es:
     button_role_assign: "Asignar Role"
   user_files_page:
     modal_title: "Agregar personas para compartir el archivo"
+  report:
+    report: "Reportes"
+    modal_title: "Seleccione un parámetro para la búsqueda"
   selects:
     question_types:
       input: "Campo de texto"
@@ -169,7 +173,7 @@ es:
       large: "Largo plazo (décadas)"
       project_end: "Al finalizar el proyecto no logramos incidir en estos aspectos"
   formulary_fields:
-    formulary_profile_5: "5. Su proyecto se circunscribe en la siguientes temáticas:"
+    formulary_profile_5: "5. Su proyecto se circunscribe en las siguientes temáticas:"
     formulary_profile_6: "6. Está el proyecto ligado explícitamente con otros proyectos (diseño, ejecución, programación oficial) como:"
     formulary_profile_7: "7. Describa brevemente el principal problema sobre el cual el proyecto está actuando:"
     formulary_profile_9: "9. Dado el alcance o interés de su proyecto, su trabajo se centra en:"
@@ -185,7 +189,7 @@ es:
     formulary_action_5: "5. Al terminar su proyecto, que nuevos conocimientos acerca del enfoque Ecosistémico para investigaciones y la práctica en salud cree usted que habrá contribuido a:"
     formulary_action_6: "6. Durante su proyecto, cuales estrategias de evaluación se han utilizado en su proyecto que le permitieron hacer cambios para mejorar acciones en:"
     formulary_action_7: "7. Considera que el principal impacto de las acciones de su proyecto fue en un nivel:"
-    formulary_policy_2: "2. Su proyecto logró incluir/intervenir o influir en alguna política de salud/ambiente:"
+    formulary_policy_2: "2. Su proyecto logró incluir / intervenir o influir en alguna política de salud/ambiente:"
   formulary_sections:
     registration: "Registro"
     context: "Contexto"
@@ -228,6 +232,7 @@ es:
         single: "Pregunta"
         plural: "Preguntas"
       answer: "Formulario"
+      report: "Reportes"
     attributes:
       user:
         email: "Correo electrónico"
@@ -245,11 +250,11 @@ es:
         project_name: "Nombre del proyecto"
         name: "1. Nombre del proyecto"
         project_begins: "2. Periodo que abarca el proyecto (yyyy-mm-dd)"
-        region: "3. País(es) / Región (es) donde el proyecto se llevó a cabo"
-        institution: "4. Nombre completo de la(s) institución (nes) de investigación involucradas en el proyecto: No queremos saber todas las instituciones involucradas?"
+        region: "3. País(es) / Región(es) donde el proyecto se llevó a cabo"
+        institution: "4. Nombre completo de la(s) institución(nes) de investigación involucradas en el proyecto"
         objective: "7.1. ¿Cuáles son los objetivos principales del proyecto? "
-        discipline: "8. ¿Cuáles son las disciplinas y sectores representados por instituciones, personas y estrategias (teóricas y metodológicas) en su  equipo de trabajo? "
-        success: "10. ¿Cuál es el principal logro que se utilizará para determinar si el proyecto ha sido un éxito?  "
+        discipline: "8. ¿Cuáles son las disciplinas y sectores representados por instituciones, personas y estrategias (teóricas y metodológicas) en su  equipo de trabajo?"
+        success: "10. ¿Cuál es el principal logro que se utilizará para determinar si el proyecto ha sido un éxito?"
         mining: "Minería"
         pesticide: "Plaguicidas"
         occupational_health: "Salud laboral"
@@ -274,6 +279,18 @@ es:
         entire_program: "Un programa"
         other_project: "Otro"
         which_project: "¿Cuál?"
+        project_name_modal: "Nombre del proyecto"
+        project_begins_modal: "Periodo que abarca el proyecto"
+        region_modal: "País(es) / Región(es) donde el proyecto se llevó a cabo"
+        institution_modal: "Nombre de la(s) institución(nes) de investigación involucradas en el proyecto"
+        objective_modal: "¿Cuáles son los objetivos principales del proyecto?"
+        success_modal: "¿Cuál es el principal logro que se utilizará para determinar si el proyecto..."
+        name_modal: "Nombre del proyecto"
+        project_begins_modal: "Fecha de inicio"
+        project_ends_modal: "Fecha de finalizacion"
+        formulary_profile_5_modal: "Proyecto circunscrito en las siguientes temáticas:"
+        discipline_modal: "Disciplinas y sectores representados por instituciones, personas y..."
+        formulary_profile_9_modal: "Su trabajo se centra en:"
       formulary_contact:
         name: "Nombre"
         email: "Correo electrónico"
@@ -328,6 +345,10 @@ es:
         complexity: "Complejidad"
         other_approach: "Otra"
         which_approach: "Por favor especifique"
+        formulary_context_2_modal: "El ecosistema predominantemente:"
+        intersectoral_aspect_modal: "Dimensión intersectorial en su proyecto"
+        success_consideration_modal: "Consideración de cómo el éxito de su proyecto se puede escalar..."
+        formulary_context_8_c_modal: "Cuál de los siguientes temas su proyecto se enfoca explícitamente:"
       formulary_research:
         interaction: "1. En su análisis, ha considerado los impactos de la interacción entre los diferentes actores (por ejemplo sociales, económicos, ambientales y salud)."
         interaction_name: "Las interacciones más relevantes del estudio son:"
@@ -342,6 +363,7 @@ es:
         no_impact: "No ha tenido ningún impacto en los resultados o en la utilidad del proyecto"
         other_integration: "Otros"
         which_integration: "¿Cuáles?"
+        formulary_research_3_modal: "Integrar el conocimiento de la población estudiada ha sido útil para:"
       formulary_action:
         community_leader: "Líderes comunales"
         decision_maker: "Tomadores de decisión"
@@ -380,8 +402,13 @@ es:
         national_impacts: "Nacional"
         international_impacts: "Internacional"
         global_impacts: "Global"
+        formulary_action_1_modal: "En este proyecto, hubo una participación activa por parte de:"
+        formulary_action_2_modal: "La ejecución de acciones y estrategias de su proyecto involucró..."
+        formulary_action_3_modal: "Cuando se reflexiona sobre los procesos participativos desarrollados..."
+        formulary_action_5_modal: "Que nuevos conocimientos acerca del enfoque Ecosistémico para..."
+        formulary_action_7_modal: "El principal impacto de las acciones de su proyecto fue en un nivel:"
       formulary_policy:
-        intersectoral_design: "1. Las intervenciones planteadas/ realizadas por su proyecto tienen o tuvieron un impacto:"
+        intersectoral_design: "1. Las intervenciones planteadas / realizadas por su proyecto tienen o tuvieron un impacto:"
         improve_strategies: "Estrategias en las que los recursos del ecosistema pueden ser utilizado de una manera ecológicamente eficiente y sostenible."
         prevent_strategies: "Acciones que se requieren para prevenir, mitigar, controlar, compensar y corregir los posibles efectos o impactos ambientales o en salud negativos que son objeto de estudio"
         actor_strategies: "Planes, estrategias y actores responsables de seguimiento, evaluación y monitoreo"
@@ -391,6 +418,9 @@ es:
         multiple_kind_name: "¿Cuáles?"
         improve_policies: "4. ¿Cuántos grupos de la comunidad y fuera de ella, se han apropiado  profundamente de los resultados del proyecto para desarrollar y/o ejecutar (en aquellos casos donde existen y no se aplican) políticas que les beneficien? Describa brevemente"
         project_result: "5. ¿Logró su proyecto hacer una intervención exitosa o un cambio en las políticas de salud y/ambiente a:"
+        intersectoral_design_modal: "Las intervenciones planteadas / realizadas por su proyecto..."
+        formulary_policy_2_modal: "Su proyecto logró incluir / intervenir o influir en alguna..."
+        project_result_modal: "¿Logró su proyecto hacer una intervención exitosa o un cambio en..."
       user_file:
         file: "Archivo"
         name: "Nombre"
@@ -428,3 +458,8 @@ es:
       answer:
         project_name: "Título del Formulario"
         created_at: "Creado"
+      report:
+        query: "Campos sobre los que se realiza la búsqueda"
+        comparate: "Define comparación"
+        param: "Parámetros para comparar"
+        result: "%{quantity} Resultados"

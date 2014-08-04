@@ -4,4 +4,15 @@ class HomeController < ApplicationController
   
   def index
   end
+
+  def reports
+    check_user_ability
+    @intersectoral_design_options = FormularyPolicy.intersectoral_design
+    @project_result_options = FormularyPolicy.project_result
+    @formularies = []
+  end
+
+  def fetch_formularies
+    @formularies = Formulary.fetch_formularies(params)
+  end
 end

@@ -42,9 +42,10 @@ OccupationalHealth::Application.routes.draw do
     end
   end
 
-  resources :home do
+  resources :home, only: [:index, :reports] do
     collection do
-      get :custom_form
+      get :reports
+      post :fetch_formularies
     end
   end
 

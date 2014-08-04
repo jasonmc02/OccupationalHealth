@@ -76,17 +76,17 @@
                 <p>
                   <%= link_to t("helpers.links.edit"),
                           edit_user_file_path(my_file),
-                          :class => 'btn btn-sm btn-info' %>
+                          :class => 'btn btn-xs btn-info' %>
                   <%= link_to t("helpers.links.destroy"),
                           user_file_path(my_file),
                           :method => :delete,
                           :data => { :confirm => t("helpers.links.confirm") },
-                          :class => 'btn btn-sm btn-danger' %>
+                          :class => 'btn btn-xs btn-danger' %>
                   <% unless my_file.file.blank? %>
                     <%= link_to t("helpers.links.download"),
                             download_user_file_path(my_file),
-                            :class => "btn btn-sm btn-success" %>
-                    <a href="" class="btn btn-sm btn-warning share" data-id="<%= my_file.id %>">
+                            :class => "btn btn-xs btn-success" %>
+                    <a href="" class="btn btn-xs btn-warning share" data-id="<%= my_file.id %>">
                       <%= I18n.t("helpers.links.share") %>
                     </a>
                   <% end %>
@@ -168,10 +168,10 @@
                           stop_sharing_user_file_share_path(shared),
                           :method => :delete,
                           :data => { :confirm => t("helpers.links.confirm") },
-                          :class => 'btn btn-sm btn-danger' %>
+                          :class => 'btn btn-xs btn-danger' %>
                   <%= link_to t("helpers.links.download"),
                           download_user_file_path(shared),
-                          :class => "btn btn-sm btn-success" %>
+                          :class => "btn btn-xs btn-success" %>
                 </p>
               </div>
             </div>

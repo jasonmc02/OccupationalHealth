@@ -1,0 +1,687 @@
+<%- model_class = Formulary -%>
+<%- model_subclassone = FormularyProfile %>
+<%- model_subclasstwo = FormularyContext %>
+<%- model_subclassthree = FormularyResearch %>
+<%- model_subclassfour = FormularyAction %>
+<%- model_subclassfive = FormularyPolicy %>
+<div id="service_1">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= t "activerecord.models.report" %></h3>
+    </div>
+    <form id="search-formularies" class="form-inline">
+      <div class="row margin-override">
+        <div class="form-group col-md-8">
+          <h4 class="weight-override"><%= t "activerecord.attributes.report.query" %></h4>
+        </div>
+        <div class="form-group col-md-4">
+          <h4 class="weight-override"><%= t "activerecord.attributes.report.param" %></h4>
+        </div>
+      </div>
+      <div class="row margin-override last-row">
+        <div class="form-group">
+          <button class="form-control btn btn-default" id="add_param"><%= t "helpers.links.add_param" %></button>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="form-control btn btn-primary" value="<%= t 'helpers.links.submit' %>">
+        </div>
+      </div>
+    </form>
+    <div id="formularies"></div>
+  </div>
+</div>
+<div id="modal-select-column" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= I18n.t "report.modal_title" %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="color-override">
+                <h4 class="panel-title">
+                  <%= t "formulary_sections.registration" %>
+                </h4>
+              </a>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="list-group attributes">
+                  <a href="#" id="1" class="list-group-item" data-st="formulary_profiles" data-sc="name" data-sk="string">
+                    <%= model_subclassone.human_attribute_name(:name_modal) %>
+                  </a>
+                  <a href="#" id="2" class="list-group-item" data-st="formulary_profiles" data-sc="project_begins" data-sk="date_beging">
+                    <%= model_subclassone.human_attribute_name(:project_begins_modal) %>
+                  </a>
+                  <a href="#" id="3" class="list-group-item" data-st="formulary_profiles" data-sc="project_ends" data-sk="date_end">
+                    <%= model_subclassone.human_attribute_name(:project_ends_modal) %>
+                  </a>
+                  <a href="#" id="4" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassone.human_attribute_name(:formulary_profile_5_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="mining">
+                        <%= model_subclassone.human_attribute_name(:mining) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="pesticide">
+                        <%= model_subclassone.human_attribute_name(:pesticide) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="occupational_health">
+                        <%= model_subclassone.human_attribute_name(:occupational_health) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="community_paticipation">
+                        <%= model_subclassone.human_attribute_name(:community_paticipation) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="watershed_management">
+                        <%= model_subclassone.human_attribute_name(:watershed_management) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="solid_waste_management">
+                        <%= model_subclassone.human_attribute_name(:solid_waste_management) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="public_health">
+                        <%= model_subclassone.human_attribute_name(:public_health) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="animal_health">
+                        <%= model_subclassone.human_attribute_name(:animal_health) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="determinant_of_health">
+                        <%= model_subclassone.human_attribute_name(:determinant_of_health) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="food_sovereignty">
+                        <%= model_subclassone.human_attribute_name(:food_sovereignty) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="indigenous_health">
+                        <%= model_subclassone.human_attribute_name(:indigenous_health) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="climate_change">
+                        <%= model_subclassone.human_attribute_name(:climate_change) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="forest_management">
+                        <%= model_subclassone.human_attribute_name(:forest_management) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="training">
+                        <%= model_subclassone.human_attribute_name(:training) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="other_areas">
+                        <%= model_subclassone.human_attribute_name(:other_areas) %>
+                      </label>
+                    </div>
+                  </div>
+                  <a href="#" id="5"class="list-group-item" data-st="formulary_profiles" data-sc="discipline" data-sk="string">
+                    <%= model_subclassone.human_attribute_name(:discipline_modal) %>
+                  </a>
+                  <a href="#" id="6" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassone.human_attribute_name(:formulary_profile_9_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="research">
+                        <%= model_subclassone.human_attribute_name(:research) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="action">
+                        <%= model_subclassone.human_attribute_name(:action) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="policy">
+                        <%= model_subclassone.human_attribute_name(:policy) %>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="color-override">
+                <h4 class="panel-title">
+                  <%= t "formulary_sections.context" %>
+                </h4>
+              </a>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="list-group attributes">
+                  <a href="#" id="7" class="list-group-item" data-sk="boolean">
+                    <%= model_subclasstwo.human_attribute_name(:formulary_context_2_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="urban">
+                        <%= model_subclasstwo.human_attribute_name(:urban) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="semiurban">
+                        <%= model_subclasstwo.human_attribute_name(:semiurban) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="rural">
+                        <%= model_subclasstwo.human_attribute_name(:rural) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="wilderness">
+                        <%= model_subclasstwo.human_attribute_name(:wilderness) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="resource_extraction">
+                        <%= model_subclasstwo.human_attribute_name(:resource_extraction) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="environmental_degradation">
+                        <%= model_subclasstwo.human_attribute_name(:environmental_degradation) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="climate_effect">
+                        <%= model_subclasstwo.human_attribute_name(:climate_effect) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="natural_force">
+                        <%= model_subclasstwo.human_attribute_name(:natural_force) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="coastal">
+                        <%= model_subclasstwo.human_attribute_name(:coastal) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="agricultural">
+                        <%= model_subclasstwo.human_attribute_name(:agricultural) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="rainfores">
+                        <%= model_subclasstwo.human_attribute_name(:rainfores) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="cloud_forest">
+                        <%= model_subclasstwo.human_attribute_name(:cloud_forest) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="dry_forest">
+                        <%= model_subclasstwo.human_attribute_name(:dry_forest) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="old_growth_forest">
+                        <%= model_subclasstwo.human_attribute_name(:old_growth_forest) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="mixed_forest">
+                        <%= model_subclasstwo.human_attribute_name(:mixed_forest) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="other_scale">
+                        <%= model_subclasstwo.human_attribute_name(:other_scale) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="watershed">
+                        <%= model_subclasstwo.human_attribute_name(:watershed) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="wetland">
+                        <%= model_subclasstwo.human_attribute_name(:wetland) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="desert">
+                        <%= model_subclasstwo.human_attribute_name(:desert) %>
+                      </label>
+                    </div>
+                  </div>
+                  <a href="#" id="8" class="list-group-item" data-st="formulary_contexts" data-sc="intersectoral_aspect" data-sk="boolean_simple">
+                    <%= model_subclasstwo.human_attribute_name(:intersectoral_aspect_modal) %>
+                  </a>
+                  <a href="#" id="9" class="list-group-item" data-st="formulary_contexts" data-sc="success_consideration" data-sk="boolean_simple">
+                    <%= model_subclasstwo.human_attribute_name(:success_consideration_modal) %>
+                  </a>
+                  <a href="#" id="10" class="list-group-item" data-sk="boolean">
+                    <%= model_subclasstwo.human_attribute_name(:formulary_context_8_c_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="gender">
+                        <%= model_subclasstwo.human_attribute_name(:gender) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="equity">
+                        <%= model_subclasstwo.human_attribute_name(:equity) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="community_participation">
+                        <%= model_subclasstwo.human_attribute_name(:community_participation) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="policy">
+                        <%= model_subclasstwo.human_attribute_name(:policy) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="complexity">
+                        <%= model_subclasstwo.human_attribute_name(:complexity) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_contexts" data-sc="other_approach">
+                        <%= model_subclasstwo.human_attribute_name(:other_approach) %>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="color-override">
+                <h4 class="panel-title">
+                  <%= t "formulary_sections.research" %>
+                </h4>
+              </a>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="list-group attributes">
+                  <a href="#" id="11" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassthree.human_attribute_name(:formulary_research_3_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_researches" data-sc="test_hypothesis">
+                        <%= model_subclassthree.human_attribute_name(:test_hypothesis) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_researches" data-sc="generate_knowledge">
+                        <%= model_subclassthree.human_attribute_name(:generate_knowledge) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_researches" data-sc="inlcude_actor">
+                        <%= model_subclassthree.human_attribute_name(:inlcude_actor) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_researches" data-sc="translate_knowledge">
+                        <%= model_subclassthree.human_attribute_name(:translate_knowledge) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_researches" data-sc="no_impact">
+                        <%= model_subclassthree.human_attribute_name(:no_impact) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_researches" data-sc="other_integration">
+                        <%= model_subclassthree.human_attribute_name(:other_integration) %>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class="color-override">
+                <h4 class="panel-title">
+                  <%= t "formulary_sections.action" %>
+                </h4>
+              </a>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="list-group attributes">
+                  <a href="#" id="12" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassfour.human_attribute_name(:formulary_action_1_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="community_leader">
+                        <%= model_subclassfour.human_attribute_name(:community_leader) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="decision_maker">
+                        <%= model_subclassfour.human_attribute_name(:decision_maker) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="other_research_group">
+                        <%= model_subclassfour.human_attribute_name(:other_research_group) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="community_group">
+                        <%= model_subclassfour.human_attribute_name(:community_group) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="ngos">
+                        <%= model_subclassfour.human_attribute_name(:ngos) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="business">
+                        <%= model_subclassfour.human_attribute_name(:business) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="church">
+                        <%= model_subclassfour.human_attribute_name(:church) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="other_participation">
+                        <%= model_subclassfour.human_attribute_name(:other_participation) %>
+                      </label>
+                    </div>
+                  </div>
+                  <a href="#" id="13" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassfour.human_attribute_name(:formulary_action_2_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="municipal_actors">
+                        <%= model_subclassfour.human_attribute_name(:municipal_actors) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="regional_actors">
+                        <%= model_subclassfour.human_attribute_name(:regional_actors) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="national_actors">
+                        <%= model_subclassfour.human_attribute_name(:national_actors) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="other_actors">
+                        <%= model_subclassfour.human_attribute_name(:other_actors) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="none_actors">
+                        <%= model_subclassfour.human_attribute_name(:none_actors) %>
+                      </label>
+                    </div>
+                  </div>
+                  <a href="#" id="14" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassfour.human_attribute_name(:formulary_action_3_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="entire_process">
+                        <%= model_subclassfour.human_attribute_name(:entire_process) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="research_part">
+                        <%= model_subclassfour.human_attribute_name(:research_part) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="not_participatory_process">
+                        <%= model_subclassfour.human_attribute_name(:not_participatory_process) %>
+                      </label>
+                    </div>
+                  </div>
+                  <a href="#" id="15" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassfour.human_attribute_name(:formulary_action_5_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="implement">
+                        <%= model_subclassfour.human_attribute_name(:implement) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="new_methodologies">
+                        <%= model_subclassfour.human_attribute_name(:new_methodologies) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="other_incorporation">
+                        <%= model_subclassfour.human_attribute_name(:other_incorporation) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="influence">
+                        <%= model_subclassfour.human_attribute_name(:influence) %>
+                      </label>
+                    </div>
+                  </div>
+                  <a href="#" id="16" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassfour.human_attribute_name(:formulary_action_7_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="local_impacts">
+                        <%= model_subclassfour.human_attribute_name(:local_impacts) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="regional_impacts">
+                        <%= model_subclassfour.human_attribute_name(:regional_impacts) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="national_impacts">
+                        <%= model_subclassfour.human_attribute_name(:national_impacts) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="international_impacts">
+                        <%= model_subclassfour.human_attribute_name(:international_impacts) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="global_impacts">
+                        <%= model_subclassfour.human_attribute_name(:global_impacts) %>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" class="color-override">
+                <h4 class="panel-title">
+                  <%= t "formulary_sections.policy" %>
+                </h4>
+              </a>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="list-group attributes">
+                  <a href="#" id="17" class="list-group-item" data-sk="select">
+                    <%= model_subclassfive.human_attribute_name(:intersectoral_design_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <select data-st="formulary_policies" data-sc="intersectoral_design" class="form-control">
+                      <% @intersectoral_design_options.each do |x| %>
+                        <option value="<%= x[:key] %>"><%= x[:val] %></option>
+                      <% end %>
+                    </select>
+                  </div>
+                  <a href="#" id="18" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassfive.human_attribute_name(:formulary_policy_2_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_policies" data-sc="improve_strategies">
+                        <%= model_subclassfive.human_attribute_name(:improve_strategies) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_policies" data-sc="prevent_strategies">
+                        <%= model_subclassfive.human_attribute_name(:prevent_strategies) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_policies" data-sc="actor_strategies">
+                        <%= model_subclassfive.human_attribute_name(:actor_strategies) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_policies" data-sc="other">
+                        <%= model_subclassfive.human_attribute_name(:other) %>
+                      </label>
+                    </div>
+                  </div>
+                  <a href="#" id="19" class="list-group-item" data-sk="select">
+                    <%= model_subclassfive.human_attribute_name(:project_result_modal) %>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <select data-st="formulary_policies" data-sc="project_result" class="form-control">
+                      <% @project_result_options.each do |z| %>
+                        <option value="<%= z[:key] %>"><%= z[:val] %></option>
+                      <% end %>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal"><%= I18n.t "helpers.links.cancel" %></button>
+        <button class="btn btn-primary add-params" data-dismiss="modal"><%= I18n.t "helpers.links.add" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "js/reports" %>

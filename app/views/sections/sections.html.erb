@@ -74,18 +74,18 @@
               <p>
                 <%= link_to t("helpers.links.edit"),
                       edit_section_path(section),
-                      :class => 'btn btn-sm btn-info' %>
+                      :class => 'btn btn-xs btn-info' %>
                 <%= link_to t("helpers.links.destroy"),
                       section_path(section),
                       :method => :delete,
                       :data => { :confirm => t("helpers.links.confirm") },
-                      :class => 'btn btn-sm btn-danger' %>
+                      :class => 'btn btn-xs btn-danger' %>
                 <%= link_to model_class.human_attribute_name(:show_questions),
                       questions_custom_form_path(@form_wrapper),
                       :class => "btn btn-xs btn-success" %>
                 <%= link_to model_class.human_attribute_name(:add_question),
                       new_custom_form_path(:form_wrapper_id => @form_wrapper.id),
-                      :class => "btn btn-sm btn-primary" %>
+                      :class => "btn btn-xs btn-primary" %>
               </p>
             </div>
           </div>

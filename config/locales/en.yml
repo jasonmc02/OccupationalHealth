@@ -38,6 +38,7 @@ en:
       submit: "Submit"
       remove: "Remove"
       go_to: "Go to "
+      add_param: "Add Parameter"
     alerts:
       active_form_wrapper: "Activating this form will appear as default form for all users, other assets forms are disabled! \n Do you want to continue?"
       deactivate_form_wrapper: "Disabling this form the form is activated by default for all users! \n Do you want to continue?"
@@ -123,7 +124,7 @@ en:
     links:
       home: "Home"
       formulary: "Formularies"
-      report: "Report"
+      report: "Reports"
     configuration:
       configuration: "Config"
       users_settings: "Users Settings"
@@ -134,6 +135,9 @@ en:
     button_role_assign: "Role Assign"
   user_files_page:
     modal_title: "Add people to share the file"
+  report:
+    report: "Reports"
+    modal_title: "Select a parameter to search"
   selects:
     question_types:
       input: "Input text"
@@ -221,6 +225,7 @@ en:
         single: "Question"
         plural: "Questions"
       answer: "Formulary"
+      report: "Reports"
     attributes:
       user:
         email: "Email"
@@ -267,6 +272,12 @@ en:
         entire_program: "An entire Program"
         other_project: "Other"
         which_project: "Which?"
+        name_modal: "Project name"
+        project_begins_modal: "Being date"
+        project_ends_modal: "End date"
+        formulary_profile_5_modal: "Areas that your project include"
+        discipline_modal: "Disciplines and sectors are represented through institutions, people or..."
+        formulary_profile_9_modal: "Is your work centered in:"
       formulary_contact:
         name: "Name"
         email: "Email"
@@ -321,6 +332,10 @@ en:
         complexity: "Complexity"
         other_approach: "Other"
         which_approach: "Please specify"
+        formulary_context_2_modal: "The main features of the ecosystem are:"
+        intersectoral_aspect_modal: "Intersectoral aspect of your project"
+        success_consideration_modal: "Consideration of how the successes of your project could be scaled..."
+        formulary_context_8_c_modal: "Which of the following issues does your project focus on explicitly:"
       formulary_research:
         interaction: "1. Have the impacts of the interactions between different drivers (for example social, economic, environmental and health) been considered in your analysis?"
         interaction_name: "The interactions most relevant to this study are:"
@@ -335,6 +350,7 @@ en:
         no_impact: "Has had no impact on the project's findings or usefulness"
         other_integration: "Other"
         which_integration: "Which?"
+        formulary_research_3_modal: "Integrating knowledge of the population(s) studied has been useful for:"
       formulary_action:
         community_leader: "Community Leaders "
         decision_maker: "Decision makers "
@@ -373,17 +389,25 @@ en:
         national_impacts: "National"
         international_impacts: "International"
         global_impacts: "Global"
+        formulary_action_1_modal: "In this project, there was active participation from:"
+        formulary_action_2_modal: "The execution of actions and strategies arising from..."
+        formulary_action_3_modal: "When you reflect on the participatory processes developed in your project..."
+        formulary_action_5_modal: "What new learning about ecosystem approaches to health research and practice..."
+        formulary_action_7_modal: "Level have the principle impacts of the project been achieved"
       formulary_policy:
-        intersectoral_design: "1. The planned and/or completed interventions for your project should have/have had an impact on:"
+        intersectoral_design: "1. The planned and / or completed interventions for your project should have / have had an impact on:"
         improve_strategies: "Strategies that improve the ecological efficiency, impact and sustainability of the use of resources"
-        prevent_strategies: "Strategies that prevent, mitigate, control, remediate, and/or correct the possible ecosystem and environmental effects included in the objectives of our project"
+        prevent_strategies: "Strategies that prevent, mitigate, control, remediate, and / or correct the possible ecosystem and environmental effects included in the objectives of our project"
         actor_strategies: "Plans, strategies, and agreements with stakeholders that are responsible for follow-up, evaluation and monitoring as they pertain to project objectives"
         other: "Other"
         other_description: "Describe"
         multiple_kind: "3. Does your project incorporate multiple and diverse kinds of knowledge, experiences, histories, narratives and evidence in the development of recommendations intended to support policy change? (with specific attention to local knowledge)"
         multiple_kind_name: "Which ones?"
         improve_policies: "4. Which community groups, and non-community groups, have taken-up and used the results of your project to develop and/or undertake (in those cases where they exist, and did not have existing similar policies) initiative to change and improve their policies?"
-        project_result: "5. Has your project resulted in an intervention, or a policy change pertaining to health and ecosystems/environment"
+        project_result: "5. Has your project resulted in an intervention, or a policy change pertaining to health and ecosystems / environment"
+        intersectoral_design_modal: "The planned and / or completed interventions for your..."
+        formulary_policy_2_modal: "Has your project succeeded in including, intervening or..."
+        project_result_modal: "Has your project resulted in an intervention, or a policy change..."
       user_file:
         file: "Archive"
         name: "Name"
@@ -419,3 +443,8 @@ en:
       answer:
         project_name: "Form's Title"
         created_at: "Created"
+      report:
+        query: "Fields on which the search is performed"
+        comparate: "Define comparition"
+        param: "Parameters to compare"
+        result: "%{quantity} Results"

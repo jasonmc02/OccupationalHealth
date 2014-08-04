@@ -74,36 +74,36 @@
               <p>
                 <%= link_to t("helpers.links.edit"),
                       edit_form_wrapper_path(form_wrapper),
-                      :class => 'btn btn-sm btn-info' %>
+                      :class => 'btn btn-xs btn-info' %>
                 <%= link_to t("helpers.links.destroy"),
                       form_wrapper_path(form_wrapper),
                       :method => :delete,
                       :data => { :confirm => t("helpers.links.confirm") },
-                      :class => 'btn btn-sm btn-danger' %>
+                      :class => 'btn btn-xs btn-danger' %>
                 <%= link_to model_class.human_attribute_name(:show_sections),
                       sections_section_path(form_wrapper),
                       :class => "btn btn-xs btn-success" %>
                 <%= link_to model_class.human_attribute_name(:add_section),
                       new_section_path(:form_wrapper_id => form_wrapper.id),
-                      :class => "btn btn-sm btn-primary" %>
+                      :class => "btn btn-xs btn-primary" %>
                 <%= link_to model_class.human_attribute_name(:show_questions),
                       questions_custom_form_path(form_wrapper),
                       :class => "btn btn-xs btn-success" %>
                 <%= link_to model_class.human_attribute_name(:add_question),
                       new_custom_form_path(:form_wrapper_id => form_wrapper.id),
-                      :class => "btn btn-sm btn-primary" %>
+                      :class => "btn btn-xs btn-primary" %>
                 <% if form_wrapper.active %>
                   <%= link_to t("helpers.links.deactivate"),
                         deactive_form_wrappers_path,
                         :method => :post,
                         :data => { :confirm => t("helpers.alerts.deactivate_form_wrapper") },
-                        :class => 'btn btn-sm btn-warning' %>
+                        :class => 'btn btn-xs btn-warning' %>
                 <% else %>
                   <%= link_to t("helpers.links.active"),
                         active_form_wrapper_path(form_wrapper),
                         :method => :post,
                         :data => { :confirm => t("helpers.alerts.active_form_wrapper") },
-                        :class => 'btn btn-sm btn-warning' %>
+                        :class => 'btn btn-xs btn-warning' %>
                 <% end %>
               </p>
             </div>

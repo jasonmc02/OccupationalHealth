@@ -35,6 +35,10 @@ body {
 	.index-scene {
 		width: 850px;
 	}
+	.h4-extra-margin {
+		margin-top: 30px;
+		margin-bottom: 15px;
+	}
 	@media (max-width: 1200px) {
 		.index-scene {
 			width: 600px;
@@ -97,6 +101,23 @@ body {
 		}
 	}
 	/* OVERRIDES */
+	#service_1 {
+		form#search-formularies {
+			.row.margin-override {
+				margin: 10px;
+			}
+			h4.weight-override {
+				font-weight: normal;
+			}
+		}
+	}
+	#modal-select-column {
+		.panel-heading {
+			.color-override {
+				color: #333;
+			}	
+		}
+	}
 	#contact {
 		.form {
 			margin-bottom: 20px;

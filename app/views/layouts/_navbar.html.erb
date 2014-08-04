@@ -29,6 +29,13 @@
               <%= t 'navbar_elements.links.formulary' %>
             </a>
           </li>
+          <% if current_user.role_id == Rails.configuration.admin_role %>
+            <li>
+              <a href="<%= reports_home_index_path %>" class="upper-case">
+                <%= t 'navbar_elements.links.report' %>
+              </a>
+            </li>
+          <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle upper-case" data-toggle="dropdown">
               <%= current_user.email %>
