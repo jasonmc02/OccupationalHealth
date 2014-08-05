@@ -29,7 +29,7 @@ class UserFileSharesController < ApplicationController
 
     respond_to do |format|
       if @user_file_share.save
-        format.html { redirect_to @user_file_share, notice: 'User file share was successfully created.' }
+        format.html { redirect_to @user_file_share, alert: I18n.t('activerecord.models.user_file_share') + I18n.t('helpers_locale.models.created') }
         format.json { render action: 'show', status: :created, location: @user_file_share }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class UserFileSharesController < ApplicationController
   def update
     respond_to do |format|
       if @user_file_share.update(user_file_share_params)
-        format.html { redirect_to @user_file_share, notice: 'User file share was successfully updated.' }
+        format.html { redirect_to @user_file_share, alert: I18n.t('activerecord.models.user_file_share') + I18n.t('helpers_locale.models.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -57,7 +57,7 @@ class UserFileSharesController < ApplicationController
   def destroy
     @user_file_share.destroy
     respond_to do |format|
-      format.html { redirect_to user_file_shares_url }
+      format.html { redirect_to user_file_shares_url, alert: I18n.t('activerecord.models.user_file_share') + I18n.t('helpers_locale.models.deleted') }
       format.json { head :no_content }
     end
   end

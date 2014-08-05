@@ -92,6 +92,13 @@ es:
       previous: "&lsaquo; Anterior"
       next: "Siguiente &rsaquo;"
       truncate: "&hellip;"
+  helpers_locale:
+    application_helper:
+      and: " y "
+    models:
+      created: " ha sido creado con éxito."
+      updated: " ha sido editado con éxito."
+      deleted: " ha sido eliminado con éxito."
   mailit:
     subjects:
       file_shared: "Archivo Compartido"
@@ -215,12 +222,25 @@ es:
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: " no coincide con la Contraseña"
+              blank: " no puede estar en blanco"
+            password:
+              too_short: " es demasiado corta (mínimo 8 caracteres)"
+              blank: " no puede estar en blanco"
+            email:
+              blank: " no puede estar en blanco"
+              taken: "ya ha sido tomado"
+              not_found: " no encontrado"
     models:
       user: "Usuario"
       formulary: "Formulario"
       user_file:
         model_name: "Repositorio"
         model_util: "Archivo"
+      user_file_share: "Compartir"
       form_wrapper: 
         single: "Formulario Personalizado"
         plural: "Formularios Personalizado"

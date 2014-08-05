@@ -69,10 +69,10 @@ class CustomFormsController < ApplicationController
         @custom_form.check_index()
         
         if action.eql?("true")
-          format.html { redirect_to new_custom_form_path(:form_wrapper_id => form_wrapper_id), notice: 'Custom form was successfully created.' }
+          format.html { redirect_to new_custom_form_path(:form_wrapper_id => form_wrapper_id), alert: I18n.t('activerecord.models.custom_form.single') + I18n.t('helpers_locale.models.created') }
           format.json { render action: 'show', status: :created, location: @custom_form }
         else
-          format.html { redirect_to form_wrappers_path, notice: 'Custom form was successfully created.' }
+          format.html { redirect_to form_wrappers_path, alert: I18n.t('activerecord.models.custom_form.single') + I18n.t('helpers_locale.models.created') }
           format.json { render action: 'show', status: :created, location: @custom_form }
         end
       else
@@ -113,7 +113,7 @@ class CustomFormsController < ApplicationController
         @custom_form.store_options(options_checkbox, options_select, nil, true)
         @custom_form.check_index()
 
-        format.html { redirect_to questions_custom_form_path(form_wrapper_id), notice: 'Custom form was successfully updated.' }
+        format.html { redirect_to questions_custom_form_path(form_wrapper_id), alert: I18n.t('activerecord.models.custom_form.single') + I18n.t('helpers_locale.models.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -128,7 +128,7 @@ class CustomFormsController < ApplicationController
     @custom_form.destroy
     respond_to do |format|
       form_wrapper = FormWrapper.find(@custom_form.section.form_wrapper_id)
-      format.html { redirect_to questions_custom_form_path(form_wrapper.id) }
+      format.html { redirect_to questions_custom_form_path(form_wrapper.id), alert: I18n.t('activerecord.models.custom_form.single') + I18n.t('helpers_locale.models.deleted') }
       format.json { head :no_content }
     end
   end

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_path, notice: 'Formulary profile was successfully updated.' }
+        format.html { redirect_to users_path, alert: I18n.t('activerecord.models.user') + I18n.t('helpers_locale.models.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'index' }

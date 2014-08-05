@@ -85,6 +85,13 @@ en:
       negative: "No"
       true: "Yes"
       false: "No"
+  helpers_locale:
+    application_helper:
+      and: " and "
+    models:
+      created: " was successfully created."
+      updated: " was successfully updated."
+      deleted: " was successfully deleted."
   mailit:
     subjects:
       file_shared: "File Shared"
@@ -214,6 +221,7 @@ en:
       user_file:
         model_name: "Repository"
         model_util: "File"
+      user_file_share: "Share"
       form_wrapper: 
         single: "Custom Formulary"
         plural: "Custom Formulary"

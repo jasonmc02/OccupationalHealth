@@ -33,7 +33,7 @@ class SectionsController < ApplicationController
       if @section.save
         @section.check_index()
         form_wrapper = FormWrapper.find(@section.form_wrapper_id)
-        format.html { redirect_to sections_section_path(form_wrapper), notice: 'Form wrapper was successfully created.' }
+        format.html { redirect_to sections_section_path(form_wrapper), alert: I18n.t('activerecord.models.section.single') + I18n.t('helpers_locale.models.created') }
         format.json { render action: 'show', status: :created, location: @section }
       else
         format.html { render action: 'new' }
@@ -49,7 +49,7 @@ class SectionsController < ApplicationController
       if @section.update(section_params)
         @section.check_index()
         form_wrapper = FormWrapper.find(@section.form_wrapper_id)
-        format.html { redirect_to sections_section_path(form_wrapper), notice: 'Section was successfully updated.' }
+        format.html { redirect_to sections_section_path(form_wrapper), alert: I18n.t('activerecord.models.section.single') + I18n.t('helpers_locale.models.created') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -64,7 +64,7 @@ class SectionsController < ApplicationController
     @section.destroy
     respond_to do |format|
       form_wrapper = FormWrapper.find(@section.form_wrapper_id)
-      format.html { redirect_to sections_section_path(form_wrapper) }
+      format.html { redirect_to sections_section_path(form_wrapper), alert: I18n.t('activerecord.models.section.single') + I18n.t('helpers_locale.models.created') }
       format.json { head :no_content }
     end
   end

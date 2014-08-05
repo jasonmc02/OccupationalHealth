@@ -40,7 +40,7 @@ class UserFilesController < ApplicationController
     @user_file.user_id = current_user.id
     respond_to do |format|
       if @user_file.save
-        format.html { redirect_to user_files_url, notice: 'User file was successfully created.' }
+        format.html { redirect_to user_files_url, alert: I18n.t('activerecord.models.user_file.model_util') + I18n.t('helpers_locale.models.created') }
         format.json { render action: 'show', status: :created, location: @user_file }
       else
         format.html { render action: 'new' }
@@ -54,7 +54,7 @@ class UserFilesController < ApplicationController
   def update
     respond_to do |format|
       if @user_file.update(user_file_params)
-        format.html { redirect_to @user_file, notice: 'User file was successfully updated.' }
+        format.html { redirect_to @user_file, alert: I18n.t('activerecord.models.user_file.model_util') + I18n.t('helpers_locale.models.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -68,7 +68,7 @@ class UserFilesController < ApplicationController
   def destroy
     @user_file.destroy
     respond_to do |format|
-      format.html { redirect_to user_files_url }
+      format.html { redirect_to user_files_url, alert: I18n.t('activerecord.models.user_file.model_util') + I18n.t('helpers_locale.models.deleted') }
       format.json { head :no_content }
     end
   end

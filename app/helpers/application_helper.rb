@@ -257,7 +257,7 @@ module ApplicationHelper
     response = ""
     if result.length > 0
       if result.length > 1
-        response = result[0..-2].join(", ") + " and " + result[-1]
+        response = result[0..-2].join(", ") + I18n.t("helpers_locale.application_helper.and") + result[-1]
       else
         response = result[0]
       end
@@ -269,7 +269,6 @@ module ApplicationHelper
     if result.length > 0
       if result.length > 1
         response = result.join("\n")
-        a=1/0
       else
         response = result[0]
       end

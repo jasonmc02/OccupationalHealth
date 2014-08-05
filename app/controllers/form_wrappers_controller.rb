@@ -30,7 +30,7 @@ class FormWrappersController < ApplicationController
 
     respond_to do |format|
       if @form_wrapper.save
-        format.html { redirect_to new_custom_form_path(:form_wrapper_id => @form_wrapper.id), notice: 'Form wrapper was successfully created.' }
+        format.html { redirect_to new_custom_form_path(:form_wrapper_id => @form_wrapper.id), alert: I18n.t('activerecord.models.form_wrapper.single') + I18n.t('helpers_locale.models.created') }
         format.json { render action: 'show', status: :created, location: @form_wrapper }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class FormWrappersController < ApplicationController
   def update
     respond_to do |format|
       if @form_wrapper.update(form_wrapper_params)
-        format.html { redirect_to form_wrappers_path, notice: 'Form wrapper was successfully updated.' }
+        format.html { redirect_to form_wrappers_path, alert: I18n.t('activerecord.models.form_wrapper.single') + I18n.t('helpers_locale.models.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -58,7 +58,7 @@ class FormWrappersController < ApplicationController
   def destroy
     @form_wrapper.destroy
     respond_to do |format|
-      format.html { redirect_to form_wrappers_url }
+      format.html { redirect_to form_wrappers_url, alert: I18n.t('activerecord.models.form_wrapper.single') + I18n.t('helpers_locale.models.deleted') }
       format.json { head :no_content }
     end
   end

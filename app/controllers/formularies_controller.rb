@@ -55,7 +55,7 @@ class FormulariesController < ApplicationController
     @formulary.user_id = current_user.id
     respond_to do |format|
       if @formulary.save
-        format.html { redirect_to formularies_url, notice: 'Formulary was successfully created.' }
+        format.html { redirect_to formularies_url, alert: I18n.t('activerecord.models.formulary') + I18n.t('helpers_locale.models.created') }
         format.json { render action: 'show', status: :created, location: @formulary }
       else
         format.html { render action: 'new' }
@@ -69,7 +69,7 @@ class FormulariesController < ApplicationController
   def update
     respond_to do |format|
       if @formulary.update(formulary_params)
-        format.html { redirect_to formularies_url, notice: 'Formulary was successfully updated.' }
+        format.html { redirect_to formularies_url, alert: I18n.t('activerecord.models.formulary') + I18n.t('helpers_locale.models.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -84,7 +84,7 @@ class FormulariesController < ApplicationController
     if @formulary.user_id == current_user.id
       @formulary.destroy
       respond_to do |format|
-        format.html { redirect_to formularies_url }
+        format.html { redirect_to formularies_url, alert: I18n.t('activerecord.models.formulary') + I18n.t('helpers_locale.models.deleted') }
         format.json { head :no_content }
       end
     else

@@ -30,14 +30,13 @@ class AnswersController < ApplicationController
       @form_wrapper = FormWrapper.where(:active => true).first
       @sections = @form_wrapper.sections.order(:sort_index).includes(:custom_forms).order("custom_forms.sort_index")
     else
-      redirect_to new_formulary_path
+      redirect_to new_alert:_path
     end
   end
 
   # GET /answers/1/edit
   def edit
     @answers = Answer.where(:user_counter => params[:user_counter], :wrapper_id => params[:wrapper_id], :user_id => current_user.id)
-    Rails.logger.info "-->1<--"
     if @answers.first.user_id == current_user.id
       @answer_form = Answer.new
       @form_wrapper = FormWrapper.where(:id => params[:wrapper_id]).first
@@ -54,10 +53,10 @@ class AnswersController < ApplicationController
   def create
     if params.blank? == false && params[:answer][:editing]
       Answer.update_stored_answers(params, current_user)
-      redirect_to answers_path
+      redirect_to answers_path, alert: I18n.t('activerecord.models.answer') + I18n.t('helpers_locale.models.updated')
     else    
       Answer.store_answers(params, current_user)
-      redirect_to answers_path
+      redirect_to answers_path, alert: I18n.t('activerecord.models.answer') + I18n.t('helpers_locale.models.created')
     end
     #respond_to do |format|
     #  if @answer.save
@@ -74,7 +73,7 @@ class AnswersController < ApplicationController
   # PATCH/PUT /answers/1.json
   def update
     Answer.store_answers(params, current_user)
-    redirect_to answers_path
+    redirect_to answers_path, alert: I18n.t('activerecord.models.answer') + I18n.t('helpers_locale.models.updated')
     #respond_to do |format|
     #  if @answer.update(answer_params)
     #    format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
@@ -91,7 +90,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer.destroy
     respond_to do |format|
-      format.html { redirect_to answers_url }
+      format.html { redirect_to answers_url, alert: I18n.t('activerecord.models.answer') + I18n.t('helpers_locale.models.deleted') }
       format.json { head :no_content }
     end
   end
@@ -101,7 +100,7 @@ class AnswersController < ApplicationController
     if answers.first.user_id == current_user.id
       answers.destroy_all
       respond_to do |format|
-        format.html { redirect_to answers_url }
+        format.html { redirect_to answers_url, alert: I18n.t('activerecord.models.answer') + I18n.t('helpers_locale.models.deleted') }
         format.json { head :no_content }
       end
     end
