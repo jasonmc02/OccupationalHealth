@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726190923) do
+ActiveRecord::Schema.define(version: 20140806030506) do
 
   create_table "answers", force: true do |t|
     t.integer  "custom_form_id"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20140726190923) do
     t.boolean  "global_impacts"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "none_impact"
   end
 
   create_table "formulary_contacts", force: true do |t|

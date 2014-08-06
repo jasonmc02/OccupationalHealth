@@ -20,7 +20,8 @@
       </div>
       <div class="row margin-override last-row">
         <div class="form-group">
-          <button class="form-control btn btn-default" id="add_param"><%= t "helpers.links.add_param" %></button>
+          <button class="form-control btn btn-default" id="add_param"><%= t "helpers.links.add_param" %>
+          </button>
         </div>
         <div class="form-group">
           <input type="submit" class="form-control btn btn-primary" value="<%= t 'helpers.links.submit' %>">
@@ -52,15 +53,23 @@
                 <div class="list-group attributes">
                   <a href="#" id="1" class="list-group-item" data-st="formulary_profiles" data-sc="name" data-sk="string">
                     <%= model_subclassone.human_attribute_name(:name_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <a href="#" id="2" class="list-group-item" data-st="formulary_profiles" data-sc="project_begins" data-sk="date_beging">
                     <%= model_subclassone.human_attribute_name(:project_begins_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <a href="#" id="3" class="list-group-item" data-st="formulary_profiles" data-sc="project_ends" data-sk="date_end">
                     <%= model_subclassone.human_attribute_name(:project_ends_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
+                  <a href="#" id="20" class="list-group-item" data-st="formulary_profiles" data-sc="region" data-sk="string">
+                    <%= model_subclassone.human_attribute_name(:region_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <a href="#" id="4" class="list-group-item" data-sk="boolean">
                     <%= model_subclassone.human_attribute_name(:formulary_profile_5_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -154,11 +163,43 @@
                       </label>
                     </div>
                   </div>
+                  <a href="#" id="21" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassone.human_attribute_name(:formulary_profile_6_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="project" class="trigger-add">
+                        <%= model_subclassone.human_attribute_name(:project) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="part_program" class="trigger-add">
+                        <%= model_subclassone.human_attribute_name(:part_program) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="entire_program" class="trigger-add">
+                        <%= model_subclassone.human_attribute_name(:entire_program) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_profiles" data-sc="other_project" class="trigger-add">
+                        <%= model_subclassone.human_attribute_name(:other_project) %>
+                      </label>
+                    </div>
+                  </div>
                   <a href="#" id="5"class="list-group-item" data-st="formulary_profiles" data-sc="discipline" data-sk="string">
                     <%= model_subclassone.human_attribute_name(:discipline_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <a href="#" id="6" class="list-group-item" data-sk="boolean">
                     <%= model_subclassone.human_attribute_name(:formulary_profile_9_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -197,6 +238,7 @@
                 <div class="list-group attributes">
                   <a href="#" id="7" class="list-group-item" data-sk="boolean">
                     <%= model_subclasstwo.human_attribute_name(:formulary_context_2_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -314,14 +356,43 @@
                       </label>
                     </div>
                   </div>
-                  <a href="#" id="8" class="list-group-item" data-st="formulary_contexts" data-sc="intersectoral_aspect" data-sk="boolean_simple">
+                  <a href="#" id="8" class="list-group-item" data-sk="select">
                     <%= model_subclasstwo.human_attribute_name(:intersectoral_aspect_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <select data-st="formulary_contexts" data-sc="intersectoral_aspect_name" class="form-control">
+                      <% @intersectoral_aspect.each do |z| %>
+                        <option value="<%= z[:key] %>"><%= z[:val] %></option>
+                      <% end %>
+                    </select>
+                  </div>
+                  <a href="#" id="22" class="list-group-item" data-st="formulary_contexts" data-sc="local_context" data-sk="boolean_simple">
+                    <%= model_subclasstwo.human_attribute_name(:local_context_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
+                  <a href="#" id="23" class="list-group-item" data-st="formulary_contexts" data-sc="role_consideration" data-sk="boolean_simple">
+                    <%= model_subclasstwo.human_attribute_name(:role_consideration_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <a href="#" id="9" class="list-group-item" data-st="formulary_contexts" data-sc="success_consideration" data-sk="boolean_simple">
                     <%= model_subclasstwo.human_attribute_name(:success_consideration_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
+                  <a href="#" id="24" class="list-group-item" data-sk="select">
+                    <%= model_subclasstwo.human_attribute_name(:project_term_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <select data-st="formulary_contexts" data-sc="project_term" class="form-control">
+                      <% @project_term.each do |x| %>
+                        <option value="<%= x[:key] %>"><%= x[:val] %></option>
+                      <% end %>
+                    </select>
+                  </div>
                   <a href="#" id="10" class="list-group-item" data-sk="boolean">
                     <%= model_subclasstwo.human_attribute_name(:formulary_context_8_c_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -376,8 +447,13 @@
             <div id="collapseThree" class="panel-collapse collapse">
               <div class="panel-body">
                 <div class="list-group attributes">
+                  <a href="#" id="25" class="list-group-item" data-st="formulary_researches" data-sc="integrate_investigation" data-sk="boolean_simple">
+                    <%= model_subclassthree.human_attribute_name(:integrate_investigation_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
                   <a href="#" id="11" class="list-group-item" data-sk="boolean">
                     <%= model_subclassthree.human_attribute_name(:formulary_research_3_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -434,6 +510,7 @@
                 <div class="list-group attributes">
                   <a href="#" id="12" class="list-group-item" data-sk="boolean">
                     <%= model_subclassfour.human_attribute_name(:formulary_action_1_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -487,6 +564,7 @@
                   </div>
                   <a href="#" id="13" class="list-group-item" data-sk="boolean">
                     <%= model_subclassfour.human_attribute_name(:formulary_action_2_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -522,6 +600,7 @@
                   </div>
                   <a href="#" id="14" class="list-group-item" data-sk="boolean">
                     <%= model_subclassfour.human_attribute_name(:formulary_action_3_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -543,8 +622,13 @@
                       </label>
                     </div>
                   </div>
+                  <a href="#" id="26" class="list-group-item" data-st="formulary_actions" data-sc="factor_affects" data-sk="boolean_simple">
+                    <%= model_subclassfour.human_attribute_name(:factor_affects_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
                   <a href="#" id="15" class="list-group-item" data-sk="boolean">
                     <%= model_subclassfour.human_attribute_name(:formulary_action_5_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -572,8 +656,51 @@
                       </label>
                     </div>
                   </div>
+                  <a href="#" id="15" class="list-group-item" data-sk="boolean">
+                    <%= model_subclassfour.human_attribute_name(:formulary_action_6_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
+                  </a>
+                  <div class="list-group-item hide options">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="develop_understanding">
+                        <%= model_subclassfour.human_attribute_name(:develop_understanding) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="including_actor">
+                        <%= model_subclassfour.human_attribute_name(:including_actor) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="enhancing_participation">
+                        <%= model_subclassfour.human_attribute_name(:enhancing_participation) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="improving_communication">
+                        <%= model_subclassfour.human_attribute_name(:improving_communication) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="other_changes">
+                        <%= model_subclassfour.human_attribute_name(:other_changes) %>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="none_changes">
+                        <%= model_subclassfour.human_attribute_name(:none_changes) %>
+                      </label>
+                    </div>
+                  </div>
                   <a href="#" id="16" class="list-group-item" data-sk="boolean">
                     <%= model_subclassfour.human_attribute_name(:formulary_action_7_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -606,6 +733,12 @@
                         <%= model_subclassfour.human_attribute_name(:global_impacts) %>
                       </label>
                     </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="" data-st="formulary_actions" data-sc="none_impact">
+                        <%= model_subclassfour.human_attribute_name(:none_impact) %>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -624,6 +757,7 @@
                 <div class="list-group attributes">
                   <a href="#" id="17" class="list-group-item" data-sk="select">
                     <%= model_subclassfive.human_attribute_name(:intersectoral_design_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <select data-st="formulary_policies" data-sc="intersectoral_design" class="form-control">
@@ -634,6 +768,7 @@
                   </div>
                   <a href="#" id="18" class="list-group-item" data-sk="boolean">
                     <%= model_subclassfive.human_attribute_name(:formulary_policy_2_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <div class="checkbox">
@@ -663,6 +798,7 @@
                   </div>
                   <a href="#" id="19" class="list-group-item" data-sk="select">
                     <%= model_subclassfive.human_attribute_name(:project_result_modal) %>
+                    <span class='glyphicon glyphicon-remove remove-param-glyp hide'></span>
                   </a>
                   <div class="list-group-item hide options">
                     <select data-st="formulary_policies" data-sc="project_result" class="form-control">

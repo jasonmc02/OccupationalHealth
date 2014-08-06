@@ -50,6 +50,9 @@ class Formulary < ActiveRecord::Base
         when "boolean_simple"
           fields.push("formulary_contexts.#{val[:sc]} = ?")
           params.push(1)
+        when "select"
+          fields.push("formulary_contexts.#{val[:sc]} = ?")
+          params.push("#{val[:sp]}")
         end
       end
     end

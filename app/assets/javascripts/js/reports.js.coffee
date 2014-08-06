@@ -9,7 +9,7 @@ Report.initialize = ->
 Report.field_string = (st, sc, sk, text, selected) ->
   el = "<div class='row margin-override rp'>"
   el += "<div class='form-group col-md-8'>"
-  el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text}</button>"
+  el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text}<span class='glyphicon glyphicon-remove remove-param-glyp'></span></button>"
   el += "</div>"
   el += "<div class='form-group col-md-4'>"
   el += "<input type='hidden' value='#{st}' class='st'>"
@@ -23,7 +23,7 @@ Report.field_string = (st, sc, sk, text, selected) ->
 Report.field_boolean_simple = (st, sc, sk, text, selected) ->
   el = "<div class='row margin-override rp'>"
   el += "<div class='form-group col-md-8'>"
-  el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text}</button>"
+  el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text}<span class='glyphicon glyphicon-remove remove-param-glyp'></span></button>"
   el += "</div>"
   el += "<div class='form-group col-md-4'>"
   el += "<input type='hidden' value='#{st}' class='st'>"
@@ -37,7 +37,7 @@ Report.field_boolean_simple = (st, sc, sk, text, selected) ->
 Report.field_date = (st, sc, sk, text, selected) ->
   el = "<div class='row margin-override rp'>"
   el += "<div class='form-group col-md-8'>"
-  el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text}</button>"
+  el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text}<span class='glyphicon glyphicon-remove remove-param-glyp'></span></button>"
   el += "</div>"
   el += "<div class='form-group col-md-4'>"
   el += "<input type='hidden' value='#{st}' class='st'>"
@@ -84,6 +84,7 @@ Report.remove_param_rowa = (sk, selected) ->
   switch sk
     when "string"
       Report.modal.find('#' + selected).removeClass("active")
+      Report.modal.find('#' + selected).find("span").addClass("hide")
       Report.form.find("#" + selected).closest(".margin-override").remove()
       break
     when "boolean"
@@ -91,22 +92,27 @@ Report.remove_param_rowa = (sk, selected) ->
         Report.form.find("#" + selected).closest(".margin-override").remove()
       Report.modal.find('#' + selected).removeClass("added")
       Report.modal.find('#' + selected).removeClass("active")
+      Report.modal.find('#' + selected).find("span").addClass("hide")
       break
     when "boolean_simple"
       Report.modal.find('#' + selected).removeClass("active")
+      Report.modal.find('#' + selected).find("span").addClass("hide")
       Report.form.find("#" + selected).closest(".margin-override").remove()
       break
     when "date_beging"
       Report.modal.find('#' + selected).removeClass("active")
+      Report.modal.find('#' + selected).find("span").addClass("hide")
       Report.form.find("#" + selected).closest(".margin-override").remove()
       break
     when "date_end"
       Report.modal.find('#' + selected).removeClass("active")
+      Report.modal.find('#' + selected).find("span").addClass("hide")
       Report.form.find("#" + selected).closest(".margin-override").remove()
       break
     when "select"
       Report.modal.find('#' + selected).removeClass("active")
       Report.modal.find('#' + selected).removeClass("added")
+      Report.modal.find('#' + selected).find("span").addClass("hide")
       Report.form.find("#" + selected).closest(".margin-override").remove()
       break
 
@@ -201,7 +207,7 @@ Report.add_field_custom = ->
           text = $(val).closest("label").text()
           el = "<div class='row margin-override rp hide'>"
           el += "<div class='form-group col-md-8'>"
-          el += "<button class='form-control remove_param' id='#{selected}'>#{text}</button>"
+          el += "<button class='form-control remove_param' id='#{selected}'>#{text}<span class='glyphicon glyphicon-remove remove-param-glyp'></span></button>"
           el += "</div>"
           el += "<div class='form-group col-md-4'>"
           el += "<input type='hidden' value='#{st}' class='st'>"
@@ -215,7 +221,7 @@ Report.add_field_custom = ->
           $(val).prop("checked", false)
       el = "<div class='row margin-override rp'>"
       el += "<div class='form-group col-md-8'>"
-      el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text_main}</button>"
+      el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text_main}<span class='glyphicon glyphicon-remove remove-param-glyp'></span></button>"
       el += "</div>"
       el += "<div class='form-group col-md-4'>"
       el += "<input class='form-control sp' value='#{names.join(', ')}' readonly='true'>"
@@ -232,7 +238,7 @@ Report.add_field_custom = ->
       value = $(element).val()
       el = "<div class='row margin-override rp'>"
       el += "<div class='form-group col-md-8'>"
-      el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text_main}</button>"
+      el += "<button class='form-control remove_param' id='#{selected}' data-sk='#{sk}'>#{text_main}<span class='glyphicon glyphicon-remove remove-param-glyp'></span></button>"
       el += "</div>"
       el += "<div class='form-group col-md-4'>"
       el += "<input type='hidden' value='#{st}' class='st'>"
@@ -247,6 +253,10 @@ Report.add_field_custom = ->
       $(val).addClass("added")
   Report.modal.modal("hide")
 
+Report.trigger_add = (element) ->
+  if element.prop("checked")
+    Report.modal.find(".add-params").trigger("click")
+
 $(document).ready ->
   Report.initialize()
   Report.form.on "click", "#add_param", (e) ->
@@ -260,9 +270,11 @@ $(document).ready ->
     currentTarget = $(e.currentTarget)
     if currentTarget.hasClass("active")
       currentTarget.removeClass("active")
+      currentTarget.find("span").addClass("hide")
       Report.remove_param_rowb(currentTarget.attr("id"), currentTarget.data("sk"))
     else
       currentTarget.addClass("active")
+      currentTarget.find("span").removeClass("hide")
       Report.add_field(currentTarget.data("st"), currentTarget.data("sc"), currentTarget.data("sk"), currentTarget.text(), currentTarget.attr("id"), currentTarget)
   Report.modal.on "click", ".add-params", (e) ->
     e.preventDefault()
@@ -270,3 +282,5 @@ $(document).ready ->
   Report.form.on "submit", (e) -> 
     e.preventDefault()
     Report.fetch_formularies()
+  Report.modal.on "change", ".trigger-add", (e) ->
+    Report.trigger_add($(e.currentTarget))

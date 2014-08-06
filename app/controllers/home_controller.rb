@@ -9,6 +9,8 @@ class HomeController < ApplicationController
     check_user_ability
     @intersectoral_design_options = FormularyPolicy.intersectoral_design
     @project_result_options = FormularyPolicy.project_result
+    @project_term = FormularyContext.project_term
+    @intersectoral_aspect = FormularyContext.intersectoral_aspect
     @formularies = []
   end
 
