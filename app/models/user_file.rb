@@ -5,7 +5,6 @@ class UserFile < ActiveRecord::Base
 
   mount_uploader :file, FileUploader
 
-  #before_save :update_asset_attributes
   before_destroy :destroy_file_shares
 
   private

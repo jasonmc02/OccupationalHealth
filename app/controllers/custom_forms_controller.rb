@@ -51,14 +51,7 @@ class CustomFormsController < ApplicationController
      :fr => params[:custom_form][:checkbox_field_option_choices_fr],
      :pt => params[:custom_form][:checkbox_field_option_choices_pt],
    } || nil
-=begin
-    misc = {
-      :en => params[:custom_form][:checkbox_field_misc_en],
-      :es => params[:custom_form][:checkbox_field_misc_es],
-      :fr => params[:custom_form][:checkbox_field_misc_fr],
-      :pt => params[:custom_form][:checkbox_field_misc_pt]
-    } || nil
-=end
+
     @custom_form = CustomForm.new(custom_form_params)
 
     respond_to do |format|
@@ -98,14 +91,7 @@ class CustomFormsController < ApplicationController
      :fr => params[:custom_form][:checkbox_field_option_choices_fr],
      :pt => params[:custom_form][:checkbox_field_option_choices_pt],
    } || nil
-=begin
-    misc = {
-      :en => params[:custom_form][:checkbox_field_misc_en],
-      :es => params[:custom_form][:checkbox_field_misc_es],
-      :fr => params[:custom_form][:checkbox_field_misc_fr],
-      :pt => params[:custom_form][:checkbox_field_misc_pt]
-    } || nil
-=end
+
     respond_to do |format|
       if @custom_form.update(custom_form_params)
         

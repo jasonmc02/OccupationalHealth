@@ -266,11 +266,6 @@ class CustomForm < ActiveRecord::Base
             obj.description_fr = select[:fr][index]
             obj.description_pt = select[:pt][index]
 
-            #obj.misc_en = misc[:en]
-            #obj.misc_es = misc[:es]
-            #obj.misc_fr = misc[:fr]
-            #obj.misc_pt = misc[:pt]
-
             obj.save
             index += 1
           end
@@ -285,11 +280,6 @@ class CustomForm < ActiveRecord::Base
             obj.description_es = checkbox[:es][index]
             obj.description_fr = checkbox[:fr][index]
             obj.description_pt = checkbox[:pt][index]
-
-            #obj.misc_en = misc[:en]
-            #obj.misc_es = misc[:es]
-            #obj.misc_fr = misc[:fr]
-            #obj.misc_pt = misc[:pt]
 
             obj.save
             index += 1
@@ -310,11 +300,6 @@ class CustomForm < ActiveRecord::Base
             obj.description_fr = select[:fr][index]
             obj.description_pt = select[:pt][index]
 
-            #obj.misc_en = misc[:en]
-            #obj.misc_es = misc[:es]
-            #obj.misc_fr = misc[:fr]
-            #obj.misc_pt = misc[:pt]
-
             obj.save
             index += 1
           end
@@ -329,11 +314,6 @@ class CustomForm < ActiveRecord::Base
             obj.description_es = checkbox[:es][index]
             obj.description_fr = checkbox[:fr][index]
             obj.description_pt = checkbox[:pt][index]
-
-            #obj.misc_en = misc[:en]
-            #obj.misc_es = misc[:es]
-            #obj.misc_fr = misc[:fr]
-            #obj.misc_pt = misc[:pt]
 
             obj.save
             index += 1

@@ -58,15 +58,6 @@ class AnswersController < ApplicationController
       Answer.store_answers(params, current_user)
       redirect_to answers_path, alert: I18n.t('activerecord.models.answer') + I18n.t('helpers_locale.models.created')
     end
-    #respond_to do |format|
-    #  if @answer.save
-    #    format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
-    #    format.json { render action: 'show', status: :created, location: @answer }
-    #  else
-    #    format.html { render action: 'new' }
-    #    format.json { render json: @answer.errors, status: :unprocessable_entity }
-    #  end
-    #end
   end
 
   # PATCH/PUT /answers/1
@@ -74,15 +65,6 @@ class AnswersController < ApplicationController
   def update
     Answer.store_answers(params, current_user)
     redirect_to answers_path, alert: I18n.t('activerecord.models.answer') + I18n.t('helpers_locale.models.updated')
-    #respond_to do |format|
-    #  if @answer.update(answer_params)
-    #    format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
-    #    format.json { head :no_content }
-    #  else
-    #    format.html { render action: 'edit' }
-    #    format.json { render json: @answer.errors, status: :unprocessable_entity }
-    #  end
-    #end
   end
 
   # DELETE /answers/1

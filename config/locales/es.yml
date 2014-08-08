@@ -146,7 +146,7 @@ es:
   user_roles_page:
     modal_title: "Cambiar Rol del Usuario"
     modal_select_role: "Seleccione el rol"
-    button_role_assign: "Asignar Role"
+    button_role_assign: "Asignar Rol"
   user_files_page:
     modal_title: "Agregar personas para compartir el archivo"
   report:
