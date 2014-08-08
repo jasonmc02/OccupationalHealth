@@ -4,7 +4,7 @@ lock '3.1.0'
 set :application, 'OccupationalHealth'
 set :deploy_user, 'root'
 set :scm, :git
-set :branch, :development
+set :branch, :master
 set :repo_url, 'git@github.com:jasonmc02/OccupationalHealth.git'
 set :deploy_to, '~/OccupationalHealth'
 set :keep_releases, 3
