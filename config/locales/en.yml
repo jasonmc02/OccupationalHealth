@@ -39,6 +39,7 @@ en:
       remove: "Remove"
       go_to: "Go to "
       add_param: "Add Parameter"
+      refresh: "Refresh"
     alerts:
       active_form_wrapper: "Activating this form will appear as default form for all users, other assets forms are disabled! \n Do you want to continue?"
       deactivate_form_wrapper: "Disabling this form the form is activated by default for all users! \n Do you want to continue?"
@@ -136,10 +137,17 @@ en:
       configuration: "Config"
       users_settings: "Users Settings"
       form_wrapper: "Formularies Settings"
+      stats: "Server Status"
   user_roles_page:
     modal_title: "Change User Role"
     modal_select_role: "Select the role"
     button_role_assign: "Role Assign"
+  stats:
+    stats: "Server Status"
+    ram: "RAM"
+    hdd: "Hard Drive"
+    total: "Total"
+    used: "Used"
   user_files_page:
     modal_title: "Add people to share the file"
   report:

@@ -1,0 +1,89 @@
+<div id="service_1">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= t "stats.stats" %></h3>
+      <%= link_to t("helpers.links.refresh"), stats_home_index_path, :class => 'btn btn-primary pull-right' %>
+    </div>
+    <div class="row service_wrapper">
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <h6></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <h6><%= t "stats.used" %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <h6><%= t "stats.total" %></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row service_wrapper custom-well">
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <p>
+              <%= t "stats.ram" %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <p>
+              <%= number_to_human_size(@ram_used, precision: 2) %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <p>
+              <%= number_to_human_size(@ram_total, precision: 2) %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row service_wrapper custom-well">
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <p>
+              <%= t "stats.hdd" %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <p>
+              <%= number_to_human_size(@hdd_used, precision: 2) %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="feature">
+          <div class="text text-centered">
+            <p>
+              <%= number_to_human_size(@hdd_total, precision: 2) %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

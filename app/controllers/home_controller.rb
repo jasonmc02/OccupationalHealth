@@ -14,6 +14,17 @@ class HomeController < ApplicationController
     @formularies = []
   end
 
+  def stats
+    ram = `free -m`
+    ram = ram.split()
+    @ram_total = ram[7].to_i * 1048576
+    @ram_used = ram[8].to_i * 1048576
+    hdd = `df -m`
+    hdd = hdd.split()
+    @hdd_total = hdd[8].to_i * 1048576
+    @hdd_used = hdd[9].to_i * 1048576
+  end
+
   def fetch_formularies
     @formularies = Formulary.fetch_formularies(params)
   end

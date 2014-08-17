@@ -39,6 +39,7 @@ es:
       remove: "Remover"
       go_to: "Ir a "
       add_param: "Agregar Parámetro"
+      refresh: "Refrescar"
     alerts:
       active_form_wrapper: "¡Al activar este formulario aparecerá como formulario por defecto para todos los usuarios, los demás formularios activos se desactivarán! \n ¿Deseas continuar?"
       deactivate_form_wrapper: "¡Al desactivar este formulario se activará el formulario por defecto para todos los usuarios! \n ¿Deseas continuar?"
@@ -143,10 +144,17 @@ es:
       configuration: "Config"
       users_settings: "Configurar Usuarios"
       form_wrapper: "Configurar Formularios"
+      stats: "Estado del Servidor"
   user_roles_page:
     modal_title: "Cambiar Rol del Usuario"
     modal_select_role: "Seleccione el rol"
     button_role_assign: "Asignar Rol"
+  stats:
+    stats: "Estado del Servidor"
+    ram: "Memoria RAM"
+    hdd: "Disco Duro"
+    total: "Total"
+    used: "Usado"
   user_files_page:
     modal_title: "Agregar personas para compartir el archivo"
   report:
