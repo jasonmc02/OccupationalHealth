@@ -132,6 +132,7 @@ en:
     links:
       home: "Home"
       formulary: "Formularies"
+      send_formulary: "Reply Formulary"
       report: "Reports"
     configuration:
       configuration: "Config"

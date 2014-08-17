@@ -5,7 +5,7 @@
     <div class="section_header">
       <h3><%= I18n.t('activerecord.models.form_wrapper.plural').pluralize %></h3>
       <%= link_to t("helpers.links.new"), new_answer_path, :class => 'btn btn-primary pull-right' %>
-      <%= link_to t("helpers.links.return_to") + t("activerecord.models.form_wrapper.plural"), formularies_path, :class => 'btn btn-default pull-right button-margin-rigth' %>
+      <%= link_to t("helpers.links.return_to") + t("activerecord.models.formulary").pluralize, formularies_path, :class => 'btn btn-default pull-right button-margin-rigth' %>
     </div>
     <div class="row" align="center">
       <%= paginate @formularies %>

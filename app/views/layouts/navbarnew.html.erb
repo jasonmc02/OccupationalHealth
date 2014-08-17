@@ -1,0 +1,120 @@
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <strong>
+          <%= t 'application.title' %>
+        </strong>
+        <small>
+          <%= t "index.slides.scene" %>
+        </small>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="<%= root_path %>" class="upper-case">
+            <%= t 'navbar_elements.links.home' %>
+          </a>
+        </li>
+        <% if user_signed_in? %>
+          <li>
+            <a href="<%= new_formulary_path %>" class="upper-case">
+              <%= t 'navbar_elements.links.send_formulary' %>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle upper-case" data-toggle="dropdown">
+              <%= current_user.email %>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="<%= formularies_path %>" class="">
+                  <%= t 'navbar_elements.links.formulary' %>
+                </a>
+              </li>
+              <% if current_user.role_id == Rails.configuration.admin_role %>
+                <li>
+                  <a href="<%= reports_home_index_path %>" class="">
+                    <%= t 'navbar_elements.links.report' %>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= user_files_path %>">
+                    <%= t 'navbar_elements.user.repository' %>
+                  </a>
+                </li>
+              <% end %>
+              <li>
+                <a href="<%= destroy_user_session_path %>" data-method="delete">
+                  <%= t 'navbar_elements.user.log_out' %>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <% if current_user.role_id == Rails.configuration.admin_role %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle upper-case" data-toggle="dropdown">
+                <%= t 'navbar_elements.configuration.configuration' %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="<%= users_path %>">
+                    <%= t 'navbar_elements.configuration.users_settings' %>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= form_wrappers_path %>">
+                    <%= t 'navbar_elements.configuration.form_wrapper' %>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%= stats_home_index_path %>">
+                    <%= t 'navbar_elements.configuration.stats' %>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        <% else %>
+          <li>
+            <a href="<%= new_user_session_path %>" class="upper-case">
+              <%= t 'navbar_elements.user.log_in' %>
+            </a>
+          </li>
+          <li>
+            <a href="<%= new_user_registration_path %>" class="upper-case">
+              <%= t 'navbar_elements.user.sign_up' %>
+            </a>
+          </li>
+        <% end %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle upper-case" data-toggle="dropdown">
+            <%= t 'navbar_elements.language.language' %>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="<%= request.env['PATH_INFO'] %>?locale=en">
+                <%= t 'navbar_elements.language.en' %>
+              </a>
+            </li>
+            <li>
+              <a href="<%= request.env['PATH_INFO'] %>?locale=es">
+                <%= t 'navbar_elements.language.es' %>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

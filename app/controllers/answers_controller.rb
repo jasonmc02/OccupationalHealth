@@ -30,7 +30,7 @@ class AnswersController < ApplicationController
       @form_wrapper = FormWrapper.where(:active => true).first
       @sections = @form_wrapper.sections.order(:sort_index).includes(:custom_forms).order("custom_forms.sort_index")
     else
-      redirect_to new_alert:_path
+      redirect_to new_formulary_path
     end
   end
 

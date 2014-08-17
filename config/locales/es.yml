@@ -139,6 +139,7 @@ es:
     links:
       home: "Inicio"
       formulary: "Formularios"
+      send_formulary: "Responder Formulario"
       report: "Reportes"
     configuration:
       configuration: "Config"
