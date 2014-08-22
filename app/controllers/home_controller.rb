@@ -1,12 +1,12 @@
 class HomeController < ApplicationController
   
   skip_before_filter :authenticate_user!, only: [:index]
+  before_filter :check_user_ability, except: [:index]
   
   def index
   end
 
   def reports
-    check_user_ability
     @intersectoral_design_options = FormularyPolicy.intersectoral_design
     @project_result_options = FormularyPolicy.project_result
     @project_term = FormularyContext.project_term
