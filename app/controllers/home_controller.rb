@@ -28,4 +28,25 @@ class HomeController < ApplicationController
   def fetch_formularies
     @formularies = Formulary.fetch_formularies(params)
   end
+
+  def backups
+  end
+
+  def create_backup
+    name = "backup-#{Time.now.strftime("%Y-%m-%d")}.sql"
+    command = `#{Rails.configuration.database_export}`
+    File.open(Rails.configuration.application_root + name, "w+") do |file|
+      file.write(command)
+    end
+    send_file(Rails.configuration.application_root + name)
+  end
+
+  def restore_backup
+    backup = params[:file]
+    File.open(Rails.configuration.application_root + "/backup.sql", 'wb') do |file|
+      file.write(backup.read)
+    end
+    `#{Rails.configuration.database_import} < #{Rails.configuration.application_root}backup.sql`
+    head :no_content
+  end
 end

@@ -26,7 +26,7 @@ OccupationalHealth::Application.routes.draw do
     end
   end
 
-  resources :user_file_shares do
+  resources :user_file_shares, :except => [:index, :show, :new, :edit, :create, :update, :destroy] do
     collection do
       get :fetch_user_file_shares
       post :upsert_user_file_shares
@@ -36,7 +36,7 @@ OccupationalHealth::Application.routes.draw do
     end
   end
 
-  resources :user_files do
+  resources :user_files, :except => [:show] do
     member do
       get :download
     end
@@ -46,6 +46,9 @@ OccupationalHealth::Application.routes.draw do
     collection do
       get :reports
       get :stats
+      get :backups
+      get :create_backup
+      post :restore_backup
       post :fetch_formularies
     end
   end
@@ -56,7 +59,7 @@ OccupationalHealth::Application.routes.draw do
 
   match "/" => "home#index", :via => :get
 
-  scope "/:locale", :locale => /en|es|fr|pt/ do
+  scope "/:locale", :locale => /en|es/ do
     root 'home#index'
     resources :formularies
     resources :user_files

@@ -1,0 +1,52 @@
+<div id="service_2">
+  <div class="container">
+    <div class="section_header">
+      <h3><%= t "backups.backups" %></h3>
+    </div>
+    <div class="row perk">
+      <div class="col-sm-2 circle circle1">
+          <img src="/assets/fonts/sql-icon.png" alt="" style="max-height: 75px;margin-top: 29px;margin-left: 9px;">
+      </div>
+      <div class="col-sm-10 description_wrapper">
+        <h5><%= t "backups.body_title" %></h5>
+        <p>
+          <%= t "backups.body" %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <a href="<%= create_backup_home_index_path%>" class="btn btn-primary btn-lg btn-block"><%= t "backups.button_export" %></a>
+      </div>
+      <div class="col-sm-6">
+        <a href="<%= create_backup_home_index_path%>" class="btn btn-danger btn-lg btn-block upload-file"><%= t "backups.button_import" %></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="upload-file-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= t "backups.modal_title" %></h4>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+            <p><%= t "backups.modal_body" %></p>
+            <br>
+            <div align="center">
+              <input id="sql-file"  type="file" accept=".sql">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal"><%= I18n.t "helpers.links.cancel" %></button>
+        <button class="btn btn-primary upload" data-dismiss="modal"><%= I18n.t "helpers.links.upload" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "js/backups" %>

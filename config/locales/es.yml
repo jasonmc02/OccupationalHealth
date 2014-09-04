@@ -40,6 +40,7 @@ es:
       go_to: "Ir a "
       add_param: "Agregar Parámetro"
       refresh: "Refrescar"
+      upload: "Subir"
     alerts:
       active_form_wrapper: "¡Al activar este formulario aparecerá como formulario por defecto para todos los usuarios, los demás formularios activos se desactivarán! \n ¿Deseas continuar?"
       deactivate_form_wrapper: "¡Al desactivar este formulario se activará el formulario por defecto para todos los usuarios! \n ¿Deseas continuar?"
@@ -146,6 +147,7 @@ es:
       users_settings: "Configurar Usuarios"
       form_wrapper: "Configurar Formularios"
       stats: "Estado del Servidor"
+      backups: "Respaldos"
   user_roles_page:
     modal_title: "Cambiar Rol del Usuario"
     modal_select_role: "Seleccione el rol"
@@ -156,6 +158,14 @@ es:
     hdd: "Disco Duro"
     total: "Total"
     used: "Usado"
+  backups:
+    backups: "Respaldos"
+    body_title: "Respaldos en formato SQL"
+    body: "El almacenamiento de la página está en formato SQL, los respaldo generados son copias del sistema de archivos principal de la página"
+    button_export: "Generar un respaldo de la base de datos"
+    button_import: "Restablecer un respaldo anterior"
+    modal_title: "Subir un respaldo SQL"
+    modal_body: "Al subir este respaldo se borrarán todos los datos que se hayan generado desde la creación del respaldo"
   user_files_page:
     modal_title: "Agregar personas para compartir el archivo"
   report:

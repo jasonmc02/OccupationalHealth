@@ -40,6 +40,7 @@ en:
       go_to: "Go to "
       add_param: "Add Parameter"
       refresh: "Refresh"
+      upload: "Upload"
     alerts:
       active_form_wrapper: "Activating this form will appear as default form for all users, other assets forms are disabled! \n Do you want to continue?"
       deactivate_form_wrapper: "Disabling this form the form is activated by default for all users! \n Do you want to continue?"
@@ -139,6 +140,7 @@ en:
       users_settings: "Users Settings"
       form_wrapper: "Formularies Settings"
       stats: "Server Status"
+      backups: "Backups"
   user_roles_page:
     modal_title: "Change User Role"
     modal_select_role: "Select the role"
@@ -149,6 +151,14 @@ en:
     hdd: "Hard Drive"
     total: "Total"
     used: "Used"
+  backups:
+    backups: "Backups"
+    body_title: "SQL format backups"
+    body: "The storage site is in SQL format, the backup copies are generated filesystem main page"
+    button_export: "Generate a backup of the database"
+    button_import: "Restore a previous backup"
+    modal_title: "Upload a SQL backup"
+    modal_body: "By uploading this backup all data that have been generated since the creation of the backup will be deleted"
   user_files_page:
     modal_title: "Add people to share the file"
   report:
