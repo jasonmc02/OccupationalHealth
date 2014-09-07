@@ -1,4 +1,4 @@
-<section id="feature_slider" class="lol">
+<section id="feature_slider">
   <article id="ideas" class="slide index-slide scene1">
     <img class="asset left sp t z index-scene" src="/assets/organization/slides/scene6.jpg"/>
     <div class="info">
@@ -37,7 +37,7 @@
 </section>
 <div id="showcase">
   <div class="container">
-    <div class="section_header">
+    <div class="section_header override">
       <h3><%= t 'application.title' %></h3>
     </div>            
     <div class="row feature_wrapper">
@@ -48,6 +48,11 @@
             <p><%= t "index.slides.scene" %></p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row formulary-link">
+      <div class="col-sm-6 col-sm-offset-3">
+        <a href="<%= new_formulary_path%>" class="btn btn-primary btn-lg btn-block"><%= t "home.formulary_link" %></a>
       </div>
     </div>
   </div>

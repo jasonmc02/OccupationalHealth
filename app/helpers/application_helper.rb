@@ -274,4 +274,19 @@ module ApplicationHelper
       end
     end
   end
+
+  def convertQuantity(a)
+    if a == 0
+      return '0 Bytes'
+    end
+    b = 1000
+    c = ['Bytes', 'KB', 'MB', 'GB', 'TB']
+    z = Math.log(a)
+    y = Math.log(b)
+    x = z / y
+    w = x.floor
+    v = b ** w
+    u = (a.to_f / v.to_f).round(2)
+    "#{u} #{c[w]}"
+  end
 end

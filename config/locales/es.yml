@@ -148,6 +148,8 @@ es:
       form_wrapper: "Configurar Formularios"
       stats: "Estado del Servidor"
       backups: "Respaldos"
+  home:
+    formulary_link: "Contestar el Formulario de EkoSanté"
   user_roles_page:
     modal_title: "Cambiar Rol del Usuario"
     modal_select_role: "Seleccione el rol"
@@ -158,10 +160,11 @@ es:
     hdd: "Disco Duro"
     total: "Total"
     used: "Usado"
+    info_text: "La Memoria RAM del servidor se limpia por si sola los domingos en horas de la madrugada"
   backups:
     backups: "Respaldos"
     body_title: "Respaldos en formato SQL"
-    body: "El almacenamiento de la página está en formato SQL, los respaldo generados son copias del sistema de archivos principal de la página"
+    body: "El almacenamiento de la aplicación está en formato SQL, los respaldos generados son copias exactas de estos datos. Al restaurarse un respaldo, el sistema vuelve al estado de cuando se creó el respaldo."
     button_export: "Generar un respaldo de la base de datos"
     button_import: "Restablecer un respaldo anterior"
     modal_title: "Subir un respaldo SQL"

@@ -49,4 +49,19 @@ class HomeController < ApplicationController
     `#{Rails.configuration.database_import} < #{Rails.configuration.application_root}backup.sql`
     head :no_content
   end
+
+  def release_memory
+    #`sudo sysctl -w vm.drop_caches=3`
+    #`sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches`
+    ram = `free -m`
+    ram = ram.split()
+    resp = {}
+    resp[:ram_total] = ram[7].to_i * 1048576
+    resp[:ram_used] = ram[8].to_i * 1048576
+    hdd = `df -m`
+    hdd = hdd.split()
+    resp[:hdd_total] = hdd[8].to_i * 1048576
+    resp[:hdd_used] = hdd[9].to_i * 1048576
+    render json: resp
+  end
 end

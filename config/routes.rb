@@ -50,6 +50,7 @@ OccupationalHealth::Application.routes.draw do
       get :create_backup
       post :restore_backup
       post :fetch_formularies
+      put :release_memory
     end
   end
 

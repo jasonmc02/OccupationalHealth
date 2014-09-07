@@ -141,6 +141,8 @@ en:
       form_wrapper: "Formularies Settings"
       stats: "Server Status"
       backups: "Backups"
+  home:
+    formulary_link: "Answer the EkoSanté Formulary"
   user_roles_page:
     modal_title: "Change User Role"
     modal_select_role: "Select the role"
@@ -151,10 +153,11 @@ en:
     hdd: "Hard Drive"
     total: "Total"
     used: "Used"
+    info_text: "The Server RAM Memory cleans itself the Sunday in the early morning hours"
   backups:
     backups: "Backups"
     body_title: "SQL format backups"
-    body: "The storage site is in SQL format, the backup copies are generated filesystem main page"
+    body: "The application storage is in SQL format, generated backups are exact copies of the data. To restore a backup, the system returns to the state when the backup was created."
     button_export: "Generate a backup of the database"
     button_import: "Restore a previous backup"
     modal_title: "Upload a SQL backup"

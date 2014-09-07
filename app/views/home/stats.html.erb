@@ -4,6 +4,11 @@
       <h3><%= t "stats.stats" %></h3>
       <%= link_to t("helpers.links.refresh"), stats_home_index_path, :class => 'btn btn-primary pull-right' %>
     </div>
+    <div class="header-info">
+      <p class="text-justified">
+        <%= t "stats.info_text" %>
+      </p>
+    </div>
     <div class="row service_wrapper">
       <div class="col-sm-4">
         <div class="feature">
@@ -40,8 +45,8 @@
       <div class="col-sm-4">
         <div class="feature">
           <div class="text text-centered">
-            <p>
-              <%= number_to_human_size(@ram_used, precision: 2) %>
+            <p id="ram-used">
+              <%= convertQuantity(@ram_used) %>
             </p>
           </div>
         </div>
@@ -49,8 +54,8 @@
       <div class="col-sm-4">
         <div class="feature">
           <div class="text text-centered">
-            <p>
-              <%= number_to_human_size(@ram_total, precision: 2) %>
+            <p id="ram-total">
+              <%= convertQuantity(@ram_total) %>
             </p>
           </div>
         </div>
@@ -69,8 +74,8 @@
       <div class="col-sm-4">
         <div class="feature">
           <div class="text text-centered">
-            <p>
-              <%= number_to_human_size(@hdd_used, precision: 2) %>
+            <p id="hdd-used">
+              <%= convertQuantity(@hdd_used) %>
             </p>
           </div>
         </div>
@@ -78,8 +83,8 @@
       <div class="col-sm-4">
         <div class="feature">
           <div class="text text-centered">
-            <p>
-              <%= number_to_human_size(@hdd_total, precision: 2) %>
+            <p id="hdd-total">
+              <%= convertQuantity(@hdd_total) %>
             </p>
           </div>
         </div>
@@ -87,3 +92,4 @@
     </div>
   </div>
 </div>
+<%= javascript_include_tag "js/stats" %>

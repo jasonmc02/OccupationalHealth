@@ -5,7 +5,7 @@
     <div class="section_header">
       <h3><%= @form_wrapper["title_#{locale}"] + " " %><%= I18n.t("activerecord.models.custom_form.plural") %></h3>
       <%= link_to t("helpers.links.new"), new_custom_form_path(:form_wrapper_id => @form_wrapper.id), :class => 'btn btn-primary pull-right' %>
-      <%= link_to t("helpers.links.return_to") + t("activerecord.models.form_wrapper.plural"), form_wrappers_path, :class => 'btn btn-default pull-right button-margin-rigth' %>
+      <%= link_to t("helpers.links.return_to") + t("activerecord.models.form_wrapper.plural"), form_wrappers_path, :class => 'btn btn-default pull-right button-margin-right' %>
     </div>
     <div class="row" align="center">
       <%= paginate @sections %>
