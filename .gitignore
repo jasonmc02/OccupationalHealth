@@ -4,9 +4,4 @@
 /public/assets/
 /public/uploads/
 /log/*
-/config/database.yml
-/config/nginx.conf
-/config/unicorn.sh
-/config/unicorn.rb
-/config/importand.txt
-/config/configuration.yml
+/config/

@@ -10,11 +10,14 @@ class ApplicationController < ActionController::Base
 
     def global_language
       if params.has_key?(:locale)
-        I18n.locale = params[:locale]
-      else
-        if I18n.locale.blank?
-          I18n.locale = 'en'
+        if ["en", "es"].include?(params[:locale].to_s)
+          I18n.locale = params[:locale]
+        else
+          I18n.locale = :en
+          redirect_to home_index_path
         end
+      else
+        I18n.locale = :en
       end
     end
 
