@@ -42,11 +42,13 @@ class HomeController < ApplicationController
   end
 
   def restore_backup
-    backup = params[:file]
-    File.open(Rails.configuration.application_root + "/backup.sql", 'wb') do |file|
-      file.write(backup.read)
+    if params[:file].content_type.to_s.eql?("text/x-sql")
+      backup = params[:file]
+      File.open(Rails.configuration.application_root + "/backup.sql", 'wb') do |file|
+        file.write(backup.read)
+      end
+      `#{Rails.configuration.database_import} < #{Rails.configuration.application_root}backup.sql`
     end
-    `#{Rails.configuration.database_import} < #{Rails.configuration.application_root}backup.sql`
     head :no_content
   end
 
