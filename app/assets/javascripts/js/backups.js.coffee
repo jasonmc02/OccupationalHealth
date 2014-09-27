@@ -20,6 +20,7 @@ Backups.uploadFile = ->
       processData: false
       cache: false
       contentType: false
+      dataType: "json"
       data: formData
 
 $(document).ready ->

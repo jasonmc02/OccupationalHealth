@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   before_filter :global_language
+  before_filter :clean_request_format
 
   private
 
@@ -27,6 +28,16 @@ class ApplicationController < ActionController::Base
 
     def check_user_ability
       unless current_user.role_id == Rails.configuration.admin_role
+        request = nil
+        params = nil
+        redirect_to home_index_path
+      end
+    end
+
+    def clean_request_format
+      unless ["text/html", "application/json", "text/javascript"].include?(request.format.to_s)
+        request = nil
+        params = nil
         redirect_to home_index_path
       end
     end
